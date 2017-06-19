@@ -1,0 +1,68 @@
+/*all*/
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/*Highlighting*/
+::selection {
+  background: $darkBlue;
+  color: white;
+}
+::-moz-selection {
+  background: $darkBlue;
+  color: white;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+html{
+	body{
+		margin:0;
+		font-family: sofia_pro_lightregular, verdana, arial;
+		-webkit-tap-highlight-color: $darkBlue;
+	}
+}
+@keyframes loadingMail{
+	0%	{width: 0%;}
+	20%	{width: 100%;}
+	100%{width: 0%;}
+}
+.cta{
+	border:1px solid white;
+	color: #fff;
+	height: 40px;
+	width: 100px;
+	margin-right: 10px;
+	padding-top:8px;
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	transition: color 0.3s;
+	z-index: 999;
+	&:hover{
+		color: $darkBlue;
+		&:before{
+			width: 100%;
+		}
+	}
+	&:before{
+		content: '';
+		transition: width 0.3s, background-color 0.3s;
+		z-index: -1;
+		background-color: white;
+		width: 0%;
+		height: 100%;
+		position: absolute;
+		display: block;
+		top:0;
+		left: 0;
+		opacity: 1;
+	}
+    &.cta-large {
+        width:150px;
+    }
+}
