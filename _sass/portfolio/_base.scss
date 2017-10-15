@@ -1,4 +1,11 @@
-main {
-	width: 1000px;
-	margin: 0 auto;
+@import "header";
+
+html, body {
+	height: 100%;
+}
+
+.wrapper>div>h1 {
+	color: white;
+	font-size: 36px;
+	margin-top: 0px;
 }

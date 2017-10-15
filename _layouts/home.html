@@ -4,8 +4,100 @@ title: Antoine Altorffer - Portfolio
 date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 ---
 
-<body>
-	<h1>Bonjour le monde, nous sommes le {{ page.date }} !</h1>
-	{{ content }}
-</body>
-</html>
+<section id="home">
+	<div class="home-half-text">
+		<div>
+			<h1>ALTORFFER Antoine</h1>
+			<h2>Etudiant ingénieur en 5ème année ESIEA</h2>
+		</div>
+	</div><!-- HACK --><div class="home-half-picture">
+
+	</div>
+</section>
+<!--<section id="slider">
+	<div id="bottomCross">
+		<div></div>
+		<svg viewBox="0 0 100 50" preserveAspectRatio="none">
+			<polygon points="0,50 50,0 100,50"/>
+		</svg>
+		<div></div>
+	</div>
+</section>-->
+<section id="whoami" class="wrapper section">
+	<div id="bottomCross">
+		<svg viewBox="0 0 100 50" preserveAspectRatio="none">
+			<polygon points="0,50 50,0 100,50"/>
+		</svg>
+	</div>
+	<div>
+		<h1>Qui suis-je ?</h1>
+		<div id="presentation">
+			<div id="imgProfil"></div>
+			<div id="description">
+				<h2>Ingénieur du monde du numérique</h2>
+				<a href="{{ site.github_url }}" target="_blank" id="git" class="externLink">github</a>
+				<a href="{{ site.linkedin_url }}" target="_blank" id="linkedin" class="externLink">linkedin</a>
+
+				<p>Actuellement en cinquième année à l'ESIEA (campus de Laval, majeure réalité virtuelle), je suis intéressé par divers domaines, tel que le machine learning, l'intelligence artificielle mais aussi la réalité virtuelle. En parallèle de ces domaines, j'ai acquis des compétences artistiques pendant mes trois années à l'université de Paris-Est Marne-la-Vallée.</p>
+				<p>Au cours de ma formation, j'ai eu l'occasion de travailler sur des domaines divers et variés, tel que l'électronique, l'automatique ainsi que la sécurité informatique, mais aussi la création artistique, la vidéo...</p>
+				<p>Je recherche actuellement un stage de 6 mois entre Février 2017 et Août 2017.</p>
+
+				<a href="assets/download/{{ site.cv_fr }}" target="_blank" class="cta cta-large">CV Français</a>
+				<a href="assets/download/{{ site.cv_en }}" target="_blank" class="cta cta-large">English Resume</a>
+			</div>
+		</div>
+		<div id="formation">
+			<h2>Formation</h2>
+			<div id="src">
+				<p>2012-2014</p>
+				<h3>DUT MMI</h3>
+				<p>Métier du Multimédia et de l'Internet</p>
+			</div>
+			<div id="evman">
+				<p>2014-2015</p>
+				<h3>Licence EVMAN</h3>
+				<p>Etudes visuelles, multimédia et arts numériques</p>
+			</div>
+			<div id="evman">
+				<p>2015-2018</p>
+				<h3>ESIEA (Site de Laval)</h3>
+				<p>Ecole d'ingénieurs du monde numérique</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="projects" class="section">
+	<div class="wrapper">
+		<h1>Bonjour les projets</p>
+	</div>
+</section>
+<section id="contact" class="wrapper section">
+	<div>
+		<h1>Contact</h1>
+		<!-- see formspree or equivalent for email sending in jekyll -->
+		<form method="post" enctype="multipart/form-data" action="" id="formMail">
+			<div id="infoMessage">
+				<div>
+					<label for="name">Nom : </label>
+					<input type="text" id="name" name="nom" placeholder="Nom" required>
+				</div>
+				<div>
+					<label for="firstname">Prénom : </label>
+					<input type="text" id="firstname" name="prenom"  placeholder="Prénom" required>
+				</div>
+				<div>
+					<label for="mail">Mail : </label>
+					<input type="email" id="mail" name="email" placeholder="e-mail" required>
+				</div>
+			</div>
+			<div id="message">
+				<label for="message">Message : </label>
+				<textarea name="message" id="message" placeholder="Entrez ici votre message..." required></textarea>
+			</div>
+			<div id="question">
+				<div class="g-recaptcha" data-sitekey="6Lft5igTAAAAAPaDKVjmOBp5kqida-NA98f0HG1M"></div>
+			</div>
+			<button class="cta" type="submit" id="send">Envoyer</button>
+		</form>
+	</div>
+</section>

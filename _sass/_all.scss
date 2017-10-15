@@ -5,11 +5,11 @@
 }
 /*Highlighting*/
 ::selection {
-  background: $darkBlue;
+  background: $dark-blue;
   color: white;
 }
 ::-moz-selection {
-  background: $darkBlue;
+  background: $dark-blue;
   color: white;
 }
 img::selection {
@@ -22,7 +22,7 @@ html{
 	body{
 		margin:0;
 		font-family: sofia_pro_lightregular, verdana, arial;
-		-webkit-tap-highlight-color: $darkBlue;
+		-webkit-tap-highlight-color: $dark-blue;
 	}
 }
 @keyframes loadingMail{
@@ -44,7 +44,7 @@ html{
 	transition: color 0.3s;
 	z-index: 999;
 	&:hover{
-		color: $darkBlue;
+		color: $dark-blue;
 		&:before{
 			width: 100%;
 		}
