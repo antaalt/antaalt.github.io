@@ -1,22 +1,19 @@
-#header {
+#menu {
     z-index: 1;
     position: fixed;
     width: 100%;
-    #menu {
-        border-bottom: 1px solid white;
-        height: 55px;
-        &>h1 {
-            display: none;
-        }
-    }
-    #menu.minimize {
-        &>h1 {
-            display: inline-block;
-        }
+    background-color: #fff;
+
+    height: 0px;
+    transition: height 0.2s;
+    overflow: hidden;
+    &.minimize {
+        height: 51px;
     }
 
     h1 {
         margin: 0;
+        color: #000;
     }
     nav {
         float:right;
@@ -30,13 +27,36 @@
         display: inline-block;
     }
     a {
+        position: relative;
         display: inline-block;
         text-decoration: none;
         color: black;
         padding: 15px 20px;
+        &:before {
+            transition:height 0.2s, background-color 0.2s;
+			z-index: -1;
+			content: '';
+			text-align: center;
+			position: absolute;
+			width: 100%;
+			height: 0%;
+			display: block;
+			background-color: $dark-blue;
+			bottom: 0;
+			left: 0;
+        }
         &:hover {
-            background-color: $dark-blue;
-            color:white;
+            color: #fff;
+            &:before {
+                background-color: $light-blue;
+                height: 100%;
+            }
+        }
+        &.selected {
+            color:#fff;
+            &:before {
+                height:100%;
+            }
         }
     }
     .wrapper {

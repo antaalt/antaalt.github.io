@@ -3,28 +3,28 @@ layout: default
 title: Antoine Altorffer - Portfolio
 date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 ---
-
+<!-- Home -->
 <section id="home">
 	<div class="home-half-text">
+		<div id="right-cross">
+			<svg viewBox="0 0 100 50" preserveAspectRatio="none">
+				<polygon points="0,0 0,50 100,0"/>
+			</svg>
+		</div>
 		<div>
 			<h1>ALTORFFER Antoine</h1>
 			<h2>Etudiant ingénieur en 5ème année ESIEA</h2>
+			<p>Actuellement à la recherche d'un stage de 6 mois </p>
+			<p><a href="#whoami" class="smooth-scroll">Qui-suis je</a> - <a href="#whoami" class="smooth-scroll">Projets</a></p>
+			<a href="#contact" class="cta cta-big smooth-scroll">Contactez-moi</a>
 		</div>
-	</div><!-- HACK --><div class="home-half-picture">
-
-	</div>
+	</div><!-- HACK --><div class="home-half-picture"></div>
 </section>
-<!--<section id="slider">
-	<div id="bottomCross">
-		<div></div>
-		<svg viewBox="0 0 100 50" preserveAspectRatio="none">
-			<polygon points="0,50 50,0 100,50"/>
-		</svg>
-		<div></div>
-	</div>
-</section>-->
+<!-- / Home -->
+
+<!-- Qui suis-je -->
 <section id="whoami" class="wrapper section">
-	<div id="bottomCross">
+	<div id="bottom-cross">
 		<svg viewBox="0 0 100 50" preserveAspectRatio="none">
 			<polygon points="0,50 50,0 100,50"/>
 		</svg>
@@ -66,11 +66,31 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 		</div>
 	</div>
 </section>
-<section id="projects" class="section">
-	<div class="wrapper">
-		<h1>Bonjour les projets</p>
+<!-- / Qui suis-je -->
+<!-- Projets -->
+<section id="projects" class="wrapper section">
+	<div>
+		<h1>Projets</h1>
+		{% for project in site.data.projects %}
+		   <article class="{% cycle 'odd', 'even' %}">
+			   <img src="{{ project.image_url }}" name="{{ project.name }}"/>
+			   <p>{{ project.name }}</p>
+			   <p>{{ project.description }}</p>
+		   </article>
+		{% endfor %}
 	</div>
 </section>
+<!-- / Projets -->
+
+<!-- Competences -->
+<section id="skills" class="wrapper section">
+	<div>
+		<h1>Compétences</h1>
+	</div>
+</section>
+<!-- / Competences -->
+
+<!-- Contact -->
 <section id="contact" class="wrapper section">
 	<div>
 		<h1>Contact</h1>
@@ -101,3 +121,4 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 		</form>
 	</div>
 </section>
+<!-- / Contact -->

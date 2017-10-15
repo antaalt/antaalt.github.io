@@ -5,30 +5,67 @@
         height: 99vh;
         margin : 0;
     }
-    background-color: $light-blue;
     .home-half-text {
         width: 40%;
-        background-color: $light-blue;
+        background-color: $grey;
         text-align: right;
-        padding-right: 20px;
-        color: white;
+        padding-right: 40px;
+        position: relative;
+        //color: white;
         h1 {
             font-size: 3em;
-
-            padding: 20px 0;
         }
-        h1, h2, h3 {
+        h1, h2 {
             margin: 0;
-            /*text-shadow: 1px 1px 1px black;*/
         }
         h2 {
-            border-top: 1px solid white;
             font-weight: lighter;
         }
         &>div {
-            margin-top: 60vh;
+            margin-top: 50vh;
             vertical-align: middle;
             display: inline-block;
+        }
+        p>a {
+            color: #000;
+            transition:color 0.1s;
+            &:hover {
+                color: $light-blue;
+            }
+        }
+        a {
+            margin-top: 25px;
+            margin-right: 0;
+        }
+        #right-cross {
+            font-size: 0;
+            position: absolute;
+            top: 0px;
+            right:-100px;
+            margin-top: 0px;
+            height: calc(99vh - 50px);
+            padding: 0;
+            &>svg{
+                display: inline-block;
+                height: 100%;
+                width: 100px;
+                margin-left: calc(40% - 50px);
+                transform: translateX(0); // Hack acceleration matérielle
+                &>polygon{
+                    width:10%;
+                    fill: $grey;
+                }
+            }
+        }
+        .cta {
+            color: #000;
+            border-color: #000;
+            &:before{
+                background-color: #000;
+            }
+            &:hover {
+                color: #fff;
+            }
         }
     }
 
@@ -44,10 +81,11 @@
 #whoami{
 	background-color: $dark-blue;
 	width: 100%;
-    #bottomCross{
+    position: relative;
+    #bottom-cross{
         font-size: 0;
         position: absolute;
-        bottom: 0px;
+        top: -50px;
         height: 50px;
         width: 100%;
         padding: 0;
@@ -166,7 +204,27 @@
 	}
 }
 
-#contact{
+#projects {
+    background-color: $light-blue;
+    color: #fff;
+    &>div {
+        width: 1000px;
+		margin:0 auto;
+        padding:20px 0;
+    }
+}
+
+#skills {
+    background-color: $red;
+    color: #fff;
+    &>div {
+        width: 1000px;
+		margin:0 auto;
+        padding:20px 0;
+    }
+}
+
+#contact {
 	background-color: $grey;
 	width: 100%;
 	&>div{

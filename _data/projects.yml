@@ -1,0 +1,14 @@
+- name: Chapeau L'Artiste
+  description: > # this means to ignore newlines until "baseurl:"
+    Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
+    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
+    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  vimeo_url: vimeourl
+  image_url: ./assets/images/projets/miniatures/chapeaulArtiste.jpg
+
+- name: project2
+  description: > # this means to ignore newlines until "baseurl:"
+    Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
+    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
+    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  image_url: ./assets/images/projets/miniatures/chapeaulArtiste.jpg
