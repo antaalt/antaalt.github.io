@@ -1,0 +1,101 @@
+fr:
+  whoami: "Qui suis-je"
+  skills: "Compétences"
+  projects: "Projets"
+  contact: "Contact"
+  home_description: "Etudiant ingénieur en 5ème année<br>ESIEA - Majeure Réalité virtuelle"
+  home_status: "Actuellement à la recherche d'un stage de fin d'études de 6 mois<br>(A partir de Février 2018)"
+  contact_me: "Contactez-moi"
+  development: "Développement"
+  computer_graphics: "Imagerie"
+  web: "Web"
+  graphism: "Graphisme"
+
+  whoami_title: "Ingénieur en imagerie et réalité virtuelle"
+  whoami_description: > # this means ignore newlines
+    Je suis actuellement un étudiant en cinquième année à l'ESIEA (campus de Laval)
+    en majeure réalité virtuelle. J'ai choisi cette majeure pour vivre de ma passion
+    pour la création d'univers immersifs et créatifs. Je suis passionné par l'animation,
+    les effets spéciaux ou encore les jeux vidéo. J'ai décidé de devenir ingénieur
+    en partie par curiosité, pour être en mesure de comprendre le fonctionnement
+    de ces diverses techniques.</p>
+    <p>En parallèle, j'ai acquis des compétences variées au cours de ma formation.
+    Des compétences artistiques dans un premier temps, au cours du DUT MMI et de
+    la licence EVMAN à l'université Paris-Est Marne-la-Vallée, puis j'ai pu
+    approfondir mes compétences techniques au cours de mes trois années à l'ESIEA.
+    J'ai aussi obtenu des compétences dans divers domaines plus variés, tels que
+    le montage vidéo, la création graphique, le web, mais aussi la sécurité
+    informatique, l'automatique et l'électronique, le big data...</p>
+    <p>Dans ce but, je recherche actuellement un stage de fin d'étude de 6 mois à
+    partir de Février 2018.
+
+  formation_title: "Formation"
+  formation_dut_title: "DUT MMI"
+  formation_dut_description: "Métier du Multimédia et de l'Internet (ex SRC)"
+  formation_evman_title: "Licence EVMAN"
+  formation_evman_description: "Etudes visuelles, multimédia et arts numériques"
+  formation_esiea_title: "ESIEA (Site de Laval)"
+  formation_esiea_description: "Ecole d'ingénieurs du monde numérique"
+
+  form_name: "Nom"
+  form_name_placeholder: "Nom"
+  form_surname: "Prénom"
+  form_surname_placeholder: "Prénom"
+  form_mail: "Mail"
+  form_mail_placeholder: "e-mail"
+  form_message: "Message"
+  form_message_placeholder: "Entrez ici votre message..."
+  form_send: "Envoyer" # TODO js for this
+  form_sending: "Envoi..."
+  form_sent: "Envoyé !"
+  form_send_error: "Erreur..."
+
+en:
+  whoami: "Who am I"
+  skills: "Skills"
+  projects: "Projects"
+  contact: "Contact"
+  home_description: "Engineering student in 5th year<br>ESIEA - Majoring Virtual reality"
+  home_status: "Currently looking for a end of study 6 months internship<br>(Starting from February 2018)"
+  contact_me: "Contact-me"
+  development: "Development"
+  computer_graphics: "Computer Graphics"
+  web: "Web"
+  graphism: "Graphism"
+
+  whoami_title: "Computer graphics and virtual reality engineer"
+  whoami_description: > # this means ignore newlines
+    I am currently a student in fifth year at ESIEA (Laval, France) majoring in
+    Virtual Reality. I choosed this major to live of my passion for the creation
+    of immersive and creative universe. I am passionate by animation, special
+    effects and video games. I decided to become engineer partly by curiosity,
+    to be able to understand how these medias are working.</p>
+    <p>In parallel, I acquired various skills during my formation. Artistical
+    skills in a first time, during my two-year university diploma in technology
+    and the third year at university, then I could improve my technical and
+    management skills during my three years at ESIEA. I also got skills and
+    knowledge in various fields such as video editing, digital creation, web,
+    but also security, automation, electronic, big data...</p>
+    <p>In this goal, I am actually looking for an end of study internship of 6
+    months from February 2018.
+
+  formation_title: "Formation"
+  formation_dut_title: "DUT Multimedia"
+  formation_dut_description: "Two-year university diploma in technology"
+  formation_evman_title: "Licence Multimedia"
+  formation_evman_description: "Three-year university degree (third year only)"
+  formation_esiea_title: "ESIEA (Laval campus)"
+  formation_esiea_description: "Engineering school of computer science"
+
+  form_name: "Name"
+  form_name_placeholder: "Name"
+  form_surname: "Surname"
+  form_surname_placeholder: "Surname"
+  form_mail: "Mail"
+  form_mail_placeholder: "e-mail"
+  form_message: "Message"
+  form_message_placeholder: "Write your message here..."
+  form_send: "Send" # TODO js for this
+  form_sending: "Sending..."
+  form_sent: "Sent !"
+  form_send_error: "Error..."

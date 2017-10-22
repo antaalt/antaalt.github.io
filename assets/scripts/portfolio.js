@@ -111,10 +111,11 @@
 
 	_this.handleSend = function(event) {
 		event.preventDefault();
-		var $check = $('#check');
 		var $send = $('#send');
 		$send.removeClass("error sending");
-		$send.val('Envoi...');
+
+		$send.val($send.data("sending"));
+
 		if($("#hello-data").val() != "")
 			_this.error($send, $check);
 		$.ajax({
@@ -122,29 +123,26 @@
 			url : "https://getsimpleform.com/messages/ajax?form_api_token=1db4df38e9b6a087372743c70051b0e4",
 			data : $('#formMail').serialize(),
 			beforeSend: function(){
-				$send.text('Envoi...').removeClass('error').addClass('sending');
-				$check.css('background-color', '#e7e7e7');
+				$send.text($send.data("sending")).removeClass('error').addClass('sending');
 			},
 			success : function(data, textStatus, jqXHR){
 				if(data.success)
-					_this.success($send, $check);
+					_this.success($send);
 				else
-					_this.error($send, $check);
+					_this.error($send);
 			},
 			error : function(jqXHR, textStatus, errorThrown){
-				_this.error($send, $check);
+				_this.error($send);
 			}
 		});
 	};
 
-	_this.success = function($send, $check) {
-		$send.text('Envoyé !').addClass('sent').removeClass('sending');
-		$check.css('background-color', '#e7e7e7');
+	_this.success = function($send) {
+		$send.text($send.data("sent")).addClass('sent').removeClass('sending');
 	};
 
-	_this.error = function($send, $check) {
-		$send.text('Erreur...').addClass('error').removeClass('sending');
-		$check.css('background-color', '#e7e7e7');
+	_this.error = function($send) {
+		$send.text($send.data("error")).addClass('error').removeClass('sending');
 	};
 
 	_this.init();

@@ -12,15 +12,23 @@ fr:
       <p> Pour parvenir à cela, il fallait utiliser les capacités parallèles du
       GPU, en utilisant OpenCL pour de la programmation GPGPU.
 
-    vimeo_url: "https://vimeo.com/0000000"
+    #vimeo_url: "https://vimeo.com/0000000"
     date: 07/2017 - 12/2017
     image_url: raytracing.jpg
 
   - name: Scanner 3D
-    intro: C++ / OpenGL / VRPN / PCL / Kinect
+    intro: C++ / OpenGL / VRPN / PCL /&nbsp;Kinect
     description: > # this means to ignore newlines until "date:"
-      Ce projet a été présenté au Laval Virtual 2017 lors de la compétition étudiante Virtual fantasy. Le but était de réaliser un scanner 3D utilisant la Kinect de Microsoft pour numériser de petits objets 3D et ensuite les afficher sur un Workbench avec un affichage stéréoscopique traqué.</p>
-      <p> J'ai travaillé sur le développement de l'application permettant de visualiser l'objet 3D numérisé. L'application a été développé entièrement avec OpenGL et C++, son but était d'afficher un objet sur deux écrans en fonction de la position de l'utilisateur, dont les données de tracking étaient récupérées grâce à la librairie VRPN.
+      Ce projet a été présenté au Laval Virtual 2017 lors de la compétition
+      étudiante Virtual fantasy. Le but était de réaliser un scanner 3D
+      utilisant la Kinect de Microsoft pour numériser de petits objets 3D et
+      ensuite les afficher sur un Workbench avec un affichage stéréoscopique
+      traqué.</p>
+      <p> J'ai travaillé sur le développement de l'application permettant de
+      visualiser l'objet 3D numérisé. L'application a été développé entièrement
+      avec OpenGL et C++, son but était d'afficher un objet sur deux écrans en
+      fonction de la position de l'utilisateur, dont les données de tracking
+      étaient récupérées grâce à la librairie VRPN.
 
     date: 07/2016 - 04/2017
     vimeo_url: https://vimeo.com/204033854
@@ -29,7 +37,14 @@ fr:
   - name: Google Tango world sharing
     intro: Unity / Google Tango / Kinect
     description: > # this means to ignore newlines until "date:"
-      Au cours des vacances d'été 2017, j'ai réalisé un stage au Japon dans un laboratoire de recherche en réalité virtuelle à Tama University. Ce stage a été l'occasion de travailler sur un projet en autonomie. J'ai travaillé sur un appareil Google Tango, une plateforme de réalité augmentée pour smartphone. Le but était de partager le monde capturé par l'appareil pour s'y immerger, à la manière de Facebook Spaces. La Kinect permettait de reproduire nos mouvements dans ce monde et pouvoir ainsi échanger avec d'autres personnes.
+      Au cours de ma quatrième année à l'ESIEA, j'ai réalisé un stage au Japon
+      dans un laboratoire de recherche en réalité virtuelle à Tama University.
+      Ce stage a été l'occasion de travailler sur un projet en autonomie. J'ai
+      travaillé sur un appareil Google Tango, une plateforme de réalité
+      augmentée pour smartphone. Le but était de partager le monde capturé par
+      l'appareil pour s'y immerger, à la manière de Facebook Spaces. La Kinect
+      permettait de reproduire nos mouvements dans ce monde et pouvoir ainsi
+      échanger avec d'autres personnes.
 
     date: 04/2017 - 08/2017
     image_url: tango.jpg
@@ -37,7 +52,13 @@ fr:
   - name: Robot autonome
     intro: C / DSP / GPS
     description: > # this means to ignore newlines until "date:"
-      Le but de ce projet a été d'automatiser les déplacements d'une voiture télécommandée ici contrôlé par une carte sur mesure équipée d'un DSP (processeur de signal numérique), d'un GPS, d'une centrale inertielle... Le robot récupère une suite de coordonnées GPS et doit alors s'y rendre par lui-même sans aucune intervention extérieure. Pour cela, il doit corriger sa trajectoire au fur et à mesure de son avancement en utilisant le GPS ainsi que la centrale inertielle.
+      Le but de ce projet a été d'automatiser les déplacements d'une voiture
+      télécommandée ici contrôlé par une carte sur mesure équipée d'un DSP
+      (processeur de signal numérique), d'un GPS, d'une centrale inertielle...
+      Le robot récupère une suite de coordonnées GPS et doit alors s'y rendre
+      par lui-même sans aucune intervention extérieure. Pour cela, il doit
+      corriger sa trajectoire au fur et à mesure de son avancement en utilisant
+      le GPS ainsi que la centrale inertielle.
 
     date: 07/2015 - 06/2016
     image_url: robotAutonome.jpg
@@ -45,8 +66,17 @@ fr:
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
     description: > # this means to ignore newlines until "date:"
-      Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.</p>
-      <p>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières. Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travailler la rigueur du travail en équipe.
+      Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers
+      du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation
+      utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et
+      la vidéo.</p>
+      <p>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous
+      3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais
+      aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la
+      gestion des lumières. Ce projet nous a ainsi permis de toucher à de
+      nombreuses techniques de création différentes, chacun ayant
+      participé un peu à chaque élément du projet, ce qui nous a amené à
+      travailler la rigueur du travail en équipe.
 
     date: 01/2013 - 06/2014
     vimeo_url: https://vimeo.com/90116071
@@ -72,43 +102,59 @@ fr:
   - name: Projet Kinect
     intro: Processing / Kinect
     description: > # this means to ignore newlines until "date:"
-      Utilisant Processing (libraire Java), ce projet a été réalisé dans le cadre du cours de Florent Di Bartolo au sein de la licence EVMAN. Il permet d'interagir avec la Kinect de Microsoft en utilisant la bibliothèque simple-openNI avec un flux d'image qui défile en continue face à l'utilisateur. Il est ainsi possible de communiquer avec une archive numérique de façon interactive, en utilisant son corps.
+      Utilisant Processing (libraire Java), ce projet a été réalisé dans le
+      cadre du cours de Florent Di Bartolo au sein de la licence EVMAN. Il
+      permet d'interagir avec la Kinect de Microsoft en utilisant la
+      bibliothèque simple-openNI avec un flux d'image qui défile en continue
+      face à l'utilisateur. Il est ainsi possible de communiquer avec une
+      archive numérique de façon interactive, en utilisant son corps.
 
     date: 01/2015
     image_url: kinect.jpg
 
   - name: La tour de Babel
-    intro: Première Pro / After Effects
+    intro: Photoshop / Première Pro /&nbsp;After Effects
     description: > # this means to ignore newlines until "date:"
-      Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le but de présenter un tableau de l'artiste peintre Pieter Brueghel l'Ancien, ici, une de ses œuvres sur la tour de Babel. J'ai utilisé le logiciel Adobe Photoshop afin de décomposer les éléments du tableau et pouvoir les animer au sein du logiciel Adobe After Effects et ainsi obtenir cette composition qui permet de voyager au sein du tableau de Pieter Bruegel, tout en cherchant à recréer l'ambiance de l'époque.
+      Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le
+      but de présenter un tableau de l'artiste peintre Pieter Brueghel
+      l'Ancien, ici, une de ses œuvres sur la tour de Babel. J'ai utilisé le
+      logiciel Adobe Photoshop afin de décomposer les éléments du tableau et
+      pouvoir les animer au sein du logiciel Adobe After Effects et ainsi
+      obtenir cette composition qui permet de voyager au sein du tableau de
+      Pieter Bruegel, tout en cherchant à recréer l'ambiance de l'époque.
     date: 01/2015
     vimeo_url: https://vimeo.com/113370584
     image_url: tourDeBabel.jpg
 
 en:
-  - name: Foveated Raytracing
+  - name: Foveated realtime Raytracing
     intro: C++ / OpenCL / OpenGL
     description: > # this means to ignore newlines until "date:"
-      Le but de ce projet de fin d'étude était d'utiliser les propriétés de la
-      vision périphérique pour économiser des ressources au rendu. En effet, ce
-      qui se situe dans la périphérie de la vision ne nécessite pas d'être rendu
-      en très haute résolution, car l'œil ne le percevra pas. Cette méthode se
-      prêtent parfaitement au raytracing, car nous pouvons envoyer plus ou moins
-      de rayons en fonction de la position de l'œil, pour ainsi gagner en temps
-      de rendu pour obtenir du temps réel sur une configuration honnête.</p>
-      <p> Pour parvenir à cela, il fallait utiliser les capacités parallèles du
-      GPU, en utilisant OpenCL pour de la programmation GPGPU.
-
-    vimeo_url: "https://vimeo.com/0000000"
+      The goal of this end of study project is to use peripheral vision
+      properties in order to save rendering resources. Indeed, what is in the
+      vision periphery do not need to be render at very high resolution because
+      the eye will not perceive it. This method suit perfectly to raytracing
+      rendering, because we can send a number of ray relative to the eye target
+      in order to earn ressources to render in realtime on a honnest
+      configuration.</p>
+      <p> To reach this goal, we have to use parallel capacity of the GPU, using
+      OpenCL for GPGPU programmation.
+    #vimeo_url: "https://vimeo.com/0000000"
     date: 07/2017 - 12/2017
     image_url: raytracing.jpg
 
-  - name: Scanner 3D
-    intro: C++ / OpenGL / VRPN / PCL / Kinect
+  - name: 3D scanner
+    intro: C++ / OpenGL / VRPN / PCL /&nbsp;Kinect
     description: > # this means to ignore newlines until "date:"
-      Ce projet a été présenté au Laval Virtual 2017 lors de la compétition étudiante Virtual fantasy. Le but était de réaliser un scanner 3D utilisant la Kinect de Microsoft pour numériser de petits objets 3D et ensuite les afficher sur un Workbench avec un affichage stéréoscopique traqué.</p>
-      <p> J'ai travaillé sur le développement de l'application permettant de visualiser l'objet 3D numérisé. L'application a été développé entièrement avec OpenGL et C++, son but était d'afficher un objet sur deux écrans en fonction de la position de l'utilisateur, dont les données de tracking étaient récupérées grâce à la librairie VRPN.
-
+      This project was presented to Laval Virtual 2017 during the virtual
+      fantasy student competition. The goal was to create a 3D scanner using
+      Microsoft Kinect to scan small 3D objects and then display it on a
+      Workbench with a tracked stereoscopic display.</p>
+      <p> I worked on the development of the application letting visualize the
+      3D object scanned. The application was developed entirely with OpenGL and
+      C++. Its goal was to display an object on two screens depending on the
+      position of the user, which tracking datas were gathered using the VRPN
+      library.
     date: 07/2016 - 04/2017
     vimeo_url: https://vimeo.com/204033854
     image_url: scanner.jpg
@@ -116,25 +162,40 @@ en:
   - name: Google Tango world sharing
     intro: Unity / Google Tango / Kinect
     description: > # this means to ignore newlines until "date:"
-      Au cours des vacances d'été 2017, j'ai réalisé un stage au Japon dans un laboratoire de recherche en réalité virtuelle à Tama University. Ce stage a été l'occasion de travailler sur un projet en autonomie. J'ai travaillé sur un appareil Google Tango, une plateforme de réalité augmentée pour smartphone. Le but était de partager le monde capturé par l'appareil pour s'y immerger, à la manière de Facebook Spaces. La Kinect permettait de reproduire nos mouvements dans ce monde et pouvoir ainsi échanger avec d'autres personnes.
-
+      During my fourth year at ESIEA, I went to Japan for a four months
+      technical internship in a research laboratory at Tama University. This
+      internship was for me an opportunity to work on a project autonomously. I
+      worked on a Google Tango device, an augmented reality platform for
+      smartphone. The goal was to share the world captured by the phone in order
+      to immerse ourselves into it with others, such as Facebook Spaces. Kinect
+      was here to reproduce our movements in this world and share with others
     date: 04/2017 - 08/2017
     image_url: tango.jpg
 
-  - name: Robot autonome
+  - name: Autonomous Robot
     intro: C / DSP / GPS
     description: > # this means to ignore newlines until "date:"
-      Le but de ce projet a été d'automatiser les déplacements d'une voiture télécommandée ici contrôlé par une carte sur mesure équipée d'un DSP (processeur de signal numérique), d'un GPS, d'une centrale inertielle... Le robot récupère une suite de coordonnées GPS et doit alors s'y rendre par lui-même sans aucune intervention extérieure. Pour cela, il doit corriger sa trajectoire au fur et à mesure de son avancement en utilisant le GPS ainsi que la centrale inertielle.
-
+      The goal of this project was to automate movements of a remote controlled
+      car, here controlled with a custom electronic card with a DSP (digital
+      signal processing), a GPS, an inertial measurement unit... The robot
+      gathers a suite of GPS coordinates and must go there all by itself without
+      any exeterior inverventions. To do so, it needs to correct its trajectory
+      as it is moving using its GPS and its inertial measurement unit.
     date: 07/2015 - 06/2016
     image_url: robotAutonome.jpg
 
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
     description: > # this means to ignore newlines until "date:"
-      Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.</p>
-      <p>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières. Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travailler la rigueur du travail en équipe.
-
+      This movie was made during my years at university as a end of study
+      project. It is an animation movie using multiples techniques, such as 3D
+      animation, 2D animation and video.</p>
+      <p>I had an important role in this project as a 3D animator using 3DS Max.
+      I had the task to make the whole modelisation, but also the rigging, the
+      integration and tracking of 3D models in a moving video and also the light
+      management. This project let us use many differents techniques of
+      creation, everyone participating a bit to each elements of the project,
+      which needed rigor for teamwork
     date: 01/2013 - 06/2014
     vimeo_url: https://vimeo.com/90116071
     image_url: chapeaulArtiste.jpg
@@ -142,32 +203,38 @@ en:
   - name: Angular Vimeo
     intro: HTML5 / CSS3 / AngularJS
     description: > # this means to ignore newlines until "date:"
-      Le stage que j'ai réalisé en Avril 2014 chez Sampleo m'a permis de manipuler
-      le framework Symfony 2 et de travailler en lien avec une API Rest utilisant
-      JSON. Il m'a permis de découvrir de nouvelles technologies, et j'ai souhaité
-      en découvrir certaines offertes par JavaScript, tel que le framework
-      AngularJS. Je voulais travailler en lien avec une API pour mieux en
-      comprendre le fonctionnement et j'ai choisi celle de Vimeo, complète et bien
-      documentée afin de réaliser cette application. J'ai aussi porté mon intérêt
-      sur d'autres technologies, telles que nodeJS dont les possibilités sont
-      très vastes.
-
+      The internship I did in April 2014 at Sampleo let me manipulate the Symfony
+      2 framework and work with Rest API using JSON. I discovered technologies I
+      had never used before and I wished to disover more offered by JavaScript,
+      such as AngularJS. I wanted to work with an API to better understand how it
+      worked, and I choosed the Vimeo API, which was greatly documented in order
+      make this application. After this, I also ported my interest on others
+      technologies, such as NodeJS, which possibilities are very large.
     date: 08/2014
     github_url: https://github.com/antaalt/AngularVimeo
     image_url: angularVimeo.jpg
 
-  - name: Projet Kinect
+  - name: Kinect Project
     intro: Processing / Kinect
     description: > # this means to ignore newlines until "date:"
-      Utilisant Processing (libraire Java), ce projet a été réalisé dans le cadre du cours de Florent Di Bartolo au sein de la licence EVMAN. Il permet d'interagir avec la Kinect de Microsoft en utilisant la bibliothèque simple-openNI avec un flux d'image qui défile en continue face à l'utilisateur. Il est ainsi possible de communiquer avec une archive numérique de façon interactive, en utilisant son corps.
+      Using Processing (a Graphic Java library), this project was made during my
+      years at university during Florent Di Bartolo. It was an opportunity to
+      work with Microsoft Kinect using the library simple-openNI with an images
+      stream passing continuously in front of the user. It is then possible to
+      communicate with an digital archive interactively, using our body.
 
     date: 01/2015
     image_url: kinect.jpg
 
-  - name: La tour de Babel
-    intro: Première Pro / After Effects
+  - name: Babel Tower
+    intro: Photoshop / Première Pro /&nbsp;After Effects
     description: > # this means to ignore newlines until "date:"
-      Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le but de présenter un tableau de l'artiste peintre Pieter Brueghel l'Ancien, ici, une de ses œuvres sur la tour de Babel. J'ai utilisé le logiciel Adobe Photoshop afin de décomposer les éléments du tableau et pouvoir les animer au sein du logiciel Adobe After Effects et ainsi obtenir cette composition qui permet de voyager au sein du tableau de Pieter Bruegel, tout en cherchant à recréer l'ambiance de l'époque.
+      This video was made during my third year at university. The goal was to
+      present a painting of the artist Pieter Brueghel the elder, here, one of
+      his painting of the Babel Tower's myth. I used Adobe Photoshop in order to
+      cut all the frames of the painting and to animate them inside of After
+      Effects to obtain the final composition that let us travel through Pieter
+      Brueghel's painting, while trying to recreate the atmosphere.
     date: 01/2015
     vimeo_url: https://vimeo.com/113370584
     image_url: tourDeBabel.jpg

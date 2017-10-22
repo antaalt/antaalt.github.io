@@ -22,14 +22,14 @@ title: Antoine Altorffer - Portfolio
 				{% endfor %}
 			--></p>
 			<h1>ALTORFFER Antoine</h1>
-			<h2>{{ site.data.content[page.lang].home_description }}</h2>
-			<p><span class="highlighted">{{ site.data.content[page.lang].home_status }}</span></p>
+			<h2>{{ site.data.i18n[page.lang].home_description }}</h2>
+			<p><span class="highlighted">{{ site.data.i18n[page.lang].home_status }}</span></p>
 			<p>
-				<a href="#whoami" class="smooth-scroll">{{ site.data.content[page.lang].whoami }}</a>
-				 - <a href="#skills" class="smooth-scroll">{{ site.data.content[page.lang].skills }}</a>
-				  - <a href="#projects" class="smooth-scroll">{{ site.data.content[page.lang].projects }}</a>
+				<a href="#whoami" class="smooth-scroll">{{ site.data.i18n[page.lang].whoami }}</a>
+				 - <a href="#skills" class="smooth-scroll">{{ site.data.i18n[page.lang].skills }}</a>
+				  - <a href="#projects" class="smooth-scroll">{{ site.data.i18n[page.lang].projects }}</a>
 			  </p>
-			<a href="#contact" class="cta cta-big smooth-scroll">{{ site.data.content[page.lang].contact_me }}</a>
+			<a href="#contact" class="cta cta-big smooth-scroll">{{ site.data.i18n[page.lang].contact_me }}</a>
 		</div>
 	</div><!-- HACK --><div class="home-half-picture" id="slider"></div>
 </section>
@@ -43,37 +43,38 @@ title: Antoine Altorffer - Portfolio
 		</svg>
 	</div>
 	<div>
-		<h1>{{ site.data.content[page.lang].whoami }} ?</h1>
+		<h1>{{ site.data.i18n[page.lang].whoami }} ?</h1>
 		<div id="presentation">
 			<div id="imgProfil"></div>
 			<div id="description">
-				<h2>Ingénieur en imagerie et réalité virtuelle</h2>
+				<h2>{{ site.data.i18n[page.lang].whoami_title }}</h2>
 				<a href="{{ site.github_url }}" target="_blank" id="git" class="externLink">github</a>
 				<a href="{{ site.linkedin_url }}" target="_blank" id="linkedin" class="externLink">linkedin</a>
-				<p>Je suis actuellement un étudiant en cinquième année à l'ESIEA (campus de Laval) en majeure réalité virtuelle. J'ai choisi cette majeure pour vivre de ma passion pour la création d'univers immersifs et créatifs. Je suis passionné par l'animation, les effets spéciaux ou encore les jeux vidéo. J'ai décidé de devenir ingénieur en partie par curiosité, pour être en mesure de comprendre le fonctionnement de ces diverses techniques.</p>
-				<p>En parallèle, j'ai acquis des compétences variées au cours de ma formation. Des compétences artistiques dans un premier temps, au cours du DUT MMI et de la licence EVMAN à l'université Paris-Est Marne-la-Vallée, puis j'ai pu approfondir mes compétences techniques au cours de mes trois années à l'ESIEA. J'ai aussi obtenu des compétences dans divers domaines plus variés, tels que le montage vidéo, la création graphique, le web, mais aussi la sécurité informatique, l'automatique et l'électronique, le big data...</p>
-				<p>Dans ce but, je recherche actuellement un stage de fin d'étude de 6 mois à partir de Février 2018.</p>
-
-				<a href="assets/download/{{ site.cv_fr }}" target="_blank" class="cta cta-large">CV Français</a>
-				<a href="assets/download/{{ site.cv_en }}" target="_blank" class="cta cta-large">English Resume</a>
+				<p>{{ site.data.i18n[page.lang].whoami_description }}</p>
+				{% if page.lang == "fr" %}
+					<a href="assets/download/{{ site.cv_fr }}" target="_blank" class="cta cta-large">CV Français</a>
+				{% endif %}
+				{% if page.lang == "en" %}
+					<a href="assets/download/{{ site.cv_en }}" target="_blank" class="cta cta-large">English Resume</a>
+				{% endif %}
 			</div>
 		</div>
 		<div id="formation">
-			<h2>Formation</h2>
+			<h2>{{ site.data.i18n[page.lang].formation_title }}</h2>
 			<div id="src">
 				<p>2012-2014</p>
-				<h3>DUT MMI</h3>
-				<p>Métier du Multimédia et de l'Internet</p>
+				<h3>{{ site.data.i18n[page.lang].formation_dut_title }}</h3>
+				<p>{{ site.data.i18n[page.lang].formation_dut_description }}</p>
 			</div>
 			<div id="evman">
 				<p>2014-2015</p>
-				<h3>Licence EVMAN</h3>
-				<p>Etudes visuelles, multimédia et arts numériques</p>
+				<h3>{{ site.data.i18n[page.lang].formation_evman_title }}</h3>
+				<p>{{ site.data.i18n[page.lang].formation_evman_description }}</p>
 			</div>
 			<div id="esiea">
 				<p>2015-2018</p>
-				<h3>ESIEA (Site de Laval)</h3>
-				<p>Ecole d'ingénieurs du monde numérique</p>
+				<h3>{{ site.data.i18n[page.lang].formation_esiea_title }}</h3>
+				<p>{{ site.data.i18n[page.lang].formation_esiea_description }}</p>
 			</div>
 		</div>
 	</div>
@@ -83,10 +84,10 @@ title: Antoine Altorffer - Portfolio
 <!-- Competences -->
 <section id="skills" class="wrapper section">
 	<div>
-		<h1>{{ site.data.content[page.lang].skills }}</h1>
+		<h1>{{ site.data.i18n[page.lang].skills }}</h1>
 		<div>
 			<div class="half half-dev">
-				<h2>{{ site.data.content[page.lang].development }}</h2>
+				<h2>{{ site.data.i18n[page.lang].development }}</h2>
 				<div id="icon-dev"></div>
 				<ul>
 					{% for data in site.data.skills.dev %}
@@ -95,7 +96,7 @@ title: Antoine Altorffer - Portfolio
 				</ul>
 			</div><!-- HACK
 			--><div class="half half-design">
-				<h2>{{ site.data.content[page.lang].computer_graphics }}</h2>
+				<h2>{{ site.data.i18n[page.lang].computer_graphics }}</h2>
 				<div id="icon-computer-graphics"></div>
 				<ul>
 					{% for data in site.data.skills.computer-graphics %}
@@ -104,7 +105,7 @@ title: Antoine Altorffer - Portfolio
 				</ul>
 			</div><!--HACK
 			--><div class="half half-design">
-				<h2>{{ site.data.content[page.lang].web }}</h2>
+				<h2>{{ site.data.i18n[page.lang].web }}</h2>
 				<div id="icon-web"></div>
 				<ul>
 					{% for data in site.data.skills.web %}
@@ -113,7 +114,7 @@ title: Antoine Altorffer - Portfolio
 				</ul>
 			</div><!--HACK
 			--><div class="half half-design">
-				<h2>{{ site.data.content[page.lang].graphism }}</h2>
+				<h2>{{ site.data.i18n[page.lang].graphism }}</h2>
 				<div id="icon-design"></div>
 				<ul>
 					{% for data in site.data.skills.design %}
@@ -129,7 +130,20 @@ title: Antoine Altorffer - Portfolio
 <!-- Projets -->
 <section id="projects" class="wrapper section">
 	<div>
-		<h1>{{ site.data.content[page.lang].projects }}</h1>
+		<h1>{{ site.data.i18n[page.lang].projects }}</h1>
+
+		<!--HACK
+		{% for project in site.data.projects[page.lang] %}
+		--><article class="project-button {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
+			    <img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
+			   --><div class="project-content">
+				   <h1>{{ project.name }}</h1>
+				   <p class="project-intro"><span class="highlighted">{{ project.intro }}</span></p>
+				   <p>{{ project.description | truncate: 290 }}</p>
+			   </div>
+		   </article><!--HACK
+		{% endfor %}
+		-->
 		<div class="projects-description">
 			{% for project in site.data.projects[page.lang] %}
 
@@ -160,18 +174,6 @@ title: Antoine Altorffer - Portfolio
 				</div>
 			{% endfor %}
 		</div>
-		<!--HACK
-		{% for project in site.data.projects[page.lang] %}
-		--><article class="project-button {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
-			    <img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
-			   --><div class="project-content">
-				   <h1>{{ project.name }}</h1>
-				   <p class="project-intro"><span class="highlighted">{{ project.intro }}</span></p>
-				   <p>{{ project.description | truncate: 290 }}</p>
-			   </div>
-		   </article><!--HACK
-		{% endfor %}
-		-->
 
 	</div>
 </section>
@@ -180,21 +182,21 @@ title: Antoine Altorffer - Portfolio
 <!-- Contact -->
 <section id="contact" class="wrapper section">
 	<div>
-		<h1>{{ site.data.content[page.lang].contact }}</h1>
+		<h1>{{ site.data.i18n[page.lang].contact }}</h1>
 		<!-- see formspree or equivalent for email sending in jekyll -->
 		<form method="post" id="formMail">
 			<div id="infoMessage">
 				<div>
-					<label for="name">{{ site.data.content[page.lang].form_name }} : </label>
-					<input type="text" id="name" name="nom" placeholder="{{ site.data.content[page.lang].form_name_placeholder }}" required>
+					<label for="name">{{ site.data.i18n[page.lang].form_name }} : </label>
+					<input type="text" id="name" name="nom" placeholder="{{ site.data.i18n[page.lang].form_name_placeholder }}" required>
 				</div>
 				<div>
-					<label for="firstname">{{ site.data.content[page.lang].form_surname }} : </label>
-					<input type="text" id="firstname" name="prenom"  placeholder="{{ site.data.content[page.lang].form_surname_placeholder }}" required>
+					<label for="firstname">{{ site.data.i18n[page.lang].form_surname }} : </label>
+					<input type="text" id="firstname" name="prenom"  placeholder="{{ site.data.i18n[page.lang].form_surname_placeholder }}" required>
 				</div>
 				<div>
-					<label for="mail">{{ site.data.content[page.lang].form_mail }} : </label>
-					<input type="email" id="mail" name="email" placeholder="{{ site.data.content[page.lang].form_mail_placeholder }}" required>
+					<label for="mail">{{ site.data.i18n[page.lang].form_mail }} : </label>
+					<input type="email" id="mail" name="email" placeholder="{{ site.data.i18n[page.lang].form_mail_placeholder }}" required>
 				</div>
 				<div id="hello">
 					<label for="firstname">Data : </label>
@@ -202,15 +204,10 @@ title: Antoine Altorffer - Portfolio
 				</div>
 			</div>
 			<div id="message">
-				<label for="message">{{ site.data.content[page.lang].form_message }} : </label>
-				<textarea name="message" id="message" placeholder="{{ site.data.content[page.lang].form_message_placeholder }}" required></textarea>
+				<label for="message">{{ site.data.i18n[page.lang].form_message }} : </label>
+				<textarea name="message" id="message" placeholder="{{ site.data.i18n[page.lang].form_message_placeholder }}" required></textarea>
 			</div>
-			{% comment %}
-			<div id="question">
-				<div class="g-recaptcha" data-sitekey="6Lft5igTAAAAAPaDKVjmOBp5kqida-NA98f0HG1M"></div>
-			</div>
-			{% endcomment %}
-			<button class="cta" type="submit" id="send">{{ site.data.content[page.lang].form_send }}</button>
+			<button class="cta" type="submit" id="send" data-error="{{ site.data.i18n[page.lang].form_send_error }}" data-sending="{{ site.data.i18n[page.lang].form_sending }}" data-sent="{{ site.data.i18n[page.lang].form_sent }}">{{ site.data.i18n[page.lang].form_send }}</button>
 		</form>
 	</div>
 </section>
