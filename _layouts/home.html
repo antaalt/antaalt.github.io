@@ -13,12 +13,12 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 		</div>
 		<div>
 			<h1>ALTORFFER Antoine</h1>
-			<h2>Etudiant ingénieur en 5ème année ESIEA</h2>
-			<p>Actuellement à la recherche d'un stage de 6 mois </p>
-			<p><a href="#whoami" class="smooth-scroll">Qui-suis je</a> - <a href="#whoami" class="smooth-scroll">Projets</a></p>
+			<h2>Etudiant ingénieur en 5ème année<br>ESIEA - Majeure Réalité virtuelle</h2>
+			<p><span class="highlighted">Actuellement à la recherche d'un stage de 6 mois <br>(A partir de Février 2018)</span></p>
+			<p><a href="#whoami" class="smooth-scroll">Qui-suis je</a> - <a href="#skills" class="smooth-scroll">Compétences</a> - <a href="#projects" class="smooth-scroll">Projets</a></p>
 			<a href="#contact" class="cta cta-big smooth-scroll">Contactez-moi</a>
 		</div>
-	</div><!-- HACK --><div class="home-half-picture"></div>
+	</div><!-- HACK --><div class="home-half-picture" id="slider"></div>
 </section>
 <!-- / Home -->
 
@@ -34,13 +34,15 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 		<div id="presentation">
 			<div id="imgProfil"></div>
 			<div id="description">
-				<h2>Ingénieur du monde du numérique</h2>
+				<h2>Ingénieur en imagerie et réalité virtuelle</h2>
 				<a href="{{ site.github_url }}" target="_blank" id="git" class="externLink">github</a>
 				<a href="{{ site.linkedin_url }}" target="_blank" id="linkedin" class="externLink">linkedin</a>
-
-				<p>Actuellement en cinquième année à l'ESIEA (campus de Laval, majeure réalité virtuelle), je suis intéressé par divers domaines, tel que le machine learning, l'intelligence artificielle mais aussi la réalité virtuelle. En parallèle de ces domaines, j'ai acquis des compétences artistiques pendant mes trois années à l'université de Paris-Est Marne-la-Vallée.</p>
+				<p>Je suis actuellement un étudiant en cinquième année à l'ESIEA (campus de Laval) en majeure réalité virtuelle. J'ai choisi cette majeure pour vivre de ma passion pour la création d'univers immersifs et créatifs. J'aime pouvoir m'exprimer au travers de médias tels que l'animation ou les jeux vidéo. Et je suis devenu ingénieur afin de pouvoir comprendre les outils de création et les modifiers. TODO Imagination engineered</p>
+				<p>En parallèle, j'ai acquis des compétences variées au cours de ma formation. Des compétences artistiques dans un premier temps, au cours du DUT MMI et de la licence EVMAN à l'université Paris-Est Marne-la-Vallée, puis j'ai pu apprfondir mes compétences techniques au cours de mes trois années à l'ESIEA. J'ai aussi obtenu des compétences dans divers domaines plus variés, tels que le montage vidéo, la création graphique, le web, mais aussi la sécurité informatique, l'automatique et l'électronique, le big data...</p>
+				<p>Dans ce but, je recherche actuellement un stage de 6 mois à partir de Février 2018.</p>
+				<!--<p>Actuellement en cinquième année à l'ESIEA (campus de Laval, majeure réalité virtuelle), je suis intéressé par divers domaines, tel que le machine learning, l'intelligence artificielle mais aussi la réalité virtuelle. En parallèle de ces domaines, j'ai acquis des compétences artistiques pendant mes trois années à l'université de Paris-Est Marne-la-Vallée.</p>
 				<p>Au cours de ma formation, j'ai eu l'occasion de travailler sur des domaines divers et variés, tel que l'électronique, l'automatique ainsi que la sécurité informatique, mais aussi la création artistique, la vidéo...</p>
-				<p>Je recherche actuellement un stage de 6 mois entre Février 2017 et Août 2017.</p>
+				<p>Je recherche actuellement un stage de 6 mois à partir de Février 2018.</p>-->
 
 				<a href="assets/download/{{ site.cv_fr }}" target="_blank" class="cta cta-large">CV Français</a>
 				<a href="assets/download/{{ site.cv_en }}" target="_blank" class="cta cta-large">English Resume</a>
@@ -58,7 +60,7 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 				<h3>Licence EVMAN</h3>
 				<p>Etudes visuelles, multimédia et arts numériques</p>
 			</div>
-			<div id="evman">
+			<div id="esiea">
 				<p>2015-2018</p>
 				<h3>ESIEA (Site de Laval)</h3>
 				<p>Ecole d'ingénieurs du monde numérique</p>
@@ -67,35 +69,120 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 	</div>
 </section>
 <!-- / Qui suis-je -->
-<!-- Projets -->
-<section id="projects" class="wrapper section">
-	<div>
-		<h1>Projets</h1>
-		{% for project in site.data.projects %}
-		   <article class="{% cycle 'odd', 'even' %}">
-			   <img src="{{ project.image_url }}" name="{{ project.name }}"/>
-			   <p>{{ project.name }}</p>
-			   <p>{{ project.description }}</p>
-		   </article>
-		{% endfor %}
-	</div>
-</section>
-<!-- / Projets -->
 
 <!-- Competences -->
 <section id="skills" class="wrapper section">
 	<div>
 		<h1>Compétences</h1>
+		<div>
+			<div class="half half-dev">
+				<h2>Développement</h2>
+				<div id="icon-dev"></div>
+				<ul>
+					{% for data in site.data.skills.dev %}
+						<li>{{ data }}</li>
+					{% endfor %}
+				</ul>
+			</div><!-- HACK
+			--><div class="half half-design">
+				<h2>Imagerie</h2>
+				<div id="icon-computer-graphics"></div>
+				<ul>
+					{% for data in site.data.skills.computer-graphics %}
+						<li>{{ data }}</li>
+					{% endfor %}
+				</ul>
+			</div><!--HACK
+			--><div class="half half-design">
+				<h2>Web</h2>
+				<div id="icon-web"></div>
+				<ul>
+					{% for data in site.data.skills.web %}
+						<li>{{ data }}</li>
+					{% endfor %}
+				</ul>
+			</div><!--HACK
+			--><div class="half half-design">
+				<h2>Graphisme</h2>
+				<div id="icon-design"></div>
+				<ul>
+					{% for data in site.data.skills.design %}
+						<li>{{ data }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="skills-presentation">
+				<h2>Quelles sont mes compétences</h2>
+				<p>Au cours de mes projets, j'ai pu me familiariser avec de nombreux languages de programmation.</p>
+				<p>Ornare <span class="highlighted">consectetur</span> ac pellentesque ligula. Aliquam in ultrices enim. Nam volutpat at ligula ac lobortis. Vestibulum posuere sodales justo, sit amet porttitor ante aliquam sit amet. Pellentesque interdum, dolor vitae pharetra tincidunt, mauris ante lobortis lacus, ut fringilla tortor sem ut ex. Aenean suscipit odio quis accumsan porta. Suspendisse finibus convallis neque, id pellentesque <span class="highlighted">consectetur</span> feugiat nec. Cras mollis non leo eget auctor.</p>
+				<p>Suspendisse ultrices <span class="highlighted">consectetur</span> facilisis. Maecenas quis magna vel dolor faucibus vestibulum quis vel dui. Cras sed sem nec tortor maximus eleifend a eu sapien. Fusce tincidunt risus ac felis maximus fringilla. Nullam et tortor vel odio maximus venenatis. Sed hendrerit eros eu sem fringilla, venenatis sagittis est condimentum.</p>
+			</div>
+		</div>
 	</div>
 </section>
 <!-- / Competences -->
+
+<!-- Projets -->
+<section id="projects" class="wrapper section">
+	<div>
+		<h1>Projets</h1>
+		<div class="projects-description">
+			{% for project in site.data.projects %}
+
+				<div class="project-description {% if forloop.first != true %}hidden{% endif %}" id="project{{forloop.index}}">
+
+					<div class="project-description-aside">
+						<h2>Info</h2>
+						<p><strong>Date : </strong>{{ project.date }}</p>
+						{% if project.languages %}
+						   <p>{{ project.languages }}</p>
+						{% endif %}
+
+						{% if project.intro %}
+						   <p>{{ project.intro }}</p>
+						{% endif %}
+						<div>
+							<!--HACK
+							{% if project.vimeo_url %}
+								--><a href="{{ project.vimeo_url }}" class="cta">Vimeo</a><!--HACK
+							{% endif %}
+
+							{% if project.github_url %}
+								--><a href="{{ project.vimeo_url }}" class="cta">GitHub</a><!--HACK
+							{% endif %}
+							-->
+						</div>
+					</div><!--HACK
+					--><div class="project-description-content">
+						<h2>{{ project.name }}</h2>
+						<p>{{ project.description}}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<!--HACK
+		{% for project in site.data.projects %}
+		--><article class="project-button {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
+			    <img src="{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
+			   --><div class="project-content">
+				   <h1>{{ project.name }}</h1>
+				   <p class="project-intro"><span class="highlighted">{{ project.intro }}</span></p>
+				   <p>{{ project.description | truncate: 290 }}</p>
+			   </div>
+		   </article><!--HACK
+		{% endfor %}
+		-->
+
+	</div>
+</section>
+<!-- / Projets -->
 
 <!-- Contact -->
 <section id="contact" class="wrapper section">
 	<div>
 		<h1>Contact</h1>
 		<!-- see formspree or equivalent for email sending in jekyll -->
-		<form method="post" enctype="multipart/form-data" action="" id="formMail">
+		<form method="post" id="formMail">
 			<div id="infoMessage">
 				<div>
 					<label for="name">Nom : </label>
@@ -109,14 +196,20 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 					<label for="mail">Mail : </label>
 					<input type="email" id="mail" name="email" placeholder="e-mail" required>
 				</div>
+				<div id="hello">
+					<label for="firstname">Data : </label>
+					<input type="text" id="hello-data" name="data"  placeholder="data">
+				</div>
 			</div>
 			<div id="message">
 				<label for="message">Message : </label>
 				<textarea name="message" id="message" placeholder="Entrez ici votre message..." required></textarea>
 			</div>
+			{% comment %}
 			<div id="question">
 				<div class="g-recaptcha" data-sitekey="6Lft5igTAAAAAPaDKVjmOBp5kqida-NA98f0HG1M"></div>
 			</div>
+			{% endcomment %}
 			<button class="cta" type="submit" id="send">Envoyer</button>
 		</form>
 	</div>

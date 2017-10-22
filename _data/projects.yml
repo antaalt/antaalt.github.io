@@ -1,14 +1,75 @@
-- name: Chapeau L'Artiste
+- name: Raytracing par fovéation
+  intro: C++ / OpenCL / OpenGL
+  description: > # this means to ignore newlines until "baseurl:"
+    Ce projet consistait en la réalisation d'un moteur de rendu utilisant la technologie de raytracing pour afficher des trucs marrant à l'écran, en gros, ça sert à rien.
+    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
+    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  date: 07/2017 - 12/2017
+  image_url: ./assets/images/projets/miniatures/raytracing.jpg
+
+- name: Scanner 3D
+  intro: C++ / OpenGL / PCL / Kinect
+  description: > # this means to ignore newlines until "baseurl:"
+    Ce projet a été présenté au Laval Virtual 2016 lors de la compétition étudiante;
+    Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
+    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
+    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  date: 16/04/1994
+  techno: 3DS Max, Adobe Première Pro
+  vimeo_url: vimeourl
+  github_url: github
+  image_url: ./assets/images/projets/miniatures/scanner.jpg
+
+- name: Tango Sharing
+  intro: Unity / Google Tango / Kinect
+  description: > # this means to ignore newlines until "baseurl:"
+    AVATEERING & reconstruction Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
+    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
+    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  date: 16/04/1994
+  image_url: ./assets/images/projets/miniatures/tango.jpg
+
+- name: Robot autonome
+  intro: C / DSP / GPS
   description: > # this means to ignore newlines until "baseurl:"
     Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
     <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
     <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  date: 16/04/1994
+  techno: 3DS Max, Adobe Première Pro
+  vimeo_url: vimeourl
+  image_url: ./assets/images/projets/miniatures/robotAutonome.jpg
+
+- name: Chapeau L'Artiste
+  intro: 3DS Max / Adobe Première Pro
+  description: > # this means to ignore newlines until "baseurl:"
+    Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
+    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
+    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
+  date: 16/04/1994
+  techno: 3DS Max, Adobe Première Pro
   vimeo_url: vimeourl
   image_url: ./assets/images/projets/miniatures/chapeaulArtiste.jpg
 
-- name: project2
+- name: Angular Vimeo
+  intro: HTML5 / CSS3 / AngularJS
   description: > # this means to ignore newlines until "baseurl:"
-    Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et la vidéo.
-    <br>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous 3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la gestion des lumières.
-    <br>Ce projet nous a ainsi permis de toucher à de nombreuses techniques de création différentes, chacun touchant ayant participé un peu à chaque élément du projet, ce qui nous a amené à travaillé la rigueur du travail en équipe.
-  image_url: ./assets/images/projets/miniatures/chapeaulArtiste.jpg
+    Le stage que j'ai réalisé en Avril 2014 chez Sampleo m'a permis de manipuler le framework Symfony 2 et de travailler en lien avec une API Rest utilisant JSON. Ce stage m'ayant beaucoup interessé, j'ai souhaité découvrir les nombreuses technologies et possibilitées offertes par le JavaScript, tel que le framework AngularJS. Je voulais travailler en lien avec une API pour mieux en comprendre le fonctionnement et j'ai choisi celle de Vimeo, complète et bien documentée afin de réaliser cette application. J'ai aussi porté mon intérêt sur d'autres technologies, telles que nodeJS dont les possibilités sont très vastes.
+  date: 16/04/1994
+  techno: HTML / CSS / JavaScript (AngularJS)
+  image_url: ./assets/images/projets/miniatures/angularVimeo.jpg
+
+- name: Projet Kinect
+  intro: Processing / Kinect
+  description: > # this means to ignore newlines until "baseurl:"
+    Utilisant Processing (libraire Java), ce projet a été réalisé dans le cadre du cours de Florent Di Bartolo au sein de la licence EVMAN. Il permet d'intéragir avec la Kinect de Microsoft en utilisant la bibliothèque simple-openNI et d'intéragir avec un flux d'image qui défile en continue face à l'utilisateur. Cela permet ainsi d'intéragir avec une archive numérique de façon interactive, en utilisant son corps pour intéragir avec l'installation.
+
+  date: 16/04/1994
+  image_url: ./assets/images/projets/miniatures/kinect.jpg
+
+- name: La tour de Babel
+  intro: Première Pro / After Effects
+  description: > # this means to ignore newlines until "baseurl:"
+    Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le but de présenter un tableau de l'artiste peintre Pieter Brueghel l'Ancien, ici, une de ses oeuvres sur la tour de Babel. J'ai utilisé le logiciel Adobe Photoshop afin de décomposer les éléments du tableau et pouvoir les animer au sein du logiciel Adobe After Effects et ainsi obtenir cette composition qui permet de voyager au sein du tableau de Pieter Bruegel, tout en cherchant à recréer l'ambiance de l'époque.
+  date: 16/04/1994
+  image_url: ./assets/images/projets/miniatures/tourDeBabel.jpg

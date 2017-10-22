@@ -8,3 +8,11 @@ $hover:#111;
 
 
 $global-width: 1000px;
+$sprite-width: 50px;
+$sprite-height: 50px;
+
+@mixin sprite($x: 0, $y: 0) {
+	background-image: url("./images/sprite.png");
+	background-position: (-$x*$sprite-width) (-$y*$sprite-height);
+	background-repeat: none;
+}

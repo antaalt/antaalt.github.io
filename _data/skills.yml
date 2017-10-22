@@ -1,0 +1,19 @@
+web:
+    - "HTML5 / CSS3"
+    - "JavaScript (AngularJS / NodeJS)"
+    - "PHP / Symfony 2"
+    - "Ruby / Python"
+computer-graphics:  #imagerie
+    - "OpenGL 3 / GLSL"
+    - "Unity / HLSL/Cg / Vuforia"
+    - "OpenCL 1.2 (Parallel computing)"
+dev:
+    - "C / C++"
+    - "C# / Java / Android"
+    - "GNU/Linux"
+    - "SGBD (SQL / NoSQL)"
+design:
+    - "Responsive Design"
+    - "3D Studio Max / Maya / Blender"
+    - "Adobe Photoshop / Illustrator"
+    - "Adobe Première Pro / After Effects"

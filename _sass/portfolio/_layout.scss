@@ -6,12 +6,12 @@
         margin : 0;
     }
     .home-half-text {
+        z-index: 1;
         width: 40%;
         background-color: $grey;
         text-align: right;
         padding-right: 40px;
         position: relative;
-        //color: white;
         h1 {
             font-size: 3em;
         }
@@ -22,7 +22,7 @@
             font-weight: lighter;
         }
         &>div {
-            margin-top: 50vh;
+            margin-top: 40vh;
             vertical-align: middle;
             display: inline-block;
         }
@@ -72,9 +72,29 @@
     .home-half-picture {
         width: 60%;
         background-color: $grey;
-        background-image: url("images/slider/colorfulNeko.jpg");
+        position: relative;
+        z-index: 0;
+        //background-image: url("images/slider/colorfulNeko.jpg");
+        //background-size: cover;
+        //background-position: center;
+        /*&>img {
+            height: 100%;
+            object-fit: cover;
+        }*/
+    }
+    .slide {
+        opacity: 1;
+        //transition: opacity 1.0s;
+        position: absolute;
+        top: 0;
+        left: 0;
         background-size: cover;
-        background-position: center;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        &.hidden {
+            opacity: 0;
+        }
     }
 }
 
@@ -82,6 +102,7 @@
 	background-color: $dark-blue;
 	width: 100%;
     position: relative;
+    z-index: 2;
     #bottom-cross{
         font-size: 0;
         position: absolute;
@@ -104,7 +125,7 @@
 	&>div{
 		width: 1000px;
 		margin:0 auto;
-		padding:20px 0;
+		padding:2vh 0;
 		h2{
 			color: white;
 		}
@@ -118,8 +139,9 @@
 				height:300px;
 				width:300px;
 				border-radius: 150px;
-				background-image: url('./images/icones/profil.jpg');
-				background-size: cover;
+				//background-image: url('./images/icones/profil.jpg');
+				//background-size: cover;
+                @include sprite(0, 3);
 			}
 			#description{
 				font-size: 16px;
@@ -142,21 +164,20 @@
 					vertical-align: middle;
 					height: 30px;
 					width: 30px;
-					background-size: contain;
 					padding:5px;
 					text-indent: -9999px;
-					&:hover{
-						transform: scale(1.2);
-					}
 				}
 				a#git{
-					background-image: url('./images/logos/github.png');
+                    @include sprite(1, 2);
+                    &:hover {
+                        @include sprite(0, 2);
+                    }
 				}
 				a#linkedin{
-					background-image: url('./images/logos/linkedin.png');
-				}
-				a#contactButton{
-					background-image: url('./images/logos/contact.png');
+                    @include sprite(3, 2);
+                    &:hover {
+                        @include sprite(2, 2);
+                    }
 				}
 			}
 		}
@@ -207,10 +228,104 @@
 #projects {
     background-color: $light-blue;
     color: #fff;
+
     &>div {
         width: 1000px;
 		margin:0 auto;
         padding:20px 0;
+        font-size: 0;
+    }
+
+    .project-button {
+        position: relative;
+        overflow: hidden;
+        width: 250px;
+        height: 250px;
+        display: inline-block;
+        vertical-align: top;
+        font-size: small;
+        background-color: #0e242d;
+        cursor: pointer;
+        &>* {
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        &:hover .project-content {
+            top:0;
+            &>h1 {
+                margin-top:0;
+            }
+        }
+        &.selected .project-content {
+            top:0;
+            &>h1 {
+                margin-top:0;
+            }
+        }
+    }
+    .project-content {
+        position: absolute;
+        top:250px;
+        left: 0;
+        background-color: rgba(0,0,0,0.8);
+        background-image: url("./images/icones/noise.png");
+        transition: top 0.6s;
+        width: 250px;
+        height: 400px;
+        padding: 10px 20px;
+
+        &>h1 {
+            transition: margin-top 0.3s ease 0.2s;
+            margin-top:100px;
+            margin-bottom: 0px;
+            font-size: 36px;
+            white-space: nowrap;
+        }
+        .project-intro {
+            margin:0;
+        }
+    }
+    .projects-description {
+        font-size: medium;
+        height: 270px;
+        background-color: #252525;// #0e242d;
+        background-image: url("./images/icones/noise.png");
+        h2 {
+            margin-top:0;
+        }
+        &>div>div {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .project-description {
+        &.hidden {
+            display: none;
+        }
+    }
+    .project-description-aside {
+        width:230px;
+        height: 300px;
+        text-align: right;
+        padding:20px;
+        font-size: small;
+
+        p {
+            margin: 0;
+        }
+        &>div a {
+            margin-top: 5px;
+            width: 85px;
+            margin-right: 0;
+            margin-left: 5px;
+        }
+    }
+
+    .project-description-content {
+        width:770px;
+        padding:20px;
+        text-align: justify;
     }
 }
 
@@ -221,6 +336,35 @@
         width: 1000px;
 		margin:0 auto;
         padding:20px 0;
+    }
+    .half {
+        text-align: center;
+        margin-bottom: 20px;
+        ul {
+            margin:0;
+            padding:0;
+            list-style-type: none;
+        }
+    }
+    .half >div {
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+    }
+    #icon-dev {
+        @include sprite(0, 0);
+    }
+    #icon-web {
+        @include sprite(2, 0);
+    }
+    #icon-design {
+        @include sprite(4, 0);
+    }
+    #icon-computer-graphics {
+        @include sprite(6, 0);
+    }
+    .skills-presentation {
+        text-align: justify;
     }
 }
 
@@ -249,100 +393,102 @@
 				}
 			}
 		}
-		form{
-			input, textarea{
-				border:none;
-				padding:10px;
-				font-family: sofia_pro_lightregular;
-				border:1px solid white;
-				transition:all 0.3s;
-				outline: none;
-				background-color: transparent;
-				&:hover{
-					border:1px solid black;
-				}
-				&:focus{
-					border:1px solid $dark-blue;
-					background-color: #fff;
-				}
-			}
-
-			button[type="submit"]{
-				width: 100px;
-				background-color: black;
-				color:white;
-				cursor:pointer;
-				position: relative;
-				left:0;
-				border:none;
-				margin-top:10px;
-				padding-top: 2px;
-				outline: none;
-				transition: left 0.3s;
-				&:hover{
-					border:none;
-				}
-				&:active{
-					&:before{
-						background-color: $light-blue;
-					}
-				}
-				&:before{
-					background-color:$dark-blue;
-				}
-				&.sent{
-					left: calc(100% - 100px);
-					background-color: green;
-					&:before{
-						background-color: green;
-					}
-				}
-				&.sending{
-					&:before{
-						animation: loadingMail infinite ease 1s;
-					}
-				}
-				&.error{
-					background-color: #cd2829;
-					&:before{
-						background-color: #cd2829;
-					}
-				}
-			}
-			#infoMessage{
-				label{
-					display: inline-block;
-					width: 100px;
-				}
-				div{
-					margin:10px 0;
-				}
-				input{
-					width: 300px;
-				}
-			}
-			#message{
-				margin-top:20px;
-				label{
-					display: block;
-				}
-				textarea{
-					width:1000px;
-					height:200px;
-					max-width: 1000px;
-					min-width: 1000px;
-					min-height:50px;
-				}
-			}
-			#question{
-				margin-top:20px;
-			}
-			label + input#check{
-				width:40px;
-				text-align: center;
-			}
-		}
 	}
+    #hello {
+        display: none;
+    }
+    form{
+        input, textarea{
+            border:none;
+            padding:10px;
+            font-family: sofia_pro_lightregular;
+            border:1px solid white;
+            transition:all 0.3s;
+            outline: none;
+            background-color: transparent;
+            &:hover{
+                border:1px solid black;
+            }
+            &:focus{
+                border:1px solid $dark-blue;
+                background-color: #fff;
+            }
+        }
+    }
+    button[type="submit"]{
+        width: 100px;
+        background-color: black;
+        color:white;
+        cursor:pointer;
+        position: relative;
+        left:0;
+        border:none;
+        margin-top:10px;
+        padding-top: 2px;
+        outline: none;
+        transition: left 0.3s;
+        &:hover{
+            border:none;
+        }
+        &:active{
+            &:before{
+                background-color: $light-blue;
+            }
+        }
+        &:before{
+            background-color:$dark-blue;
+        }
+        &.sent{
+            left: calc(100% - 100px);
+            background-color: green;
+            &:before{
+                background-color: green;
+            }
+        }
+        &.sending{
+            &:before{
+                animation: loadingMail infinite ease 1s;
+            }
+        }
+        &.error{
+            background-color: #cd2829;
+            &:before{
+                background-color: #cd2829;
+            }
+        }
+    }
+    #infoMessage{
+        label{
+            display: inline-block;
+            width: 100px;
+        }
+        div{
+            margin:10px 0;
+        }
+        input{
+            width: 300px;
+        }
+    }
+    #message{
+        margin-top:20px;
+        label{
+            display: block;
+        }
+        textarea{
+            width:1000px;
+            height:200px;
+            max-width: 1000px;
+            min-width: 1000px;
+            min-height:50px;
+        }
+    }
+    #question{
+        margin-top:20px;
+    }
+    label + input#check{
+        width:40px;
+        text-align: center;
+    }
 }
 
 footer{
@@ -352,7 +498,6 @@ footer{
 		text-align: center;
 		line-height: 200px;
 		&>a{
-			background-size: cover;
 			display: inline-block;
 			height: 20px;
 			width: 20px;
@@ -360,16 +505,18 @@ footer{
 			text-indent: -999px;
 			vertical-align: middle;
 			margin-bottom: 4px;
-			transition: all 0.3s;
-			&:hover{
-				transform:scale(1.2);
-			}
 		}
 		#linkedin{
-			background-image: url('./images/logos/linkedin.png');
+            @include sprite(4, 2);
+            &:hover {
+                @include sprite(5, 2);
+            }
 		}
 		#github{
-			background-image: url('./images/logos/github.png');
+            @include sprite(6, 2);
+            &:hover {
+                @include sprite(7, 2);
+            }
 		}
 	}
 }
