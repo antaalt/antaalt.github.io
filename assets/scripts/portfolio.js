@@ -150,13 +150,13 @@
 	var path = "./assets/images/slider/";
 	var slider = document.getElementById("slider");
 	var images = [
-		"hanami.jpg",
-		"colorfulNeko.jpg",
-		"kamogawaDenki.jpg",
-		"nightLight.jpg",
-		"river.jpg",
-		"seaClosed.jpg",
-		"train.jpg"
+		"hanami.small.jpg",
+		"colorfulNeko.small.jpg",
+		"train.small.jpg",
+		"densha.small.jpg",
+		"river.small.jpg",
+		"screw.small.jpg",
+		"window.small.jpg"
 	];
 	var downloaded = [];
 	var nb = 0;
@@ -204,7 +204,6 @@
 		var container = document.createElement("div");
 		var index = (this.index == undefined) ? 0 : this.index;
 		container.classList.add("slide");
-		console.log(this.index);
 		if(index != 0)
 			container.classList.add("hidden");
 		container.id = "slide"+index;

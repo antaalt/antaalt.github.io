@@ -111,12 +111,14 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 					{% endfor %}
 				</ul>
 			</div>
+			{% comment %}
 			<div class="skills-presentation">
 				<h2>Quelles sont mes compétences</h2>
 				<p>Au cours de mes projets, j'ai pu me familiariser avec de nombreux languages de programmation.</p>
 				<p>Ornare <span class="highlighted">consectetur</span> ac pellentesque ligula. Aliquam in ultrices enim. Nam volutpat at ligula ac lobortis. Vestibulum posuere sodales justo, sit amet porttitor ante aliquam sit amet. Pellentesque interdum, dolor vitae pharetra tincidunt, mauris ante lobortis lacus, ut fringilla tortor sem ut ex. Aenean suscipit odio quis accumsan porta. Suspendisse finibus convallis neque, id pellentesque <span class="highlighted">consectetur</span> feugiat nec. Cras mollis non leo eget auctor.</p>
 				<p>Suspendisse ultrices <span class="highlighted">consectetur</span> facilisis. Maecenas quis magna vel dolor faucibus vestibulum quis vel dui. Cras sed sem nec tortor maximus eleifend a eu sapien. Fusce tincidunt risus ac felis maximus fringilla. Nullam et tortor vel odio maximus venenatis. Sed hendrerit eros eu sem fringilla, venenatis sagittis est condimentum.</p>
 			</div>
+			{% endcomment %}
 		</div>
 	</div>
 </section>
@@ -134,21 +136,17 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 					<div class="project-description-aside">
 						<h2>Info</h2>
 						<p><strong>Date : </strong>{{ project.date }}</p>
-						{% if project.languages %}
-						   <p>{{ project.languages }}</p>
-						{% endif %}
-
 						{% if project.intro %}
 						   <p>{{ project.intro }}</p>
 						{% endif %}
 						<div>
 							<!--HACK
 							{% if project.vimeo_url %}
-								--><a href="{{ project.vimeo_url }}" class="cta">Vimeo</a><!--HACK
+								--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
 							{% endif %}
 
 							{% if project.github_url %}
-								--><a href="{{ project.vimeo_url }}" class="cta">GitHub</a><!--HACK
+								--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
 							{% endif %}
 							-->
 						</div>
