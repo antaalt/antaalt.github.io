@@ -1,3 +1,29 @@
+#fr-link {
+    @include sprite(6, 3);
+}
+#en-link {
+    @include sprite(7, 3);
+}
+.lang-selector {
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 9999px;
+}
+.lang-selector-active {
+    pointer-events: none;
+
+}
+.lang-selector-unactive {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+    &:hover {
+        -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(0%);
+    }
+}
 #home {
     .home-half-text, .home-half-picture {
         display: inline-block;
@@ -33,7 +59,7 @@
                 color: $light-blue;
             }
         }
-        a {
+        .cta {
             margin-top: 25px;
             margin-right: 0;
         }
@@ -268,7 +294,7 @@
         &>h1 {
             transition: margin-top 0.3s ease 0.2s;
             margin-top:100px;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
             font-size: 36px;
             white-space: nowrap;
         }

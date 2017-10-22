@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Antoine Altorffer - Portfolio
-date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
+#date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 ---
 <!-- Home -->
 <section id="home">
@@ -12,11 +12,24 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 			</svg>
 		</div>
 		<div>
+			<p><!--HACK
+				{% for lang in site.langs %}
+					{% if lang == site.default_lang %}
+				--><a href="{{ site.url }}" id="{{lang}}-link" class="lang-selector {% if lang == page.lang %}lang-selector-active{% else %}lang-selector-unactive{% endif %}">{{lang}}</a><!--HACK
+					{% else %}
+				--><a href="{{ site.url }}/{{lang}}" id="{{lang}}-link" class="lang-selector {% if lang == page.lang %}lang-selector-active{% else %}lang-selector-unactive{% endif %}">{{lang}}</a><!--HACK
+					{% endif %}
+				{% endfor %}
+			--></p>
 			<h1>ALTORFFER Antoine</h1>
-			<h2>Etudiant ingénieur en 5ème année<br>ESIEA - Majeure Réalité virtuelle</h2>
-			<p><span class="highlighted">Actuellement à la recherche d'un stage de 6 mois <br>(A partir de Février 2018)</span></p>
-			<p><a href="#whoami" class="smooth-scroll">Qui-suis je</a> - <a href="#skills" class="smooth-scroll">Compétences</a> - <a href="#projects" class="smooth-scroll">Projets</a></p>
-			<a href="#contact" class="cta cta-big smooth-scroll">Contactez-moi</a>
+			<h2>{{ site.data.content[page.lang].home_description }}</h2>
+			<p><span class="highlighted">{{ site.data.content[page.lang].home_status }}</span></p>
+			<p>
+				<a href="#whoami" class="smooth-scroll">{{ site.data.content[page.lang].whoami }}</a>
+				 - <a href="#skills" class="smooth-scroll">{{ site.data.content[page.lang].skills }}</a>
+				  - <a href="#projects" class="smooth-scroll">{{ site.data.content[page.lang].projects }}</a>
+			  </p>
+			<a href="#contact" class="cta cta-big smooth-scroll">{{ site.data.content[page.lang].contact_me }}</a>
 		</div>
 	</div><!-- HACK --><div class="home-half-picture" id="slider"></div>
 </section>
@@ -30,7 +43,7 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 		</svg>
 	</div>
 	<div>
-		<h1>Qui suis-je ?</h1>
+		<h1>{{ site.data.content[page.lang].whoami }} ?</h1>
 		<div id="presentation">
 			<div id="imgProfil"></div>
 			<div id="description">
@@ -70,10 +83,10 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 <!-- Competences -->
 <section id="skills" class="wrapper section">
 	<div>
-		<h1>Compétences</h1>
+		<h1>{{ site.data.content[page.lang].skills }}</h1>
 		<div>
 			<div class="half half-dev">
-				<h2>Développement</h2>
+				<h2>{{ site.data.content[page.lang].development }}</h2>
 				<div id="icon-dev"></div>
 				<ul>
 					{% for data in site.data.skills.dev %}
@@ -82,7 +95,7 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 				</ul>
 			</div><!-- HACK
 			--><div class="half half-design">
-				<h2>Imagerie</h2>
+				<h2>{{ site.data.content[page.lang].computer_graphics }}</h2>
 				<div id="icon-computer-graphics"></div>
 				<ul>
 					{% for data in site.data.skills.computer-graphics %}
@@ -91,7 +104,7 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 				</ul>
 			</div><!--HACK
 			--><div class="half half-design">
-				<h2>Web</h2>
+				<h2>{{ site.data.content[page.lang].web }}</h2>
 				<div id="icon-web"></div>
 				<ul>
 					{% for data in site.data.skills.web %}
@@ -100,7 +113,7 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 				</ul>
 			</div><!--HACK
 			--><div class="half half-design">
-				<h2>Graphisme</h2>
+				<h2>{{ site.data.content[page.lang].graphism }}</h2>
 				<div id="icon-design"></div>
 				<ul>
 					{% for data in site.data.skills.design %}
@@ -108,14 +121,6 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 					{% endfor %}
 				</ul>
 			</div>
-			{% comment %}
-			<div class="skills-presentation">
-				<h2>Quelles sont mes compétences</h2>
-				<p>Au cours de mes projets, j'ai pu me familiariser avec de nombreux languages de programmation.</p>
-				<p>Ornare <span class="highlighted">consectetur</span> ac pellentesque ligula. Aliquam in ultrices enim. Nam volutpat at ligula ac lobortis. Vestibulum posuere sodales justo, sit amet porttitor ante aliquam sit amet. Pellentesque interdum, dolor vitae pharetra tincidunt, mauris ante lobortis lacus, ut fringilla tortor sem ut ex. Aenean suscipit odio quis accumsan porta. Suspendisse finibus convallis neque, id pellentesque <span class="highlighted">consectetur</span> feugiat nec. Cras mollis non leo eget auctor.</p>
-				<p>Suspendisse ultrices <span class="highlighted">consectetur</span> facilisis. Maecenas quis magna vel dolor faucibus vestibulum quis vel dui. Cras sed sem nec tortor maximus eleifend a eu sapien. Fusce tincidunt risus ac felis maximus fringilla. Nullam et tortor vel odio maximus venenatis. Sed hendrerit eros eu sem fringilla, venenatis sagittis est condimentum.</p>
-			</div>
-			{% endcomment %}
 		</div>
 	</div>
 </section>
@@ -124,9 +129,9 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 <!-- Projets -->
 <section id="projects" class="wrapper section">
 	<div>
-		<h1>Projets</h1>
+		<h1>{{ site.data.content[page.lang].projects }}</h1>
 		<div class="projects-description">
-			{% for project in site.data.projects %}
+			{% for project in site.data.projects[page.lang] %}
 
 				<div class="project-description {% if forloop.first != true %}hidden{% endif %}" id="project{{forloop.index}}">
 
@@ -156,9 +161,9 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 			{% endfor %}
 		</div>
 		<!--HACK
-		{% for project in site.data.projects %}
+		{% for project in site.data.projects[page.lang] %}
 		--><article class="project-button {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
-			    <img src="{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
+			    <img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
 			   --><div class="project-content">
 				   <h1>{{ project.name }}</h1>
 				   <p class="project-intro"><span class="highlighted">{{ project.intro }}</span></p>
@@ -175,21 +180,21 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 <!-- Contact -->
 <section id="contact" class="wrapper section">
 	<div>
-		<h1>Contact</h1>
+		<h1>{{ site.data.content[page.lang].contact }}</h1>
 		<!-- see formspree or equivalent for email sending in jekyll -->
 		<form method="post" id="formMail">
 			<div id="infoMessage">
 				<div>
-					<label for="name">Nom : </label>
-					<input type="text" id="name" name="nom" placeholder="Nom" required>
+					<label for="name">{{ site.data.content[page.lang].form_name }} : </label>
+					<input type="text" id="name" name="nom" placeholder="{{ site.data.content[page.lang].form_name_placeholder }}" required>
 				</div>
 				<div>
-					<label for="firstname">Prénom : </label>
-					<input type="text" id="firstname" name="prenom"  placeholder="Prénom" required>
+					<label for="firstname">{{ site.data.content[page.lang].form_surname }} : </label>
+					<input type="text" id="firstname" name="prenom"  placeholder="{{ site.data.content[page.lang].form_surname_placeholder }}" required>
 				</div>
 				<div>
-					<label for="mail">Mail : </label>
-					<input type="email" id="mail" name="email" placeholder="e-mail" required>
+					<label for="mail">{{ site.data.content[page.lang].form_mail }} : </label>
+					<input type="email" id="mail" name="email" placeholder="{{ site.data.content[page.lang].form_mail_placeholder }}" required>
 				</div>
 				<div id="hello">
 					<label for="firstname">Data : </label>
@@ -197,15 +202,15 @@ date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
 				</div>
 			</div>
 			<div id="message">
-				<label for="message">Message : </label>
-				<textarea name="message" id="message" placeholder="Entrez ici votre message..." required></textarea>
+				<label for="message">{{ site.data.content[page.lang].form_message }} : </label>
+				<textarea name="message" id="message" placeholder="{{ site.data.content[page.lang].form_message_placeholder }}" required></textarea>
 			</div>
 			{% comment %}
 			<div id="question">
 				<div class="g-recaptcha" data-sitekey="6Lft5igTAAAAAPaDKVjmOBp5kqida-NA98f0HG1M"></div>
 			</div>
 			{% endcomment %}
-			<button class="cta" type="submit" id="send">Envoyer</button>
+			<button class="cta" type="submit" id="send">{{ site.data.content[page.lang].form_send }}</button>
 		</form>
 	</div>
 </section>

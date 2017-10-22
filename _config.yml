@@ -27,6 +27,8 @@ twitter_username: antaalt
 github_username:  antaalt
 github_url: "https://github.com/antaalt"
 linkedin_url: "https://fr.linkedin.com/in/antoinealtorffer"
+langs: [fr, en]
+default_lang: fr
 cv_en: cv_Oct17_AA_en.pdf
 cv_fr: cv_Oct17_AA_fr.pdf
 google_analytics: true

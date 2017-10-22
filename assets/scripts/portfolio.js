@@ -19,6 +19,8 @@
 		_this.options.fixedLimit = $(window).height()-100;
 
 		_this.$menu = $('#menu');
+		if(_this.$menu == undefined)
+			return;
 		_this.$section = $('.section');
 		_this.$menuLink = $('a[href^="#"].smooth-scroll');
 
@@ -102,6 +104,8 @@
 
 	_this.init = function() {
 		_this.$form = $('#formMail');
+		if(_this.$form == undefined)
+			return;
 		_this.$form.on('submit', _this.handleSend);
 	};
 
@@ -147,7 +151,7 @@
 }, function(options) {
 	var _this = this;
 
-	var path = "./assets/images/slider/";
+	var path = "/assets/images/slider/";
 	var slider = document.getElementById("slider");
 	var images = [
 		"hanami.small.jpg",
@@ -162,6 +166,8 @@
 	var nb = 0;
 
 	_this.init = function() {
+		if(slider == undefined)
+			return;
 		// Shuffle array
 		_this.shuffleArray(images);
 		// Load first image
@@ -178,7 +184,6 @@
 					downloaded[index].src = path + value;
 				}
 			});
-			//slider.onclick = _this.manageTransition;
 			setInterval(_this.manageTransition, options.transitionDuration);
 		};
 		downloaded[0].src = path + images[0];
@@ -195,9 +200,14 @@
 	}
 
 	_this.manageTransition = function() {
-		document.getElementById("slide"+nb).classList.add("hidden");
+		var actual = document.getElementById("slide"+nb);
+		var next = document.getElementById("slide"+((nb+1)%images.length));
+		if(next == undefined)
+			return;
+		actual.classList.add("hidden");
 		nb = (nb + 1) % images.length;
-		document.getElementById("slide"+nb).classList.remove("hidden");
+
+		next.classList.remove("hidden");
 	}
 
 	_this.onLoad = function() {
