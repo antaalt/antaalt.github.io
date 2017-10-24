@@ -82,6 +82,7 @@
 		}
 		.project-button {
 			width: 33%;
+
 			& > img {
 				width: 100%;
 			}
@@ -103,7 +104,68 @@
 			height: 87px;
 		}
 		nav {
+			position: relative;
 			float: none;
+			width: 100%;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50px;
+				height: 100%;
+				display: block;
+				background-image: linear-gradient(to right, #ccc, transparent, transparent);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50px;
+				height: 100%;
+				display: block;
+				background-image: linear-gradient(to right, transparent, transparent, #ccc);
+			}
+		}
+		ul {
+			white-space: nowrap;
+			overflow-x: scroll;
+			li:first-child {
+				position:relative;
+				a {
+					z-index: 2;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 50px;
+					height: 100%;
+					display: block;
+					background-image: linear-gradient(to right, white, white, transparent);
+					z-index: 1;
+				}
+			}
+			li:last-child {
+				position:relative;
+				a {
+					z-index: 2;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 50px;
+					height: 100%;
+					display: block;
+					background-image: linear-gradient(to right, transparent, white, white);
+					z-index: 1;
+				}
+			}
+
 		}
 	}
 	#home {
@@ -133,10 +195,13 @@
 			height: auto;
 			max-height: 300px;
 			pointer-events: none;
+			overflow: auto;
+			max-height: none;
 		}
 		.project-content {
 			top:0;
-
+			height: auto;
+			position: relative;
 			h1 {
 				margin-top: 0;
 			}
