@@ -1,0 +1,10 @@
+---
+#jekyll
+---
+Sitemap: {{ site.url }}/sitemap.xml
+
+User-agent: *
+Disallow: /assets/font
+Disallow: /assets/images
+Disallow: /assets/scripts
+Disallow: /assets/main.css

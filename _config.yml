@@ -36,7 +36,7 @@ google_analytics: true
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-feed
+  #- jekyll-feed
 timezone: Europe/Paris
 
 # Exclude from processing.

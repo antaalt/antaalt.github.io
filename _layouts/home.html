@@ -52,10 +52,10 @@ title: Antoine Altorffer - Portfolio
 				<a href="{{ site.linkedin_url }}" target="_blank" id="linkedin" class="externLink">linkedin</a>
 				<p>{{ site.data.i18n[page.lang].whoami_description }}</p>
 				{% if page.lang == "fr" %}
-					<a href="assets/download/{{ site.cv_fr }}" target="_blank" class="cta cta-large">CV Français</a>
+					<a href="/assets/download/{{ site.cv_fr }}" target="_blank" class="cta cta-large">CV Français</a>
 				{% endif %}
 				{% if page.lang == "en" %}
-					<a href="assets/download/{{ site.cv_en }}" target="_blank" class="cta cta-large">English Resume</a>
+					<a href="/assets/download/{{ site.cv_en }}" target="_blank" class="cta cta-large">English Resume</a>
 				{% endif %}
 			</div>
 		</div>
@@ -139,7 +139,7 @@ title: Antoine Altorffer - Portfolio
 			   --><div class="project-content">
 				   <h1>{{ project.name }}</h1>
 				   <p class="project-intro"><span class="highlighted">{{ project.intro }}</span></p>
-				   <p>{{ project.description | truncate: 290 }}</p>
+				   <p>{{ project.description }}</p>
 			   </div>
 		   </article><!--HACK
 		{% endfor %}

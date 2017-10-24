@@ -16,15 +16,14 @@ fr:
     Je suis actuellement un étudiant en cinquième année à l'ESIEA (campus de Laval)
     en majeure réalité virtuelle. J'ai choisi cette majeure pour vivre de ma passion
     pour la création d'univers immersifs et créatifs. Je suis passionné par l'animation,
-    les effets spéciaux ou encore les jeux vidéo. J'ai décidé de devenir ingénieur
+    les effets spéciaux, les jeux vidéo, la photo, le dessin... J'ai décidé de devenir ingénieur
     en partie par curiosité, pour être en mesure de comprendre le fonctionnement
     de ces diverses techniques.</p>
     <p>En parallèle, j'ai acquis des compétences variées au cours de ma formation.
-    Des compétences artistiques dans un premier temps, au cours du DUT MMI et de
-    la licence EVMAN à l'université Paris-Est Marne-la-Vallée, puis j'ai pu
-    approfondir mes compétences techniques au cours de mes trois années à l'ESIEA.
-    J'ai aussi obtenu des compétences dans divers domaines plus variés, tels que
-    le montage vidéo, la création graphique, le web, mais aussi la sécurité
+    Des compétences en montage vidéo, web et graphisme dans un premier temps, au
+    cours d'un DUT MMI et d'une licence EVMAN à l'université Paris-Est
+    Marne-la-Vallée, puis des compétences plus techniques au cours de mes trois
+    années à l'ESIEA, au travers de domaines variés tels que la sécurité
     informatique, l'automatique et l'électronique, le big data...</p>
     <p>Dans ce but, je recherche actuellement un stage de fin d'étude de 6 mois à
     partir de Février 2018.
@@ -45,7 +44,7 @@ fr:
   form_mail_placeholder: "e-mail"
   form_message: "Message"
   form_message_placeholder: "Entrez ici votre message..."
-  form_send: "Envoyer" # TODO js for this
+  form_send: "Envoyer"
   form_sending: "Envoi..."
   form_sent: "Envoyé !"
   form_send_error: "Erreur..."
@@ -68,7 +67,7 @@ en:
     I am currently a student in fifth year at ESIEA (Laval, France) majoring in
     Virtual Reality. I choosed this major to live of my passion for the creation
     of immersive and creative universe. I am passionate by animation, special
-    effects and video games. I decided to become engineer partly by curiosity,
+    effects, video games, photography and to draw. I decided to become engineer partly by curiosity,
     to be able to understand how these medias are working.</p>
     <p>In parallel, I acquired various skills during my formation. Artistical
     skills in a first time, during my two-year university diploma in technology
@@ -95,7 +94,7 @@ en:
   form_mail_placeholder: "e-mail"
   form_message: "Message"
   form_message_placeholder: "Write your message here..."
-  form_send: "Send" # TODO js for this
+  form_send: "Send"
   form_sending: "Sending..."
   form_sent: "Sent !"
   form_send_error: "Error..."

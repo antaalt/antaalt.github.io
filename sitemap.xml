@@ -1,0 +1,26 @@
+---
+title : "Sitemap" #http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	{% for lang in site.langs %}
+	<url>
+		<loc>{{ site.url}}{% if lang != site.default_lang %}/{{lang}}{% endif %}</loc>
+		{% for lang in site.langs %}
+		<xhtml:link
+             rel="alternate"
+             hreflang="{{lang}}"
+             href="{{ site.url}}{% if lang != site.default_lang %}/{{lang}}{% endif %}"
+             />
+		 {% endfor %}
+	</url>
+	{% endfor %}
+    {% for post in site.posts %}
+	{% if post.sitemap.enabled == true %}
+    <url>
+        <loc>{{site.url}}{{ post.url | remove: 'index.html' }}</loc>
+    </url>
+	{% endif %}
+    {% endfor %}
+</urlset>

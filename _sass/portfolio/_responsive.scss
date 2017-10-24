@@ -1,0 +1,148 @@
+/*******************************************/
+/************** MEDIA QUERIES **************/
+/*******************************************/
+
+@media only screen and (max-width : 1000px){
+	#menu .wrapper {
+		width: 100%;
+	}
+	.half {
+		width: 100%;
+		display: block;
+	}
+	#home {
+		.home-half-text {
+			width: 50%;
+		}
+		.home-half-picture {
+			width: 50%;
+		}
+	}
+
+	#whoami {
+		#bottom-cross > svg {
+			margin-left: calc(50% - 50px)
+		}
+
+		&>div {
+			width: 100%;
+			padding: 10px;
+			#presentation {
+				&>div {
+					display: block;
+					width: 100%;
+					margin: 0 auto;
+				}
+				#description {
+					width: 100%;
+				}
+			}
+			#formation {
+				&>div {
+					width: 100%;
+				}
+			}
+		}
+	}
+	#skills {
+		&>div {
+			width: 100%;
+		}
+	}
+	#contact{
+		&>div{
+			width: 100%;
+			padding: 20px;
+			&>div{
+				width: 100%;
+			}
+			form{
+				width: 100%;
+				#message{
+					textarea{
+						width:100%;
+						max-width: 100%;
+						min-width: 100%;
+					}
+				}
+				#infoMessage{
+					input{
+						width: 80%;
+					}
+				}
+				label+input#check{
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	#projects {
+		&> div {
+			width: 100%;
+		}
+		.project-button {
+			width: 33%;
+			& > img {
+				width: 100%;
+			}
+		}
+		.project-description-aside {
+			width: 30%;
+		}
+		.project-description-content {
+			width: 70%;
+		}
+	}
+}
+
+// diminution menu
+@media only screen and (max-width : 820px){
+	#menu {
+		text-align: center;
+		&.minimize {
+			height: 87px;
+		}
+		nav {
+			float: none;
+		}
+	}
+	#home {
+		.home-half-text, .home-half-picture {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		.home-half-text {
+			text-align: center;
+			padding-right: 0;
+			&>div {
+				margin-top: 0;
+				margin-bottom: 100px;
+			}
+			#right-cross {
+				display: none;
+			}
+		}
+		.home-half-picture {
+			display: none;
+		}
+	}
+	#projects {
+		.project-button {
+			width: 100%;
+			height: auto;
+			max-height: 300px;
+			pointer-events: none;
+		}
+		.project-content {
+			top:0;
+
+			h1 {
+				margin-top: 0;
+			}
+		}
+		.projects-description {
+			display: none;
+		}
+	}
+}

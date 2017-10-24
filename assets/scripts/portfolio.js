@@ -10,13 +10,15 @@
 	var _this = this;
 
 	_this.options = {
-		headerHeight : 45,
+		headerHeight : 50,
 		fixedLimit: 0,
 		selected:'selected',
 	};
 
 	_this.init = function(){
-		_this.options.fixedLimit = $(window).height()-100;
+		_this.options.headerHeight = $("#menu").height() - 1;
+		_this.options.fixedLimit = $(window).height() - _this.options.headerHeight;
+
 
 		_this.$menu = $('#menu');
 		if(_this.$menu == undefined)
@@ -31,10 +33,13 @@
 	_this.build = function(){
 		_this.buildScroll();
 		_this.buildLink();
-		//_this.buildMobileMenu();
 		$(window).resize(function(){
-			_this.options.fixedLimit = $(window).height() - 100;
+			_this.options.headerHeight = $("#menu").height() - 1;
+			_this.options.fixedLimit = $("#home").height() - _this.options.headerHeight;
 		});
+		setInterval(function() {
+			$(window).resize();
+		}, 500);
 	};
 
 	_this.buildScroll = function(){
@@ -46,17 +51,9 @@
 		});
 	};
 
-	//_this.buildMobileMenu = function() {
-	//	var $scroll = $('#scroll');
-	//	$('#menuMobile').on('click', function(){
-	//		$scroll.hasClass('closed') ? $scroll.removeClass('closed') : $scroll.addClass('closed');
-	//	});
-	//};
-
 	_this.buildLink = function(){
 		_this.$menuLink.click(function(){
 			var dest = $(this.hash).offset().top - _this.options.headerHeight;
-			$('#scroll').addClass('closed'); // CLOSE MENU MOBILE
 			$('html, body').animate({
 				scrollTop:dest
 			}, 'slow');
