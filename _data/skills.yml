@@ -4,9 +4,10 @@ web:
     - "PHP / Symfony 2"
     - "Ruby / Python"
 computer-graphics:  #imagerie
-    - "OpenGL 3 / GLSL / VRPN"
+    - "OpenGL / GLSL / VRPN"
     - "Unity / HLSL/Cg / Vuforia"
-    - "OpenCL 1.2 (Parallel computing)"
+    - "OpenCL (Parallel computing)"
+    - "Multithreading"
 dev:
     - "C / C++"
     - "C# / Java / Android"

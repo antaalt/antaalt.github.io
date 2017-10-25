@@ -6,12 +6,11 @@ fr:
       vision périphérique pour économiser des ressources au rendu. En effet, ce
       qui se situe dans la périphérie de la vision ne nécessite pas d'être rendu
       en très haute résolution, car l'œil ne le percevra pas. Cette méthode se
-      prêtent parfaitement au raytracing, car nous pouvons envoyer plus ou moins
-      de rayons en fonction de la position de l'œil, pour ainsi gagner en temps
-      de rendu pour obtenir du temps réel sur une configuration honnête.</p>
-      <p> Pour parvenir à cela, il fallait utiliser les capacités parallèles du
-      GPU, en utilisant OpenCL pour de la programmation GPGPU.
-
+      prête parfaitement au raytracing, car nous pouvons envoyer plus ou moins
+      de rayons en fonction de la position de l'œil, pour ainsi répondre aux
+      contraintes de temps réel sur une configuration honnête.</p>
+      <p> Pour parvenir à cela, nous avons décidé d'utiliser les capacités parallèles du
+      GPU, en utilisant OpenCL (programmation GPGPU) pour créer un moteur de rendu.
     #vimeo_url: "https://vimeo.com/0000000"
     date: 07/2017 - 12/2017
     image_url: raytracing.jpg
@@ -29,7 +28,6 @@ fr:
       avec OpenGL et C++, son but était d'afficher un objet sur deux écrans en
       fonction de la position de l'utilisateur, dont les données de tracking
       étaient récupérées grâce à la librairie VRPN.
-
     date: 07/2016 - 04/2017
     vimeo_url: https://vimeo.com/204033854
     image_url: scanner.jpg
