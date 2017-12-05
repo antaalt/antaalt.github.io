@@ -11,11 +11,11 @@ fr:
   web: "Web"
   graphism: "Graphisme"
 
-  whoami_title: "Ingénieur en imagerie et réalité virtuelle"
+  whoami_title: "Futur ingénieur logiciel"
   whoami_description: > # this means ignore newlines
     Je suis actuellement un étudiant en cinquième année à l'ESIEA (campus de
     Laval) en majeure réalité virtuelle. J'ai choisi cette majeure pour vivre
-    de ma passion pour la création d'univers immersifs et créatifs. Je suis
+    de ma passion pour la création d'univers immersifs et créatifs. En effet, je suis
     passionné par l’animation, les jeux vidéo, les effets spéciaux, la photo,
     le dessin... J'ai décidé de devenir ingénieur en partie par curiosité, pour
     être en mesure de comprendre le fonctionnement de ces diverses techniques.</p>
@@ -63,7 +63,7 @@ en:
   web: "Web"
   graphism: "Graphism"
 
-  whoami_title: "Computer graphics and virtual reality engineer"
+  whoami_title: "Future computer graphics and virtual reality engineer"
   whoami_description: > # this means ignore newlines
     I am currently a student in fifth year at ESIEA (Laval, France) majoring in
     Virtual Reality. I choosed this major to live of my passion for the creation

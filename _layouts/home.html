@@ -164,6 +164,10 @@ title: Antoine Altorffer - Portfolio
 							{% if project.github_url %}
 								--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
 							{% endif %}
+
+							{% if project.url %}
+								--><a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
+							{% endif %}
 							-->
 						</div>
 					</div><!--HACK

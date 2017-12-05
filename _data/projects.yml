@@ -1,18 +1,35 @@
 fr:
-  - name: Raytracing par fovéation
+  - name: Raytracer / Pathtracer par fovéation
     intro: C++ / OpenCL / OpenGL
     description: > # this means to ignore newlines until "date:"
       Le but de ce projet de fin d'étude était d'utiliser les propriétés de la
-      vision périphérique pour économiser des ressources au rendu. En effet, ce
+      vision périphérique pour économiser des ressources au rendu en utilisant le
+      raytracing ou le pathtracing. En effet, ce
       qui se situe dans la périphérie de la vision ne nécessite pas d'être rendu
       en très haute résolution, car l'œil ne le percevra pas. Cette méthode se
-      prête parfaitement au raytracing, car nous pouvons envoyer plus ou moins
+      prête parfaitement au raytracing et au pathtracing, car nous pouvons envoyer plus ou moins
       de rayons en fonction de la position de l'œil, pour ainsi répondre aux
-      contraintes de temps réel sur une configuration honnête.</p>
+      contraintes de temps réel sur une configuration honnête. C'est pourquoi nous
+      avons choisi d'utiliser ces méthodes pour le moteur.</p>
       <p> Pour parvenir à cela, nous avons décidé d'utiliser les capacités parallèles du
-      GPU, en utilisant OpenCL (programmation GPGPU) pour créer un moteur de rendu.
+      GPU, en utilisant OpenCL (programmation GPGPU) pour créer un moteur de rendu
+      ainsi qu'un traqueur tobii pour le suivi du regard.
     #vimeo_url: "https://vimeo.com/0000000"
-    date: 07/2017 - 12/2017
+    date: 07/2017 - 01/2018
+    image_url: pathtracing.jpg
+
+  - name: Raytracer
+    intro: C++ / OpenGL
+    description: > # this means to ignore newlines until "date:"
+      Réalisé pendant un cours à l'ESIEA, ce projet consistait à implémenter un
+      simple raytracer avec les fonctionnalités basiques. Je l'ai repris par la
+      suite pour pousser son utilisation plus loin, et implémenter divers éléments
+      supplémentaires tel que le rendu multithread pour plus d'efficacités, utilisant
+      des fonctionnalités C++ 11. Le but est surtout d'offrir la possibilité de
+      réaliser une base pour un rendre une image en utilisant une technique de
+      pathtracing, accéléré sur le GPU avec OpenCL.
+    github_url: https://github.com/antaalt/RayTracing-PathTracing
+    date: 08/2016 - now
     image_url: raytracing.jpg
 
   - name: Scanner 3D
@@ -47,19 +64,33 @@ fr:
     date: 04/2017 - 08/2017
     image_url: tango.jpg
 
-  - name: Robot autonome
-    intro: C / DSP / GPS
+  - name: GeoMessages
+    intro: Java / Android / Firebase
     description: > # this means to ignore newlines until "date:"
-      Le but de ce projet a été d'automatiser les déplacements d'une voiture
-      télécommandée ici contrôlé par une carte sur mesure équipée d'un DSP
-      (processeur de signal numérique), d'un GPS, d'une centrale inertielle...
-      Le robot récupère une suite de coordonnées GPS et doit alors s'y rendre
-      par lui-même sans aucune intervention extérieure. Pour cela, il doit
-      corriger sa trajectoire au fur et à mesure de son avancement en utilisant
-      le GPS ainsi que la centrale inertielle.
+      Ce projet a été une occasion d'expérimenter le développement d'une application
+      Android utilisant Java pendant la formation suivie à l'ESIEA. L'application
+      utilise la géolocalisation de l'utilisateur pour lui permettre de recevoir
+      des notifications géolocalisées laissées par d'autres utilisateurs. Pour cela,
+      une base de données gère les positions, basée sur Firebase et la librairie
+      GeoFire. Lorsque l'utilisateur passe près d'un message, l'application l'en
+      signale.
+    github_url: https://github.com/antaalt/GeoMessages
+    date: 08/2016 - now
+    image_url: geoMessages.jpg
 
-    date: 07/2015 - 06/2016
-    image_url: robotAutonome.jpg
+#  - name: Robot autonome
+#    intro: C / DSP / GPS
+#    description: > # this means to ignore newlines until "date:"
+#      Le but de ce projet a été d'automatiser les déplacements d'une voiture
+#      télécommandée ici contrôlé par une carte sur mesure équipée d'un DSP
+#      (processeur de signal numérique), d'un GPS, d'une centrale inertielle...
+#      Le robot récupère une suite de coordonnées GPS et doit alors s'y rendre
+#      par lui-même sans aucune intervention extérieure. Pour cela, il doit
+#      corriger sa trajectoire au fur et à mesure de son avancement en utilisant
+#      le GPS ainsi que la centrale inertielle.
+
+#    date: 07/2015 - 06/2016
+#    image_url: robotAutonome.jpg
 
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
@@ -80,6 +111,20 @@ fr:
     vimeo_url: https://vimeo.com/90116071
     image_url: chapeaulArtiste.jpg
 
+  - name: La tour de Babel
+    intro: Photoshop / Première Pro /&nbsp;After Effects
+    description: > # this means to ignore newlines until "date:"
+      Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le
+      but de présenter un tableau de l'artiste peintre Pieter Brueghel
+      l'Ancien, ici, une de ses œuvres sur la tour de Babel. J'ai utilisé le
+      logiciel Adobe Photoshop afin de décomposer les éléments du tableau et
+      pouvoir les animer au sein du logiciel Adobe After Effects et ainsi
+      obtenir cette composition qui permet de voyager au sein du tableau de
+      Pieter Bruegel, tout en cherchant à recréer l'ambiance de l'époque.
+    date: 01/2015
+    vimeo_url: https://vimeo.com/113370584
+    image_url: tourDeBabel.jpg
+
   - name: Angular Vimeo
     intro: HTML5 / CSS3 / AngularJS
     description: > # this means to ignore newlines until "date:"
@@ -95,34 +140,8 @@ fr:
 
     date: 08/2014
     github_url: https://github.com/antaalt/AngularVimeo
+    #url: /test
     image_url: angularVimeo.jpg
-
-  - name: Projet Kinect
-    intro: Processing / Kinect
-    description: > # this means to ignore newlines until "date:"
-      Utilisant Processing (libraire Java), ce projet a été réalisé dans le
-      cadre du cours de Florent Di Bartolo au sein de la licence EVMAN. Il
-      permet d'interagir avec la Kinect de Microsoft en utilisant la
-      bibliothèque simple-openNI avec un flux d'image qui défile en continue
-      face à l'utilisateur. Il est ainsi possible de communiquer avec une
-      archive numérique de façon interactive, en utilisant son corps.
-
-    date: 01/2015
-    image_url: kinect.jpg
-
-  - name: La tour de Babel
-    intro: Photoshop / Première Pro /&nbsp;After Effects
-    description: > # this means to ignore newlines until "date:"
-      Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le
-      but de présenter un tableau de l'artiste peintre Pieter Brueghel
-      l'Ancien, ici, une de ses œuvres sur la tour de Babel. J'ai utilisé le
-      logiciel Adobe Photoshop afin de décomposer les éléments du tableau et
-      pouvoir les animer au sein du logiciel Adobe After Effects et ainsi
-      obtenir cette composition qui permet de voyager au sein du tableau de
-      Pieter Bruegel, tout en cherchant à recréer l'ambiance de l'époque.
-    date: 01/2015
-    vimeo_url: https://vimeo.com/113370584
-    image_url: tourDeBabel.jpg
 
 en:
   - name: Foveated realtime Raytracing
@@ -135,11 +154,25 @@ en:
       rendering, because we can send a number of ray relative to the eye target
       in order to earn ressources to render in realtime on a honnest
       configuration.</p>
-      <p> To reach this goal, we have to use parallel capacity of the GPU, using
-      OpenCL for GPGPU programmation.
+      <p> To reach this goal, we are using parallel computing capacity of the GPU, using
+      OpenCL for GPGPU programmation, as well as a tobii sensor for eye gaze tracking.
     #vimeo_url: "https://vimeo.com/0000000"
     date: 07/2017 - 12/2017
+    image_url: pathtracing.jpg
+
+  - name: Raytracer
+    intro: C++ / OpenGL
+    description: > # this means to ignore newlines until "date:"
+      Realised during a lesson at ESIEA, this project consisted of implementing
+      a simple raytracer with basic functionnality. I continued this project to
+      push it further implementing more elements such as multithread rendering for
+      more efficaity, and using C++11 functionnality. The goal was to offer the
+      possibility to create a base to render an image using a path tracing technique,
+      accelerated on the GPU using OpenCL.
+    github_url: https://github.com/antaalt/RayTracing-PathTracing
+    date: 08/2016 - now
     image_url: raytracing.jpg
+
 
   - name: 3D scanner
     intro: C++ / OpenGL / VRPN / PCL /&nbsp;Kinect
@@ -170,17 +203,32 @@ en:
     date: 04/2017 - 08/2017
     image_url: tango.jpg
 
-  - name: Autonomous Robot
-    intro: C / DSP / GPS
+
+  - name: GeoMessages
+    intro: Java / Android / Firebase
     description: > # this means to ignore newlines until "date:"
-      The goal of this project was to automate movements of a remote controlled
-      car, here controlled with a custom electronic card with a DSP (digital
-      signal processing), a GPS, an inertial measurement unit... The robot
-      gathers a suite of GPS coordinates and must go there all by itself without
-      any exeterior inverventions. To do so, it needs to correct its trajectory
-      as it is moving using its GPS and its inertial measurement unit.
-    date: 07/2015 - 06/2016
-    image_url: robotAutonome.jpg
+      This project was an opportunity to experiment Android development using Java
+      during my formation at ESIEA. The application is using geolocation of the
+      user to let him receive notifications based on messages left by users in
+      the current location of the user. It was done using Firebase and a library
+      GeoFire. The application is sending data about location to a server which
+      is treating them and sending back data if a message is near. The application
+      then report it.
+    github_url: https://github.com/antaalt/GeoMessages
+    date: 08/2016 - now
+    image_url: geoMessages.jpg
+
+#  - name: Autonomous Robot
+#    intro: C / DSP / GPS
+#    description: > # this means to ignore newlines until "date:"
+#      The goal of this project was to automate movements of a remote controlled
+#      car, here controlled with a custom electronic card with a DSP (digital
+#      signal processing), a GPS, an inertial measurement unit... The robot
+#      gathers a suite of GPS coordinates and must go there all by itself without
+#      any exeterior inverventions. To do so, it needs to correct its trajectory
+#      as it is moving using its GPS and its inertial measurement unit.
+#    date: 07/2015 - 06/2016
+#    image_url: robotAutonome.jpg
 
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
@@ -198,6 +246,19 @@ en:
     vimeo_url: https://vimeo.com/90116071
     image_url: chapeaulArtiste.jpg
 
+  - name: Babel Tower
+    intro: Photoshop / Première Pro /&nbsp;After Effects
+    description: > # this means to ignore newlines until "date:"
+      This video was made during my third year at university. The goal was to
+      present a painting of the artist Pieter Brueghel the elder, here, one of
+      his painting of the Babel Tower's myth. I used Adobe Photoshop in order to
+      cut all the frames of the painting and to animate them inside of After
+      Effects to obtain the final composition that let us travel through Pieter
+      Brueghel's painting, while trying to recreate the atmosphere.
+    date: 01/2015
+    vimeo_url: https://vimeo.com/113370584
+    image_url: tourDeBabel.jpg
+
   - name: Angular Vimeo
     intro: HTML5 / CSS3 / AngularJS
     description: > # this means to ignore newlines until "date:"
@@ -211,28 +272,3 @@ en:
     date: 08/2014
     github_url: https://github.com/antaalt/AngularVimeo
     image_url: angularVimeo.jpg
-
-  - name: Kinect Project
-    intro: Processing / Kinect
-    description: > # this means to ignore newlines until "date:"
-      Using Processing (a Graphic Java library), this project was made during my
-      years at university during Florent Di Bartolo. It was an opportunity to
-      work with Microsoft Kinect using the library simple-openNI with an images
-      stream passing continuously in front of the user. It is then possible to
-      communicate with an digital archive interactively, using our body.
-
-    date: 01/2015
-    image_url: kinect.jpg
-
-  - name: Babel Tower
-    intro: Photoshop / Première Pro /&nbsp;After Effects
-    description: > # this means to ignore newlines until "date:"
-      This video was made during my third year at university. The goal was to
-      present a painting of the artist Pieter Brueghel the elder, here, one of
-      his painting of the Babel Tower's myth. I used Adobe Photoshop in order to
-      cut all the frames of the painting and to animate them inside of After
-      Effects to obtain the final composition that let us travel through Pieter
-      Brueghel's painting, while trying to recreate the atmosphere.
-    date: 01/2015
-    vimeo_url: https://vimeo.com/113370584
-    image_url: tourDeBabel.jpg

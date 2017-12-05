@@ -5,7 +5,7 @@ web:
     - "Ruby / Python"
 computer-graphics:  #imagerie
     - "OpenGL / GLSL / VRPN"
-    - "Unity / HLSL/Cg / Vuforia"
+    - "Unity / Vuforia"
     - "OpenCL (Parallel computing)"
     - "Multithreading"
 dev:
