@@ -3,31 +3,29 @@ fr:
   skills: "Compétences"
   projects: "Projets"
   contact: "Contact"
-  home_description: "Etudiant ingénieur en 5ème année<br>ESIEA - Majeure Réalité virtuelle"
-  home_status: "Actuellement à la recherche d'un stage de fin d'études de 6 mois<br>(A partir de Février 2018)"
+  home_description: "Ingénieur 3D - Kubity"
+  home_status: ""
   contact_me: "Contactez-moi"
   development: "Développement"
   computer_graphics: "Imagerie"
   web: "Web"
   graphism: "Graphisme"
 
-  whoami_title: "Futur ingénieur logiciel"
+  whoami_title: "Ingénieur 3D - Kubity"
   whoami_description: > # this means ignore newlines
-    Je suis actuellement un étudiant en cinquième année à l'ESIEA (campus de
-    Laval) en majeure réalité virtuelle. J'ai choisi cette majeure pour vivre
+    Je suis actuellement ingénieur 3D chez Kubity à Paris travaillant sur du rendu
+    photoréaliste au travers de techniques comme le path tracing. J'ai choisi cette voie pour vivre
     de ma passion pour la création d'univers immersifs et créatifs. En effet, je suis
     passionné par l’animation, les jeux vidéo, les effets spéciaux, la photo,
     le dessin... J'ai décidé de devenir ingénieur en partie par curiosité, pour
     être en mesure de comprendre le fonctionnement de ces diverses techniques.</p>
-    <p>Au cours de ma formation, j’ai pu acquérir des compétences variées qui
+    <p>Au cours de ma formation et au fil des expériences, j’ai pu acquérir des compétences variées qui
     m’ont amené à porter mon intérêt pour la 3D, au travers des films
     d’animation, des jeux vidéo et de la réalité virtuelle. J’ai ainsi acquis
     des compétences en modélisation 3D, en rendu temps réel stéréoscopique…
     Cependant, j’ai aussi acquis des compétences dans des domaines plus larges
     tels que le montage vidéo, le web, la sécurité informatique, l'automatique
     et l'électronique, le big data...</p>
-    <p>Dans ce but, je recherche actuellement un stage de fin d'étude de 6 mois
-    à partir de Février 2018
 
   formation_title: "Formation"
   formation_dut_title: "DUT MMI"
@@ -55,18 +53,18 @@ en:
   skills: "Skills"
   projects: "Projects"
   contact: "Contact"
-  home_description: "Engineering student in 5th year<br>ESIEA - Majoring Virtual reality"
-  home_status: "Currently looking for a end of study 6 months internship<br>(Starting from February 2018)"
+  home_description: "Computer science engineer - Kubity"
+  home_status: ""
   contact_me: "Contact-me"
   development: "Development"
   computer_graphics: "Computer Graphics"
   web: "Web"
   graphism: "Graphism"
 
-  whoami_title: "Future computer graphics and virtual reality engineer"
+  whoami_title: "Computer graphics engineer"
   whoami_description: > # this means ignore newlines
-    I am currently a student in fifth year at ESIEA (Laval, France) majoring in
-    Virtual Reality. I choosed this major to live of my passion for the creation
+    I am currently a computer science engineer at Kubity working on photorealist
+    rendering based on path tracing. I choosed this major to live of my passion for the creation
     of immersive and creative universe. I am passionate by animation, special
     effects, video games, photography and to draw. I decided to become engineer partly by curiosity,
     to be able to understand how these medias are working.</p>
@@ -76,9 +74,6 @@ en:
     management skills during my three years at ESIEA. I also got skills and
     knowledge in various fields such as video editing, digital creation, web,
     but also security, automation, electronic, big data...</p>
-    <p>In this goal, I am actually looking for an end of study internship of 6
-    months from February 2018.
-
   formation_title: "Formation"
   formation_dut_title: "DUT Multimedia"
   formation_dut_description: "Two-year university diploma in technology"
