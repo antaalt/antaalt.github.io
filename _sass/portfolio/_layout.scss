@@ -188,16 +188,16 @@
 					text-indent: -9999px;
 				}
 				a#git{
-                    @include sprite(1, 2);
-                    &:hover {
-                        @include sprite(0, 2);
-                    }
+				    @include sprite(3, 2);
+				    &:hover {
+					@include sprite(2, 2);
+				    }
 				}
 				a#linkedin{
-                    @include sprite(3, 2);
-                    &:hover {
-                        @include sprite(2, 2);
-                    }
+				    @include sprite(1, 2);
+				    &:hover {
+					@include sprite(0, 2);
+				    }
 				}
 			}
 		}
