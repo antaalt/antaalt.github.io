@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Antoine Altorffer - Portfolio
-#date: 2017-06-19 #YYYY-MM-DD HH:MM:SS +/-TTTT
+#date: 2020-05-17 #YYYY-MM-DD HH:MM:SS +/-TTTT
 ---
 <!-- Home -->
 <section id="home">
 	<div class="home-half-text">
 		<div id="right-cross">
-			<svg viewBox="0 0 100 50" preserveAspectRatio="none">
-				<polygon points="0,0 0,50 100,0"/>
+			<svg viewBox="0 0 1 1" preserveAspectRatio="none">
+				<polygon points="0,0 0,1 1,0"/>
 			</svg>
 		</div>
 		<div>
@@ -38,8 +38,8 @@ title: Antoine Altorffer - Portfolio
 <!-- Qui suis-je -->
 <section id="whoami" class="wrapper section">
 	<div id="bottom-cross">
-		<svg viewBox="0 0 100 50" preserveAspectRatio="none">
-			<polygon points="0,50 50,0 100,50"/>
+		<svg viewBox="0 0 1 1" preserveAspectRatio="none">
+			<polygon points="0,1 0.5,0 1,1"/>
 		</svg>
 	</div>
 	<div>
@@ -134,20 +134,41 @@ title: Antoine Altorffer - Portfolio
 
 		<!--HACK
 		{% for project in site.data.projects[page.lang] %}
-		--><article class="project-button {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
-			    <img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
-			   --><div class="project-content">
-				   <h1>{{ project.name }}</h1>
-				   <p class="project-intro"><span class="highlighted">{{ project.intro }}</span></p>
-				   <p>{{ project.description }}</p>
-			   </div>
-		   </article><!--HACK
+		--><article class="project-slide {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
+			<svg viewBox="0 0 1 1" preserveAspectRatio="none" id="start">
+				<polygon points="0,0 0,1 1,1"/>
+			</svg>
+			<img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
+			--><div class="project-content">
+				<h1>{{ project.name }}</h1>
+				<p class="project-intro"><span class="highlighted date">{{ project.date }}</span><span class="highlighted intro">{{ project.intro }}</span></p>
+				<p>{{ project.description | truncate: 400 }}</p>
+				<div><!--HACK
+					{% if project.vimeo_url %}
+						--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
+					{% endif %}
+
+					{% if project.github_url %}
+						--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
+					{% endif %}
+
+					{% if project.url %}
+						--><a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
+					{% endif %}
+					-->
+				</div>
+			</div>
+			<svg viewBox="0 0 1 1" preserveAspectRatio="none" id="end">
+				<polygon points="0,0 1,1 1,0"/>
+			</svg>
+		</article><!--HACK
 		{% endfor %}
 		-->
-		<div class="projects-description">
+		<!--<div class="projects-description">
 			{% for project in site.data.projects[page.lang] %}
-
-				<div class="project-description {% if forloop.first != true %}hidden{% endif %}" id="project{{forloop.index}}">
+				<div>
+				</div>-->
+				<!--<div class="project-description {% if forloop.first != true %}hidden{% endif %}" id="project{{forloop.index}}">
 
 					<div class="project-description-aside">
 						<h2>Info</h2>
@@ -156,28 +177,28 @@ title: Antoine Altorffer - Portfolio
 						   <p>{{ project.intro }}</p>
 						{% endif %}
 						<div>
-							<!--HACK
+						--><!--HACK
 							{% if project.vimeo_url %}
-								--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
+						--><!--<a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
 							{% endif %}
 
 							{% if project.github_url %}
-								--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
+						--><!--<a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
 							{% endif %}
 
 							{% if project.url %}
-								--><a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
+						--><!--<a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
 							{% endif %}
 							-->
-						</div>
-					</div><!--HACK
-					--><div class="project-description-content">
+						<!--</div>
+					</div>--><!--HACK
+					--><!--<div class="project-description-content">
 						<h2>{{ project.name }}</h2>
 						<p>{{ project.description}}</p>
 					</div>
-				</div>
+				</div>--><!--
 			{% endfor %}
-		</div>
+		</div>-->
 
 	</div>
 </section>

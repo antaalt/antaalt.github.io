@@ -1,9 +1,8 @@
-(function(scrollFollower, sendMail, slider, projectSelector) {
+(function(scrollFollower, sendMail, slider) {
 	$('document').ready(function() {
 		new scrollFollower();
 		new sendMail();
 		new slider({duration: 2.0, transitionDuration: 5000});
-		new projectSelector();
 	});
 })(function() {
 
@@ -219,28 +218,4 @@
 
 	_this.init();
 
-}, function() {
-	// project selector
-	var _this = this;
-	var $buttons;
-	var current = "1";
-	_this.init = function() {
-		$buttons = $("article.project-button");
-		$buttons.each(function(index) {
-			$(this).on("click", _this.click);
-		});
-	};
-
-	_this.click = function() {
-		var lastEl = this.id.substr(this.id.length - 1);
-		if(lastEl == current)
-			return;
-		$("#project"+ lastEl).removeClass("hidden");
-		$("#project"+current).addClass("hidden");
-		$("#project-button" + lastEl).addClass("selected");
-		$("#project-button" + current).removeClass("selected");
-		current = lastEl;
-	}
-
-	_this.init();
 });
