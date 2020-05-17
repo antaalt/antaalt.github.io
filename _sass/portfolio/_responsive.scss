@@ -80,18 +80,19 @@
 		&> div {
 			width: 100%;
 		}
-		.project-button {
-			width: 33%;
+		.project-slide {
+			//width: 33%;
 
 			& > img {
-				width: 100%;
+				width: 33%;
 			}
 		}
-		.project-description-aside {
-			width: 30%;
+		.project-content {
+			width:66%;
+			padding-right: 20px;
 		}
-		.project-description-content {
-			width: 70%;
+		svg {
+			display:none;
 		}
 	}
 }
@@ -190,24 +191,20 @@
 		}
 	}
 	#projects {
-		.project-button {
-			width: 100%;
-			height: auto;
-			max-height: 300px;
-			pointer-events: none;
-			overflow: auto;
-			max-height: none;
-		}
-		.project-content {
-			top:0;
-			height: auto;
-			position: relative;
-			h1 {
-				margin-top: 0;
+		.project-slide {
+			height:auto;
+			img {
+				display: block;
+				width:100%;
 			}
 		}
-		.projects-description {
-			display: none;
+		.project-content {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		.cta {
+			width: 100%;
 		}
 	}
 }

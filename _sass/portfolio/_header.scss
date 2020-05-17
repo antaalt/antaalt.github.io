@@ -1,39 +1,39 @@
 #menu {
-    z-index: 20;
-    position: fixed;
-    width: 100%;
-    background-color: #fff;
+	z-index: 20;
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
 
-    height: 0px;
-    transition: height 0.2s;
-    overflow: hidden;
-    &.minimize {
-        height: 51px;
-    }
+	height: 0px;
+	transition: height 0.2s;
+	overflow: hidden;
+	&.minimize {
+		height: 51px;
+	}
 
-    h1 {
-        margin: 0;
-        color: #000;
-    }
-    nav {
-        float:right;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    li {
-        display: inline-block;
-    }
-    a {
-        position: relative;
-        display: inline-block;
-        text-decoration: none;
-        color: black;
-        padding: 15px 20px;
-        &:before {
-            transition:height 0.2s, background-color 0.2s;
+	h1 {
+		margin: 0;
+		color: #000;
+	}
+	nav {
+		float:right;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		color: black;
+		padding: 15px 20px;
+		&:before {
+			transition:height 0.2s, background-color 0.2s;
 			z-index: -1;
 			content: '';
 			text-align: center;
@@ -44,28 +44,27 @@
 			background-color: $dark-blue;
 			bottom: 0;
 			left: 0;
-        }
-        &:hover {
-            color: #fff;
-            &:before {
-                background-color: $light-blue;
-                height: 100%;
-            }
-        }
-        &.selected {
-            color:#fff;
-            &:before {
-                height:100%;
-            }
-        }
-    }
-    .wrapper {
-        width: $global-width;
-        margin: 0 auto;
-
-        &>* {
-            display: inline-block;
-            vertical-align: middle;
-        }
-    }
+		}
+		&:hover {
+			color: #fff;
+			&:before {
+				background-color: $light-blue;
+				height: 100%;
+			}
+		}
+		&.selected {
+			color:#fff;
+			&:before {
+				height:100%;
+			}
+		}
+	}
+	.wrapper {
+		width: $global-width;
+		margin: 0 auto;
+		&>* {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
 }

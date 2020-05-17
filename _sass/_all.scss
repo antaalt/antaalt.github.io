@@ -1,22 +1,22 @@
 /*all*/
 *{
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 /*Highlighting*/
 ::selection {
-  background: $dark-blue;
-  color: white;
+	background: $dark-blue;
+	color: white;
 }
 ::-moz-selection {
-  background: $dark-blue;
-  color: white;
+	background: $dark-blue;
+	color: white;
 }
 img::selection {
-  background: transparent;
+	background: transparent;
 }
 img::-moz-selection {
-  background: transparent;
+	background: transparent;
 }
 html{
 	body{
@@ -32,17 +32,17 @@ html{
 }
 
 .highlighted {
-    background-color: #ffdd34;
-    color:black;
-    border-radius: 2px;
-    padding:0 5px 3px 5px;
-    white-space: nowrap;
+	background-color: #ffdd34;
+	color:black;
+	border-radius: 2px;
+	padding:0 5px 3px 5px;
+	white-space: nowrap;
 }
 
 .half {
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%;
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
 }
 
 .cta{
@@ -77,13 +77,12 @@ html{
 		left: 0;
 		opacity: 1;
 	}
-    &.cta-large {
-        width: 150px;
-    }
-    &.cta-big {
-        width: 200px;
-        height: 50px;
-        padding-top: 12px;
-
-    }
+	&.cta-large {
+		width: 150px;
+	}
+	&.cta-big {
+		width: 200px;
+		height: 50px;
+		padding-top: 12px;
+	}
 }
