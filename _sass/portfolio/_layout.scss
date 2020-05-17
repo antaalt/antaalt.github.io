@@ -120,7 +120,7 @@
 }
 
 #whoami{
-	background-color: $dark-blue;
+	background-color: $red;
 	&>div{
 		width: $global-width;
 		margin:0 auto;
@@ -226,7 +226,7 @@
 	position: relative;
 	z-index: 2;
 	width: 100%;
-	background-color: $light-blue;
+	background-color: $dark-blue;
 	color: #fff;
 
 	#bottom-cross{
@@ -244,7 +244,7 @@
 			transform: translateX(0); // Hack acceleration matérielle
 			&>polygon{
 				width:10%;
-				fill: $light-blue;
+				fill: $dark-blue;
 			}
 		}
 	}
@@ -285,7 +285,7 @@
 			right:0px;
 		}
 		polygon {
-			fill:$light-blue;
+			fill:$dark-blue;
 		}
 	}
 	.project-content {
@@ -321,7 +321,7 @@
 }
 
 #skills {
-	background-color: $red;
+	background-color: $light-blue;
 	color: #fff;
 	&>div {
 		width: $global-width;
@@ -380,7 +380,7 @@
 			a{
 				color:black;
 				&:hover{
-					color: $dark-blue;
+					color: $light-blue;
 				}
 			}
 		}
@@ -398,10 +398,10 @@
 			outline: none;
 			background-color: transparent;
 			&:hover{
-				border:1px solid black;
+				border:1px solid $light-blue;
 			}
 			&:focus{
-				border:1px solid $dark-blue;
+				border:1px solid $light-blue;
 				background-color: #fff;
 			}
 		}
@@ -427,7 +427,7 @@
 			}
 		}
 		&:before{
-			background-color:$dark-blue;
+			background-color: $light-blue;
 		}
 		&.sent{
 			left: calc(100% - 100px);
