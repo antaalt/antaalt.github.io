@@ -142,7 +142,7 @@ title: Antoine Altorffer - Portfolio
 			--><div class="project-content">
 				<h1>{{ project.name }}</h1>
 				<p class="project-intro"><span class="highlighted date">{{ project.date }}</span><span class="highlighted intro">{{ project.intro }}</span></p>
-				<p>{{ project.description | truncate: 400 }}</p>
+				<div class="project-description"><p>{{ project.description | truncate: 400 }}</p></div>
 				<div><!--HACK
 					{% if project.vimeo_url %}
 						--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
