@@ -8,6 +8,26 @@
 # - vimeo_url : URL of vimeo project
 # - github_url : URL of github repo
 # - url : URL that is neither git nor vimeo.
+
+# Projects displayed
+# - Foveated raytracing (2017-2018)
+# - Raytracing (2016)
+# - Scanner 3D (2016-2017)
+# - Google tango (2017)
+# - geoMessages (2016)
+# - chapeau l'artiste (2013-2014)
+# - Babel (2015)
+# - Angular (2014)
+
+# Projects to add
+# - Procedural landscape
+# - rust path tracer
+# - Building video blender
+# - Composing video blender
+# - Photo ?
+# - Dessin ?
+# - background noise generator js instead of image ?
+
 fr:
   - name: Raytracing par fovéation
     intro: C++ / OpenCL / OpenGL
@@ -20,8 +40,8 @@ fr:
       prête parfaitement au raytracing et au pathtracing, car nous pouvons envoyer plus ou moins
       de rayons en fonction de la position de l'œil, pour ainsi répondre aux
       contraintes de temps réel sur une configuration honnête. C'est pourquoi nous
-      avons choisi d'utiliser ces méthodes pour le moteur.</p>
-      <p> Pour parvenir à cela, nous avons décidé d'utiliser les capacités parallèles du
+      avons choisi d'utiliser ces méthodes pour le moteur. Pour parvenir à cela,
+      nous avons décidé d'utiliser les capacités parallèles du
       GPU, en utilisant OpenCL (programmation GPGPU) pour créer un moteur de rendu
       ainsi qu'un traqueur tobii pour le suivi du regard.
     #vimeo_url: "https://vimeo.com/0000000"
@@ -49,8 +69,7 @@ fr:
       étudiante Virtual fantasy. Le but était de réaliser un scanner 3D
       utilisant la Kinect de Microsoft pour numériser de petits objets 3D et
       ensuite les afficher sur un Workbench avec un affichage stéréoscopique
-      traqué.</p>
-      <p> J'ai travaillé sur le développement de l'application permettant de
+      traqué. J'ai travaillé sur le développement de l'application permettant de
       visualiser l'objet 3D numérisé. L'application a été développé entièrement
       avec OpenGL et C++, son but était d'afficher un objet sur deux écrans en
       fonction de la position de l'utilisateur, dont les données de tracking
@@ -94,8 +113,7 @@ fr:
       Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers
       du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation
       utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et
-      la vidéo.</p>
-      <p>J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous
+      la vidéo. J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous
       3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais
       aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la
       gestion des lumières. Ce projet nous a ainsi permis de toucher à de
@@ -149,8 +167,7 @@ en:
       the eye will not perceive it. This method suit perfectly to raytracing
       rendering, because we can send a number of ray relative to the eye target
       in order to earn ressources to render in realtime on a honnest
-      configuration.</p>
-      <p> To reach this goal, we are using parallel computing capacity of the GPU, using
+      configuration. To reach this goal, we are using parallel computing capacity of the GPU, using
       OpenCL for GPGPU programmation, as well as a tobii sensor for eye gaze tracking.
     #vimeo_url: "https://vimeo.com/0000000"
     date: 2017-2018
@@ -176,8 +193,8 @@ en:
       This project was presented to Laval Virtual 2017 during the virtual
       fantasy student competition. The goal was to create a 3D scanner using
       Microsoft Kinect to scan small 3D objects and then display it on a
-      Workbench with a tracked stereoscopic display.</p>
-      <p> I worked on the development of the application letting visualize the
+      Workbench with a tracked stereoscopic display. I worked on the
+      development of the application letting visualize the
       3D object scanned. The application was developed entirely with OpenGL and
       C++. Its goal was to display an object on two screens depending on the
       position of the user, which tracking datas were gathered using the VRPN
@@ -219,8 +236,8 @@ en:
     description: > # this means to ignore newlines until "date:"
       This movie was made during my years at university as a end of study
       project. It is an animation movie using multiples techniques, such as 3D
-      animation, 2D animation and video.</p>
-      <p>I had an important role in this project as a 3D animator using 3DS Max.
+      animation, 2D animation and video. I had an important role in this
+      project as a 3D animator using 3DS Max.
       I had the task to make the whole modelisation, but also the rigging, the
       integration and tracking of 3D models in a moving video and also the light
       management. This project let us use many differents techniques of

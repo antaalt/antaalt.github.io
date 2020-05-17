@@ -142,16 +142,14 @@ title: Antoine Altorffer - Portfolio
 			--><div class="project-content">
 				<h1>{{ project.name }}</h1>
 				<p class="project-intro"><span class="highlighted date">{{ project.date }}</span><span class="highlighted intro">{{ project.intro }}</span></p>
-				<div class="project-description"><p>{{ project.description | truncate: 400 }}</p></div>
+				<div class="project-description"><p>{{ project.description | truncate: 480 }}</p></div>
 				<div><!--HACK
 					{% if project.vimeo_url %}
 						--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
 					{% endif %}
-
 					{% if project.github_url %}
 						--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
 					{% endif %}
-
 					{% if project.url %}
 						--><a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
 					{% endif %}
@@ -163,44 +161,7 @@ title: Antoine Altorffer - Portfolio
 			</svg>
 		</article><!--HACK
 		{% endfor %}
-		-->
-		<!--<div class="projects-description">
-			{% for project in site.data.projects[page.lang] %}
-				<div>
-				</div>-->
-				<!--<div class="project-description {% if forloop.first != true %}hidden{% endif %}" id="project{{forloop.index}}">
-
-					<div class="project-description-aside">
-						<h2>Info</h2>
-						<p><strong>Date : </strong>{{ project.date }}</p>
-						{% if project.intro %}
-						   <p>{{ project.intro }}</p>
-						{% endif %}
-						<div>
-						--><!--HACK
-							{% if project.vimeo_url %}
-						--><!--<a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
-							{% endif %}
-
-							{% if project.github_url %}
-						--><!--<a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
-							{% endif %}
-
-							{% if project.url %}
-						--><!--<a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
-							{% endif %}
-							-->
-						<!--</div>
-					</div>--><!--HACK
-					--><!--<div class="project-description-content">
-						<h2>{{ project.name }}</h2>
-						<p>{{ project.description}}</p>
-					</div>
-				</div>--><!--
-			{% endfor %}
-		</div>-->
-
-	</div>
+	--></div>
 </section>
 <!-- / Projets -->
 
