@@ -121,28 +121,6 @@
 
 #whoami{
 	background-color: $dark-blue;
-	width: 100%;
-	position: relative;
-	z-index: 2;
-	#bottom-cross{
-		font-size: 0;
-		position: absolute;
-		top: -50px;
-		height: 50px;
-		width: 100%;
-		padding: 0;
-		&>svg{
-			display: inline-block;
-			height:50px;
-			width: 100px;
-			margin-left: calc(40% - 50px);
-			transform: translateX(0); // Hack acceleration matérielle
-			&>polygon{
-				width:10%;
-				fill: $dark-blue;
-			}
-		}
-	}
 	&>div{
 		width: $global-width;
 		margin:0 auto;
@@ -245,9 +223,31 @@
 }
 
 #projects {
+	position: relative;
+	z-index: 2;
+	width: 100%;
 	background-color: $light-blue;
 	color: #fff;
 
+	#bottom-cross{
+		font-size: 0;
+		position: absolute;
+		top: -50px;
+		height: 50px;
+		width: 100%;
+		padding: 0;
+		&>svg{
+			display: inline-block;
+			height:50px;
+			width: 100px;
+			margin-left: calc(40% - 50px);
+			transform: translateX(0); // Hack acceleration matérielle
+			&>polygon{
+				width:10%;
+				fill: $light-blue;
+			}
+		}
+	}
 	&>div {
 		width: $global-width;
 		margin:0 auto;
@@ -269,6 +269,23 @@
 			display: inline-block;
 			vertical-align: top;
 			width:300px;
+		}
+		svg {
+			position:absolute;
+			display:block;
+			width:50px;
+			height:100%;
+		}
+		svg#start{
+			top:0px;
+			left:0px;
+		}
+		svg#end{
+			top:0px;
+			right:0px;
+		}
+		polygon {
+			fill:$light-blue;
 		}
 	}
 	.project-content {
@@ -297,23 +314,6 @@
 			background-color:$dark-blue;
 			color:#fff;
 		}
-	}
-	svg {
-		position:absolute;
-		display:block;
-		width:50px;
-		height:100%;
-	}
-	svg#start{
-		top:0px;
-		left:0px;
-	}
-	svg#end{
-		top:0px;
-		right:0px;
-	}
-	polygon {
-		fill:$light-blue;
 	}
 	.cta {
 		width: 100%;
