@@ -4,17 +4,16 @@ web:
     - "PHP / Symfony 2"
     - "Ruby / Python"
 computer-graphics:  #imagerie
-    - "OpenGL / GLSL / VRPN"
-    - "Unity / Vuforia"
+    - "Vulkan / OpenGL / GLSL"
     - "OpenCL (Parallel computing)"
-    - "Multithreading"
+    - "Unity"
 dev:
     - "C / C++"
     - "C# / Java / Android"
     - "GNU/Linux"
     - "SGBD (SQL / NoSQL)"
 design:
-    - "Responsive Design"
-    - "3D Studio Max / Maya / Blender"
+    - "Blender 2.80"
     - "Adobe Photoshop / Illustrator"
     - "Adobe Première Pro / After Effects"
+    - "Responsive Design"

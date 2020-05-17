@@ -25,9 +25,9 @@ title: Antoine Altorffer - Portfolio
 			<h2>{{ site.data.i18n[page.lang].home_description }}</h2>
 			<!--<p><span class="highlighted">{{ site.data.i18n[page.lang].home_status }}</span></p>-->
 			<p>
-				<a href="#whoami" class="smooth-scroll">{{ site.data.i18n[page.lang].whoami }}</a>
+				<a href="#projects" class="smooth-scroll">{{ site.data.i18n[page.lang].projects }}</a>
+				 - <a href="#whoami" class="smooth-scroll">{{ site.data.i18n[page.lang].whoami }}</a>
 				 - <a href="#skills" class="smooth-scroll">{{ site.data.i18n[page.lang].skills }}</a>
-				  - <a href="#projects" class="smooth-scroll">{{ site.data.i18n[page.lang].projects }}</a>
 			  </p>
 			<a href="#contact" class="cta cta-big smooth-scroll">{{ site.data.i18n[page.lang].contact_me }}</a>
 		</div>
@@ -54,7 +54,7 @@ title: Antoine Altorffer - Portfolio
 			<img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
 			--><div class="project-content">
 				<h1>{{ project.name }}</h1>
-				<p class="project-intro"><span class="highlighted date">{{ project.date }}</span><span class="highlighted intro">{{ project.intro }}</span></p>
+				<p class="project-intro"><!--<span class="highlighted date">{{ project.date }}</span>--><span class="highlighted intro">{{ project.intro }}</span></p>
 				<div class="project-description"><p>{{ project.description | truncate: 480 }}</p></div>
 				<div><!--HACK
 					{% if project.vimeo_url %}
