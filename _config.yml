@@ -35,7 +35,7 @@ google_analytics: true
 
 # Build settings
 markdown: kramdown
-plugins:
+#plugins:
   #- jekyll-feed
 timezone: Europe/Paris
 

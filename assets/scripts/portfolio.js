@@ -148,9 +148,11 @@
 	var path = "/assets/images/slider/";
 	var slider = document.getElementById("slider");
 	var images = [
+		"mountain.small.jpg",
+		"city.small.jpg",
+		"metro.small.jpg",
 		"hanami.small.jpg",
 		"colorfulNeko.small.jpg",
-		"train.small.jpg",
 		"densha.small.jpg",
 		"river.small.jpg",
 		"screw.small.jpg",
