@@ -17,20 +17,19 @@ title: Antoine Altorffer - portfolio
 email: altorantoine@gmail.com
 image: /assets/images/projets/miniatures/profile.jpg
 description: > # this means to ignore newlines until "baseurl:"
-  Etudiant en cinquième année à l'ESIEA (majeure réalité virtuelle), je suis
-  passioné par l'animation, les jeux vidéo et la réalité
-  virtuelle et augmentée.
-keywords: "esiea, ingénieur, engineer, master, computer science, dut, mmi, src, opengl, opencl, animation, effets spéciaux, vfx, jeux video, video games, réalité virtuelle, virtual reality, réalité augmentée, augmented reality, réalité mixte, mixed reality, portfolio, étudiant, student, internship, stage"
+  Ingénieur créatif passioné par l'animation,
+  les jeux vidéo et la réalité virtuelle et augmentée.
+keywords: "esiea, ingénieur, engineer, master, computer science, dut, mmi, src, vulkan, opencl, animation, effets spéciaux, vfx, jeux video, video games, réalité virtuelle, virtual reality, réalité augmentée, augmented reality, réalité mixte, mixed reality, portfolio"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.antoinealtorffer.fr" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://antaalt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: antaalt
 github_username:  antaalt
 github_url: "https://github.com/antaalt"
 linkedin_url: "https://fr.linkedin.com/in/antoinealtorffer"
 langs: [fr, en]
 default_lang: fr
-cv_en: cv_Jan20_AA_en.pdf
-cv_fr: cv_Jan20_AA_fr.pdf
+cv_en: cv_AA_en_June20.pdf
+cv_fr: cv_AA_fr_June20.pdf
 google_analytics: true
 
 # Build settings
