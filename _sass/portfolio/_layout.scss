@@ -247,6 +247,7 @@
 
 	background-color: $light-blue;
 	color: #fff;
+	position: relative;
 	
 	&>div {
 		width: $global-width;
@@ -254,57 +255,47 @@
 		padding:20px 0;
 		font-size: 0;
 	}
-
+	.project-content, .project-slide {
+		height:250px;
+		width:300px;
+	}
 	.project-slide {
 		position: relative;
 		overflow: hidden;
 		display: inline-block;
 		vertical-align: top;
 		font-size: small;
-		height: 250px;
-		margin-bottom: 10px;
-		background-color: rgba(14, 36, 45, 1);
-		background-image: url("./images/noise.png");
+		margin: 10px;
 		&>img {
 			display: inline-block;
 			vertical-align: top;
 			width:300px;
 		}
-		svg {
-			position:absolute;
-			display:block;
-			width:50px;
-			height:100%;
-		}
-		svg#start{
-			top:0px;
-			left:0px;
-		}
-		svg#end{
-			top:0px;
-			right:0px;
-		}
-		polygon {
-			fill:$dark-blue;
-		}
 	}
 	.project-content {
+		position:absolute;
+		top:0px;
+		left: 0px;
+		z-index: 2;
 		display: inline-block;
 		vertical-align: top;
-		padding:20px;
-		padding-right: 60px;
-		text-align: justify;
-		width: $global-width - 300px;
+		padding:10px;
+		text-align: center;
 		height: 250px;
-		&>h1 {
+		background-color:rgba(0.8,0.8,0.8,0.8);
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		div {
+			margin-top: calc(50% - 20px);
+			transform: translateY(-50%);
+		}
+		h1 {
 			margin-top: 0px;
 			margin-bottom: 10px;
 			font-size:30px;
+			line-height: 1.2;
 		}
-		.project-intro {
-
-		}
-		&>p {
+		p {
 			margin: 7px 0px;
 		}
 		.highlighted {
@@ -315,8 +306,8 @@
 			color:#fff;
 		}
 	}
-	.cta {
-		width: 100%;
+	.project-content:hover {
+		opacity: 1;
 	}
 }
 

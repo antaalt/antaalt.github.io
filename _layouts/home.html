@@ -146,30 +146,19 @@ title: Antoine Altorffer - Portfolio
 		<!--HACK
 		{% for project in site.data.projects[page.lang] %}
 		--><article class="project-slide {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
-			<svg viewBox="0 0 1 1" preserveAspectRatio="none" id="start">
-				<polygon points="0,0 0,1 1,1"/>
-			</svg>
 			<img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
 			--><div class="project-content">
-				<h1>{{ project.name }}</h1>
-				<p class="project-intro"><!--<span class="highlighted date">{{ project.date }}</span>--><span class="highlighted intro">{{ project.intro }}</span></p>
-				<div class="project-description"><p>{{ project.description | truncate: 480 }}</p></div>
-				<div><!--HACK
+				<div>
+					<h1>{{ project.name }}</h1><!--HACK
 					{% if project.vimeo_url %}
 						--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
-					{% endif %}
-					{% if project.github_url %}
+					{% elsif project.github_url %}
 						--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
-					{% endif %}
-					{% if project.url %}
+					{% elsif project.url %}
 						--><a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
 					{% endif %}
-					-->
-				</div>
+				--></div>
 			</div>
-			<svg viewBox="0 0 1 1" preserveAspectRatio="none" id="end">
-				<polygon points="0,0 1,1 1,0"/>
-			</svg>
 		</article><!--HACK
 		{% endfor %}
 	--></div>
