@@ -1,19 +1,13 @@
 web:
     - "HTML5 / CSS3"
-    - "JavaScript (AngularJS / NodeJS)"
-    - "PHP / Symfony 2"
-    - "Ruby / Python"
-computer-graphics:  #imagerie
-    - "Vulkan / OpenGL / GLSL"
-    - "OpenCL (Parallel computing)"
+    - "JavaScript"
+computer-graphics:
+    - "Vulkan / OpenGL"
+    - "OpenCL"
     - "Unity"
 dev:
     - "C / C++"
-    - "C# / Java / Android"
     - "GNU/Linux"
-    - "SGBD (SQL / NoSQL)"
 design:
     - "Blender 2.80"
-    - "Adobe Photoshop / Illustrator"
-    - "Adobe Première Pro / After Effects"
-    - "Responsive Design"
+    - "Adobe Photoshop"

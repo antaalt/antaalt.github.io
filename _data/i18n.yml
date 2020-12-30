@@ -27,6 +27,17 @@ fr:
     tels que le montage vidéo, le web, la sécurité informatique, l'automatique
     et l'électronique, le big data...</p>
 
+  experience_title: "Expériences"
+  experiences:
+    - date: "Depuis 2018"
+      company: "Kubity"
+      job_title: "Ingénieur logiciel 3D"
+      job_description: "Développement d'un moteur 3D basé sous Vulkan blabla Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquam des"
+    - date: "2013-2014"
+      company: "Tama University"
+      job_title: "R&D rv"
+      job_description: "lorem"
+
   formation_title: "Formation"
   formation_dut_title: "DUT MMI"
   formation_dut_description: "Métier du Multimédia et de l'Internet (ex SRC)"

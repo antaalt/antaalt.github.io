@@ -120,11 +120,34 @@
 }
 
 #whoami{
-	background-color: $red;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	background-color: $dark-blue;
+
+	#bottom-cross{
+		font-size: 0;
+		position: absolute;
+		top: -50px;
+		height: 50px;
+		width: 100%;
+		padding: 0;
+		&>svg{
+			display: inline-block;
+			height:50px;
+			width: 100px;
+			margin-left: calc(40% - 50px);
+			transform: translateX(0); // Hack acceleration matérielle
+			&>polygon{
+				width:10%;
+				fill: $dark-blue;
+			}
+		}
+	}
 	&>div{
 		width: $global-width;
 		margin:0 auto;
-		padding:2vh 0;
+		padding:20px 0;
 		h2{
 			color: white;
 		}
@@ -181,7 +204,6 @@
 		#formation, #experience{
 			&>div{
 				display: inline-block;
-				text-align: center;
 				color:white;
 				vertical-align: top;
 				p{
@@ -194,6 +216,7 @@
 		}
 		#formation{
 			&>div{
+				text-align: center;
 				width:33%;
 				height:90px;
 				position: relative;
@@ -204,18 +227,16 @@
 		}
 		#experience{
 			&>div{
-				width:25%;
-				height:150px;
-				text-align: center;
-
-				p{
-					width:80%;
-					display: inline-block;
-					font-size: 14px;
-				}
-				p.strong{
-					font-weight: bold;
+				margin-bottom: 30px;
+				h3{
 					font-size: 16px;
+					margin-bottom: 5px;
+				}
+				.company-name {
+					font-size: 20px;
+				}
+				.date {
+					font-size: 20px;
 				}
 			}
 		}
@@ -223,31 +244,10 @@
 }
 
 #projects {
-	position: relative;
-	z-index: 2;
-	width: 100%;
-	background-color: $dark-blue;
-	color: #fff;
 
-	#bottom-cross{
-		font-size: 0;
-		position: absolute;
-		top: -50px;
-		height: 50px;
-		width: 100%;
-		padding: 0;
-		&>svg{
-			display: inline-block;
-			height:50px;
-			width: 100px;
-			margin-left: calc(40% - 50px);
-			transform: translateX(0); // Hack acceleration matérielle
-			&>polygon{
-				width:10%;
-				fill: $dark-blue;
-			}
-		}
-	}
+	background-color: $light-blue;
+	color: #fff;
+	
 	&>div {
 		width: $global-width;
 		margin:0 auto;
@@ -321,7 +321,7 @@
 }
 
 #skills {
-	background-color: $light-blue;
+	background-color: $red;
 	color: #fff;
 	&>div {
 		width: $global-width;
