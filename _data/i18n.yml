@@ -3,40 +3,36 @@ fr:
   skills: "Compétences"
   projects: "Projets"
   contact: "Contact"
-  home_description: "Ingénieur 3D - Kubity"
-  home_status: ""
+  home_description: "Ingénieur 3D à Paris"
+  home_status: "Actuellement en recherche d'emploi ! Contactez moi !"
   contact_me: "Contactez-moi"
   development: "Développement"
   computer_graphics: "Imagerie"
   web: "Web"
   graphism: "Graphisme"
 
-  whoami_title: "Ingénieur 3D - Kubity"
+  whoami_title: "Ingénieur logiciel 3D"
   whoami_description: > # this means ignore newlines
-    Je suis actuellement ingénieur 3D chez Kubity à Paris travaillant sur du rendu
-    photoréaliste au travers de techniques comme le path tracing. J'ai choisi cette voie pour vivre
-    de ma passion pour la création d'univers immersifs et créatifs. En effet, je suis
-    passionné par l’animation, les jeux vidéo, les effets spéciaux, la photo,
-    le dessin... J'ai décidé de devenir ingénieur en partie par curiosité, pour
-    être en mesure de comprendre le fonctionnement de ces diverses techniques.</p>
+    Je suis un ingénieur logiciel 3D à Paris, passionné par le rendu et le ray-tracing. J'ai choisi cette voie pour vivre
+    de ma passion pour la création d'univers immersifs et créatifs aux travers d'outils que j'utilise dans mon temps libre comme Blender,
+    le dessin, la photographie ! La curiosité m'a guidé, afin
+    d'être en mesure de comprendre le fonctionnement de ces multiples technologies et de participer à l'élaboration et 
+    l'utilisation de ces technologies par les artistes.</p>
     <p>Au cours de ma formation et au fil des expériences, j’ai pu acquérir des compétences variées qui
     m’ont amené à porter mon intérêt pour la 3D, au travers des films
     d’animation, des jeux vidéo et de la réalité virtuelle. J’ai ainsi acquis
-    des compétences en modélisation 3D, en rendu temps réel stéréoscopique…
-    Cependant, j’ai aussi acquis des compétences dans des domaines plus larges
-    tels que le montage vidéo, le web, la sécurité informatique, l'automatique
-    et l'électronique, le big data...</p>
+    des compétences en modélisation 3D, en rendu photoréaliste...</p>
 
   experience_title: "Expériences"
   experiences:
     - date: "Depuis 2018"
-      company: "Kubity"
+      company: "Kubity (Paris)"
       job_title: "Ingénieur logiciel 3D"
-      job_description: "Développement d'un moteur 3D basé sous Vulkan blabla Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquam des"
-    - date: "2013-2014"
-      company: "Tama University"
-      job_title: "R&D rv"
-      job_description: "lorem"
+      job_description: "Développement d'un moteur 3D basé sous Vulkan pour des rendus photoréalistes accélérés sur le GPU."
+    - date: "2017"
+      company: "Tama University (Japon)"
+      job_title: "Stage en laboratoire de réalité virtuelle"
+      job_description: "Développement d'une application de réalité augmentée au sein du laboratoire du professeur Idehara pour s'immerger dans un monde virtuel et partager via la numérisation 3D offerte par la technologie Google Tango"
 
   formation_title: "Formation"
   formation_dut_title: "DUT MMI"
@@ -64,8 +60,8 @@ en:
   skills: "Skills"
   projects: "Projects"
   contact: "Contact"
-  home_description: "Computer science engineer - Kubity"
-  home_status: ""
+  home_description: "Computer graphics engineer in Paris"
+  home_status: "Looking for a job ! Hire me !"
   contact_me: "Contact-me"
   development: "Development"
   computer_graphics: "Computer Graphics"
@@ -73,18 +69,28 @@ en:
   graphism: "Graphism"
 
   whoami_title: "Computer graphics engineer"
-  whoami_description: > # this means ignore newlines
-    I am currently a computer science engineer at Kubity working on photorealist
-    rendering based on path tracing. I choosed this major to live of my passion for the creation
-    of immersive and creative universe. I am passionate by animation, special
-    effects, video games, photography and to draw. I decided to become engineer partly by curiosity,
-    to be able to understand how these medias are working.</p>
+  whoami_description: > # this means ignore newlines    
+    <p>I am a computer graphic engineer in Paris, passionate by rendering and ray-tracing.
+    I choosed this path to live of my passion for the creation
+    of immersive and creative universe through tools I use in my spare time, such as Blender, drawing and photography !
+    Curiosity lead me to understand the functionning of these multiple technologies and to participate to the elaboration
+    and use of such technologies by artists.
     <p>In parallel, I acquired various skills during my formation. Artistical
     skills in a first time, during my two-year university diploma in technology
     and the third year at university, then I could improve my technical and
-    management skills during my three years at ESIEA. I also got skills and
-    knowledge in various fields such as video editing, digital creation, web,
-    but also security, automation, electronic, big data...</p>
+    management skills during my three years at ESIEA.</p>
+
+  experience_title: "Experiences"
+  experiences:
+    - date: "Since 2018"
+      company: "Kubity (Paris)"
+      job_title: "3D Software engineer"
+      job_description: "Working on a 3D rendering engine based on Vulkan for photorealistic rendering accelerated on the GPU."
+    - date: "2017"
+      company: "Tama University (Japan)"
+      job_title: "Internship in virtual reality laboratory"
+      job_description: "Working in professor Idehara laboratory on an augmented reality application to immerse himself in a virtual world and share it thanks to Google Tango AR technology."
+
   formation_title: "Formation"
   formation_dut_title: "DUT Multimedia"
   formation_dut_description: "Two-year university diploma in technology"
