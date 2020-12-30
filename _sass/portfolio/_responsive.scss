@@ -77,23 +77,22 @@
 		}
 	}
 	#projects {
-		#bottom-cross > svg {
-			margin-left: calc(50% - 50px);
-		}
 		&> div {
 			width: 100%;
 		}
 		.project-slide {
+			width: 100%;
+			margin:10px 0px;
+			height:auto;
 			& > img {
-				width: 33%;
-			}
-			svg {
-				display:none;
+				width: 100%;
 			}
 		}
 		.project-content {
-			width:66%;
 			padding-right: 20px;
+			opacity:1;
+			height:100%;
+			width:100%;
 		}
 	}
 }
@@ -189,23 +188,6 @@
 		}
 		.home-half-picture {
 			display: none;
-		}
-	}
-	#projects {
-		.project-slide {
-			height:auto;
-			img {
-				display: block;
-				width:100%;
-			}
-		}
-		.project-content {
-			display: block;
-			width: 100%;
-			height: auto;
-		}
-		.cta {
-			width: 100%;
 		}
 	}
 }
