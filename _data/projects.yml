@@ -2,156 +2,84 @@
 # Each project need :
 # - name : name of the project
 # - intro : description software / language used
-# - description : description of the project(truncated over 400 words, use only one paragraph)
 # - image_url : name of the image of the project
 # - date : only show a year
 # - vimeo_url : URL of vimeo project
 # - github_url : URL of github repo
 # - url : URL that is neither git nor vimeo.
 
-# Projects displayed
-# - Foveated raytracing (2017-2018)
-# - Scanner 3D (2016-2017)
-# - Google tango (2017)
-# - chapeau l'artiste (2013-2014)
-# - Babel (2015)
-# - Angular (2014)
-
 # Projects to add
 # - Procedural landscape
 # - rust path tracer
-# - Building video blender
-# - Composing video blender
-# - Photo ?
-# - Dessin ?
-# - background noise generator js instead of image ?
 
 fr:
-  - name: Raytracing par fovéation
+  - name: Prim renderer
     intro: C++ / OpenCL / OpenGL
-    description: > # this means to ignore newlines until "date:"
-      Pourquoi faire un rendu sur l'intégralité de l'écran alors que notre 
-      regard n'est concentré que sur une infime partie de celui-ci ? C'est la 
-      question que nous avons essayé de soulever avec ce projet concentré sur 
-      le tracking du regard. Pour y parvenir, nous avons créé un moteur de rendu 
-      utilisant OpenCL pour utiliser les capacités parallèles du GPU, qui se 
-      prête très facilement au ray-tracing.
-    date: 2017-2018
-    image_url: pathtracing.jpg
+    date: 2020
+    image_url: prim.jpg
+    github_url: https://github.com/antaalt/PrimRaytracer
 
-  - name: Scanner 3D
-    intro: C++ / OpenGL / VRPN / PCL /&nbsp;Kinect
-    description: > # this means to ignore newlines until "date:"
-      Présenté au Laval Virtual 2017 lors de la compétition
-      étudiante Virtual fantasy, ce projet nous a permis de réaliser un scanner 3D
-      utilisant la Kinect de Microsoft pour numériser de petits objets 3D et
-      ensuite les afficher sur un Workbench avec un affichage stéréoscopique
-      traqué. Nous avons utilisé OpenGL & C++ pour cela.
-    date: 2016-2017
-    vimeo_url: https://vimeo.com/204033854
-    image_url: scanner.jpg
+  - name: In the rain
+    intro: Blender 2.80
+    date: 2020
+    image_url: inTheRain.jpg
+    vimeo_url: https://vimeo.com/476401422
+
+  - name: What's this ?
+    intro: Blender 2.80
+    date: 2020
+    image_url: whatsthis.jpg
+    vimeo_url: https://vimeo.com/452537843
 
   - name: Google Tango world sharing
     intro: Unity / Google Tango / Kinect
-    description: > # this means to ignore newlines until "date:"
-      Au cours de ma quatrième année à l'ESIEA, j'ai réalisé un stage au Japon
-      au sein du laboratoire du professeur Idehara (orienté réalité virtuelle) 
-      à Tama University. J'ai travaillé sur un appareil Google Tango, une 
-      plateforme de réalité augmentée pour smartphone. Le but était de partager 
-      le monde capturé par l'appareil pour s'y immerger. La Kinect permettait 
-      de reproduire nos mouvements dans ce monde et pouvoir ainsi
-      échanger avec d'autres personnes.
-
     date: 2017
     image_url: tango.jpg
 
-  - name: Chapeau L'Artiste
-    intro: 3DS Max / Adobe Première Pro
-    description: > # this means to ignore newlines until "date:"
-      Ce film a été réalisé dans le cadre de la formation de DUT MMI (Métiers
-      du Multimédia et de l'Internet, ex SRC). Il s'agit d'un film d'animation
-      utilisant plusieurs techniques, tel que l'animation 3D, l'animation 2D et
-      la vidéo. J'ai eu un rôle important dans ce projet en tant qu'animateur 3D sous
-      3D Studio Max, en charge de réaliser l'ensemble de la modélisation mais
-      aussi le rigging du personnage, l'intégration 3D au sein de la vidéo et la
-      gestion des lumières.
-
-    date: 2013-2014
-    vimeo_url: https://vimeo.com/90116071
-    image_url: chapeaulArtiste.jpg
-
   - name: La tour de Babel
     intro: Photoshop / Première Pro /&nbsp;After Effects
-    description: > # this means to ignore newlines until "date:"
-      Cette vidéo a été réalisé dans le cadre de la formation EVMAN, dans le
-      but de présenter un tableau de l'artiste peintre Pieter Brueghel
-      l'Ancien, ici, une de ses œuvres sur la tour de Babel. J'ai utilisé le
-      logiciel Adobe Photoshop afin de décomposer les éléments du tableau et
-      pouvoir les animer au sein du logiciel Adobe After Effects et ainsi
-      obtenir cette composition qui cherche à recréer l'ambiance de l'époque.
     date: 2015
     vimeo_url: https://vimeo.com/113370584
     image_url: tourDeBabel.jpg
 
-en:
-  - name: Foveated realtime Raytracing
-    intro: C++ / OpenCL / OpenGL
-    description: > # this means to ignore newlines until "date:"
-      Why rendering on the whole screen at full resolution when we are only 
-      focused on a small part of it ? That's the question we tried to answer with
-      this project with eye gazing. To achieve this, we created a small rendering engine using 
-      OpenCL to use parallel capacity of GPU, which is perfectly fitted for 
-      raytracing.
-    #vimeo_url: "https://vimeo.com/0000000"
-    date: 2017-2018
-    image_url: pathtracing.jpg
+  - name: Chapeau L'Artiste
+    intro: 3DS Max / Adobe Première Pro
+    date: 2013-2014
+    vimeo_url: https://vimeo.com/90116071
+    image_url: chapeaulArtiste.jpg
 
-  - name: 3D scanner
-    intro: C++ / OpenGL / VRPN / PCL /&nbsp;Kinect
-    description: > # this means to ignore newlines until "date:"
-      Shown at Laval Virtual 2017 during Virtual fantasy student competition, 
-      this project let us create a 3D scanner using Kinect from Microsoft to
-      numerize small 3D object and then display them on a workbench with stereoscopic
-      rendering. We used OpenGL & c++ for that.
-    date: 2016-2017
-    vimeo_url: https://vimeo.com/204033854
-    image_url: scanner.jpg
+en:
+  - name: Prim renderer
+    intro: C++ / OpenCL / OpenGL
+    date: 2020
+    image_url: prim.jpg
+    github_url: https://github.com/antaalt/PrimRaytracer
+
+  - name: In the rain
+    intro: Blender 2.80
+    date: 2020
+    image_url: inTheRain.jpg
+    vimeo_url: https://vimeo.com/476401422
+
+  - name: What's this ?
+    intro: Blender 2.80
+    date: 2020
+    image_url: whatsthis.jpg
+    vimeo_url: https://vimeo.com/452537843
 
   - name: Google Tango world sharing
     intro: Unity / Google Tango / Kinect
-    description: > # this means to ignore newlines until "date:"
-      During my fourth year at ESIEA, I went to Japan for a four months
-      technical internship in professor Idehara research laboratory at Tama 
-      University. I worked on a Google Tango device, an augmented reality platform for
-      smartphone. The goal was to share the world captured by the phone in order
-      to immerse ourselves into it with others. Kinect
-      was here to reproduce our movements in this world and share with others
     date: 2017
     image_url: tango.jpg
 
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
-    description: > # this means to ignore newlines until "date:"
-      This movie was made during my years at university as a end of study
-      project. It is an animation movie using multiples techniques, such as 3D
-      animation, 2D animation and video. I had an important role in this
-      project as a 3D animator using 3DS Max.
-      I had the task to make the whole modelisation, but also the rigging, the
-      integration and tracking of 3D models in a moving video and also the light
-      management.
     date: 2013-2014
     vimeo_url: https://vimeo.com/90116071
     image_url: chapeaulArtiste.jpg
 
   - name: Babel Tower
     intro: Photoshop / Première Pro /&nbsp;After Effects
-    description: > # this means to ignore newlines until "date:"
-      This video was made during my third year at university. The goal was to
-      present a painting of the artist Pieter Brueghel the elder, here, one of
-      his painting of the Babel Tower's myth. I used Adobe Photoshop in order to
-      cut all the frames of the painting and to animate them inside of After
-      Effects to obtain the final composition that let us travel through Pieter
-      Brueghel's painting, while trying to recreate the atmosphere.
     date: 2015
     vimeo_url: https://vimeo.com/113370584
     image_url: tourDeBabel.jpg
