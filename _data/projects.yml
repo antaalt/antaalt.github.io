@@ -13,6 +13,18 @@
 # - rust path tracer
 
 fr:
+  - name: Aka engine
+    intro: C++ / OpenGL / DirectX11
+    date: 2021
+    image_url: aka.jpg
+    github_url: https://github.com/antaalt/AkaEngine
+
+  - name: Kubity
+    intro: C++ / Vulkan
+    date: 2020
+    image_url: kubity.jpg
+    url: https://pro.kubity.com/
+
   - name: Prim renderer
     intro: C++ / OpenCL / OpenGL
     date: 2020
@@ -49,6 +61,18 @@ fr:
     image_url: chapeaulArtiste.jpg
 
 en:
+  - name: Aka engine
+    intro: C++ / OpenGL / DirectX11
+    date: 2021
+    image_url: aka.jpg
+    github_url: https://github.com/antaalt/AkaEngine
+
+  - name: Kubity
+    intro: C++ / Vulkan
+    date: 2020
+    image_url: kubity.jpg
+    url: https://pro.kubity.com/
+
   - name: Prim renderer
     intro: C++ / OpenCL / OpenGL
     date: 2020

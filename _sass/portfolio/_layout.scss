@@ -190,13 +190,19 @@
 				a#git{
 				    @include sprite(3, 2);
 				    &:hover {
-					@include sprite(2, 2);
+						@include sprite(2, 2);
 				    }
 				}
 				a#linkedin{
 				    @include sprite(1, 2);
 				    &:hover {
-					@include sprite(0, 2);
+						@include sprite(0, 2);
+				    }
+				}
+				a#vimeo{
+				    @include sprite(8, 1);
+				    &:hover {
+						@include sprite(8, 0);
 				    }
 				}
 			}
@@ -228,6 +234,8 @@
 		#experience{
 			&>div{
 				margin-bottom: 30px;
+				width: 100%;
+				text-align: center;
 				h3{
 					font-size: 16px;
 					margin-bottom: 5px;
@@ -492,6 +500,12 @@ footer{
 			@include sprite(4, 2);
 			&:hover {
 				@include sprite(5, 2);
+			}
+		}
+		#vimeo{
+			@include sprite(8, 2);
+			&:hover {
+				@include sprite(8, 3);
 			}
 		}
 		#github{
