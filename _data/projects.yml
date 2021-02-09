@@ -17,7 +17,7 @@ fr:
     intro: C++ / OpenGL / DirectX11
     date: 2021
     image_url: aka.jpg
-    github_url: https://github.com/antaalt/AkaEngine
+    github_url: https://github.com/antaalt/Aka
 
   - name: Kubity
     intro: C++ / Vulkan
@@ -65,7 +65,7 @@ en:
     intro: C++ / OpenGL / DirectX11
     date: 2021
     image_url: aka.jpg
-    github_url: https://github.com/antaalt/AkaEngine
+    github_url: https://github.com/antaalt/Aka
 
   - name: Kubity
     intro: C++ / Vulkan
