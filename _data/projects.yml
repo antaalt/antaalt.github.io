@@ -15,95 +15,111 @@
 fr:
   - name: Aka engine
     intro: C++ / OpenGL / DirectX11
+    description: Framework / moteur de jeu pour faire du rendu.
     date: 2021
     image_url: aka.jpg
     github_url: https://github.com/antaalt/Aka
 
   - name: Kubity
     intro: C++ / Vulkan
+    description: Moteur de rendu photoréaliste basé sur Vulkan.
     date: 2020
     image_url: kubity.jpg
     url: https://pro.kubity.com/
 
   - name: Prim renderer
-    intro: C++ / OpenCL / OpenGL
+    intro: C++ / OpenGL
+    description: Raytracer CPU.
     date: 2020
     image_url: prim.jpg
     github_url: https://github.com/antaalt/PrimRaytracer
 
   - name: In the rain
     intro: Blender 2.80
+    description: Courte vidéo faite avec Blender.
     date: 2020
     image_url: inTheRain.jpg
     vimeo_url: https://vimeo.com/476401422
 
   - name: What's this ?
     intro: Blender 2.80
+    description: Courte vidéo faite avec Blender.
     date: 2020
     image_url: whatsthis.jpg
     vimeo_url: https://vimeo.com/452537843
 
   - name: Google Tango world sharing
     intro: Unity / Google Tango / Kinect
+    description: Projet de réalité augmenté fait avec Google Tango
     date: 2017
     image_url: tango.jpg
 
-  - name: La tour de Babel
-    intro: Photoshop / Première Pro /&nbsp;After Effects
-    date: 2015
-    vimeo_url: https://vimeo.com/113370584
-    image_url: tourDeBabel.jpg
-
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
+    description: Court métrage de fin d'étude fait avec 3DS&nbsp;Max&nbsp;/&nbsp;Première.
     date: 2013-2014
     vimeo_url: https://vimeo.com/90116071
     image_url: chapeaulArtiste.jpg
 
+  - name: La tour de Babel
+    intro: Photoshop / Première Pro /&nbsp;After Effects
+    description: Projet After Effects
+    date: 2015
+    vimeo_url: https://vimeo.com/113370584
+    image_url: tourDeBabel.jpg
+
 en:
   - name: Aka engine
     intro: C++ / OpenGL / DirectX11
+    description: Game engine / framework for rendering stuff.
     date: 2021
     image_url: aka.jpg
     github_url: https://github.com/antaalt/Aka
 
   - name: Kubity
     intro: C++ / Vulkan
+    description: Photorealistic renderer based on Vulkan.
     date: 2020
     image_url: kubity.jpg
     url: https://pro.kubity.com/
 
   - name: Prim renderer
-    intro: C++ / OpenCL / OpenGL
+    intro: C++ / OpenGL
+    description: CPU raytracer.
     date: 2020
     image_url: prim.jpg
     github_url: https://github.com/antaalt/PrimRaytracer
 
   - name: In the rain
     intro: Blender 2.80
+    description: Short video made with Blender.
     date: 2020
     image_url: inTheRain.jpg
     vimeo_url: https://vimeo.com/476401422
 
   - name: What's this ?
     intro: Blender 2.80
+    description: Short video made with Blender.
     date: 2020
     image_url: whatsthis.jpg
     vimeo_url: https://vimeo.com/452537843
 
   - name: Google Tango world sharing
     intro: Unity / Google Tango / Kinect
+    description: Augmented reality project using Google Tango project (RIP).
     date: 2017
     image_url: tango.jpg
 
   - name: Chapeau L'Artiste
     intro: 3DS Max / Adobe Première Pro
+    description: Short study movie made with 3DS&nbsp;Max&nbsp;/&nbsp;Première.
     date: 2013-2014
     vimeo_url: https://vimeo.com/90116071
     image_url: chapeaulArtiste.jpg
 
   - name: Babel Tower
     intro: Photoshop / Première Pro /&nbsp;After Effects
+    description: After effects project.
     date: 2015
     vimeo_url: https://vimeo.com/113370584
     image_url: tourDeBabel.jpg

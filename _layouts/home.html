@@ -151,6 +151,8 @@ title: Antoine Altorffer - 3D software engineer
 			--><div class="project-content">
 				<div>
 					<h1>{{ project.name }}</h1><!--HACK
+					--><p class="project-intro"><span class="highlighted intro">{{ project.intro }}</span></p><!--
+					--><p class="project-description">{{ project.description | truncate: 100 }}</p><!--
 					{% if project.vimeo_url %}
 						--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
 					{% elsif project.github_url %}
