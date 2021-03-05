@@ -29,8 +29,8 @@ linkedin_url: "https://fr.linkedin.com/in/antoinealtorffer"
 vimeo_url: "https://vimeo.com/antalt"
 langs: [fr, en]
 default_lang: fr
-cv_en: cv_AA_en_June20.pdf
-cv_fr: cv_AA_fr_June20.pdf
+cv_en: 2021.03.cv.en.altorffer.pdf
+cv_fr: 2021.03.cv.fr.altorffer.pdf
 google_analytics: true
 
 # Build settings
