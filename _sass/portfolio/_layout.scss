@@ -251,7 +251,7 @@
 	}
 }
 
-#projects {
+#posts {
 
 	background-color: $light-blue;
 	color: #fff;
@@ -263,59 +263,29 @@
 		padding:20px 0;
 		font-size: 0;
 	}
-	.project-content, .project-slide {
-		height:300px;
-		width:300px;
+	.post-container {
+		font-size: medium;
 	}
-	.project-slide {
-		position: relative;
-		overflow: hidden;
+	.post-link {
+		padding: 10px;
+		a {
+			display: block;
+			color:white;
+			text-decoration: none;
+			transition:all 0.2s;
+		}
+		&:hover {
+			background-color: $red;
+		}
+	}
+	.post-link-image {
+		width: 150px;
 		display: inline-block;
 		vertical-align: top;
-		font-size: small;
-		margin: 10px;
-		&>img {
-			display: inline-block;
-			vertical-align: top;
-			width:300px;
-		}
 	}
-	.project-content {
-		position:absolute;
-		top:0px;
-		left: 0px;
-		z-index: 2;
+	.post-link-description {
 		display: inline-block;
 		vertical-align: top;
-		padding:10px;
-		text-align: center;
-		height: 300px;
-		background-color:rgba(0.8,0.8,0.8,0.8);
-		opacity: 0;
-		transition: opacity 0.2s ease;
-		div {
-			margin-top: calc(50% - 20px);
-			transform: translateY(-50%);
-		}
-		h1 {
-			margin-top: 0px;
-			margin-bottom: 10px;
-			font-size:30px;
-			line-height: 1.2;
-		}
-		p {
-			margin: 7px 0px;
-		}
-		.highlighted {
-			margin: 5px 5px 5px 0px;
-		}
-		.date.highlighted {
-			background-color:$dark-blue;
-			color:#fff;
-		}
-	}
-	.project-content:hover {
-		opacity: 1;
 	}
 }
 

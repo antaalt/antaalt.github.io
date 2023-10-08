@@ -2,11 +2,15 @@
 <html lang="{{ page.lang | default: site.lang | default: "fr" }}">
 
   {% include head.html %}
-  <header><!-- TODO : header -->
-  </header>
   <body id="post">
 
-    <main class="page-content" aria-label="Content">
+    <header id="post-main-header">
+      <div>
+        <a href="/">Home</a>
+      </div>
+    </header>
+
+    <main id="post-content" aria-label="Content">
         {{ content }}
     </main>
 

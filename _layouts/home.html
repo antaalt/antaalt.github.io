@@ -29,7 +29,7 @@ title: Antoine Altorffer - 3D software engineer
 			<p>
 				<a href="#whoami" class="smooth-scroll">{{ site.data.i18n[page.lang].whoami }}</a>
 				 - <a href="#skills" class="smooth-scroll">{{ site.data.i18n[page.lang].skills }}</a>
-				 - <a href="#projects" class="smooth-scroll">{{ site.data.i18n[page.lang].projects }}</a>
+				 - <a href="#posts" class="smooth-scroll">{{ site.data.i18n[page.lang].posts }}</a>
 			  </p>
 			<a href="#contact" class="cta cta-big smooth-scroll">{{ site.data.i18n[page.lang].contact_me }}</a>
 		</div>
@@ -141,34 +141,27 @@ title: Antoine Altorffer - 3D software engineer
 </section>
 <!-- / Competences -->
 
-<!-- Projets -->
-<section id="projects" class="wrapper section">
+<!-- Posts -->
+<section id="posts" class="wrapper section">
 	<div>
-		<h1>{{ site.data.i18n[page.lang].projects }}</h1>
-
-		<!--HACK
-		{% for project in site.data.projects[page.lang] %}
-		--><article class="project-slide {% if forloop.first == true %}selected{% endif %}" id="project-button{{forloop.index}}">
-			<img src="/assets/images/projets/{{ project.image_url }}" name="{{ project.name }}"/><!--HACK
-			--><div class="project-content">
-				<div>
-					<h1>{{ project.name }}</h1><!--HACK
-					--><p class="project-intro"><span class="highlighted intro">{{ project.intro }}</span></p><!--
-					--><p class="project-description">{{ project.description | truncate: 100 }}</p><!--
-					{% if project.vimeo_url %}
-						--><a href="{{ project.vimeo_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Vimeo</a><!--HACK
-					{% elsif project.github_url %}
-						--><a href="{{ project.github_url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">GitHub</a><!--HACK
-					{% elsif project.url %}
-						--><a href="{{ project.url }}" target="_blank" title="Ouvrir dans un nouvel onglet" class="cta">Site</a><!--HACK
-					{% endif %}
-				--></div>
+		<h1>{{ site.data.i18n[page.lang].posts }}</h1>
+		
+		<div class="post-container">
+			{% for post in site.posts %}
+			<div class="post-link">
+				<a href="{{ post.url }}">
+					<img src="{{post.background}}" class="post-link-image"/>
+					<div class="post-link-description">
+						<h2>{{ post.title }}</h2>
+						<p>Published on {{ post.date | date: "%B %-d, %Y" }} by {{ post.author }}</p>
+					</div>
+				</a>
 			</div>
-		</article><!--HACK
-		{% endfor %}
-	--></div>
+			{% endfor %}
+		</div>
+	</div>
 </section>
-<!-- / Projets -->
+<!-- / Posts -->
 
 <!-- Contact -->
 <section id="contact" class="wrapper section">
