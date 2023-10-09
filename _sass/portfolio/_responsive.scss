@@ -85,20 +85,20 @@
 	#posts {
 		&> div {
 			width: 100%;
+			padding:10px;
 		}
-		.project-slide {
-			width: 100%;
-			margin:10px 0px;
-			height:auto;
-			& > img {
-				width: 100%;
+		.post-link {
+			height: auto;
+			img {
+				display: none;
 			}
 		}
-		.project-content {
-			padding-right: 20px;
-			opacity:1;
-			height:100%;
-			width:100%;
+		.post-link-description {
+			padding: 0px;
+			width: 100%;
+			img {
+				display: none;
+			}
 		}
 	}
 }
@@ -108,7 +108,7 @@
 	#menu {
 		text-align: center;
 		&.minimize {
-			height: 87px;
+			height: 118px;
 		}
 		nav {
 			position: relative;

@@ -61,6 +61,8 @@ title: Antoine Altorffer - 3D software engineer
 					</div>
 				</a>
 			</div>
+			{% else %}
+			<p>No post available yet...</p>
 			{% endfor %}
 		</div>
 	</div>
@@ -175,7 +177,7 @@ title: Antoine Altorffer - 3D software engineer
 	<div>
 		<h1>{{ site.data.i18n[page.lang].contact }}</h1>
 		<!-- see formspree or equivalent for email sending in jekyll -->
-		<form method="post" id="formMail">
+		<form id="mail-form" action="https://formspree.io/f/mdorynye" method="POST"> 
 			<div id="infoMessage">
 				<div>
 					<label for="name">{{ site.data.i18n[page.lang].form_name }} : </label>
@@ -198,7 +200,7 @@ title: Antoine Altorffer - 3D software engineer
 				<label for="message">{{ site.data.i18n[page.lang].form_message }} : </label>
 				<textarea name="message" id="message" placeholder="{{ site.data.i18n[page.lang].form_message_placeholder }}" required></textarea>
 			</div>
-			<button class="cta" type="submit" id="send" data-error="{{ site.data.i18n[page.lang].form_send_error }}" data-sending="{{ site.data.i18n[page.lang].form_sending }}" data-sent="{{ site.data.i18n[page.lang].form_sent }}">{{ site.data.i18n[page.lang].form_send }}</button>
+			<button class="cta" type="submit" id="mail-send-button" data-error="{{ site.data.i18n[page.lang].form_send_error }}" data-sending="{{ site.data.i18n[page.lang].form_sending }}" data-sent="{{ site.data.i18n[page.lang].form_sent }}">{{ site.data.i18n[page.lang].form_send }}</button>
 		</form>
 	</div>
 </section>

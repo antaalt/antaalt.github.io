@@ -81,52 +81,50 @@
 
 	_this.init();
 }, function() {
-	var _this = this;
-
-	_this.init = function() {
-		_this.$form = $('#formMail');
-		if(_this.$form == undefined)
-			return;
-		_this.$form.on('submit', _this.handleSend);
+	var form = document.getElementById("mail-form");
+	
+	var onSuccess = function() {
+		var button = document.getElementById("mail-send-button");
+		button.innerHTML = button.dataset.sent;
+		button.classList.add('sent');
+		button.classList.remove('sending');
 	};
 
-	_this.handleSend = function(event) {
+	var onFailure = function() {
+		var button = document.getElementById("mail-send-button");
+		button.innerHTML = button.dataset.error;
+		button.classList.add('error');
+		button.classList.remove('sending');
+	};
+    
+    async function handleSubmit(event) {
 		event.preventDefault();
-		var $send = $('#send');
-		$send.removeClass("error sending");
-
-		$send.val($send.data("sending"));
-
-		if($("#hello-data").val() != "")
-			_this.error($send, $check);
-		$.ajax({
-			dataType: "jsonp",
-			url : "https://getsimpleform.com/messages/ajax?form_api_token=1db4df38e9b6a087372743c70051b0e4",
-			data : $('#formMail').serialize(),
-			beforeSend: function(){
-				$send.text($send.data("sending")).removeClass('error').addClass('sending');
-			},
-			success : function(data, textStatus, jqXHR){
-				if(data.success)
-					_this.success($send);
-				else
-					_this.error($send);
-			},
-			error : function(jqXHR, textStatus, errorThrown){
-				_this.error($send);
+		var status = document.getElementById("my-form-status");
+		var data = new FormData(event.target);
+		fetch(event.target.action, {
+			method: form.method,
+			body: data,
+			headers: {
+				'Accept': 'application/json'
 			}
+		}).then(response => {
+			if (response.ok) {
+				onSuccess();
+				form.reset()
+			} else {
+				response.json().then(data => {
+					if (Object.hasOwn(data, 'errors')) {
+						onFailure(); //data["errors"].map(error => error["message"]).join(", ");
+					} else {
+						onFailure();
+					}
+				})
+			}
+		}).catch(error => {
+			status.innerHTML = "Oops! There was a problem submitting your form"
 		});
-	};
-
-	_this.success = function($send) {
-		$send.text($send.data("sent")).addClass('sent').removeClass('sending');
-	};
-
-	_this.error = function($send) {
-		$send.text($send.data("error")).addClass('error').removeClass('sending');
-	};
-
-	_this.init();
+	}
+    form.addEventListener("submit", handleSubmit)
 }, function(options) {
 	var _this = this;
 

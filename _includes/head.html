@@ -17,16 +17,7 @@
 
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    {% if jekyll.environment == 'production' and site.google_analytics %}
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VC9R759YR3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VC9R759YR3');
-    </script>
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
     {% endif %}
 </head>
