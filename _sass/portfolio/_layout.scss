@@ -16,13 +16,17 @@
 
 }
 .lang-selector-unactive {
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 	filter: grayscale(100%);
 	transition: filter 0.3s;
 	&:hover {
-		-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
 		filter: grayscale(0%);
 	}
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -$header-height;
+    visibility: hidden;
 }
 #home {
 	.highlighted {

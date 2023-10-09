@@ -1,29 +1,34 @@
 #post {
-	background-color: $grey;
-}
-.post {
-
-}
-#post-main-header {
-	background-color: $red;
-	&>div {
-		width: $global-width;
-		margin: 0 auto;
-		padding: 50px;
+	margin-top: 0px;
+	//background-color: $grey;
+	#menu {
+		height:$header-height;
+		//background-color: $red;
+		top:0;
+		.wrapper {
+			//background-color: $red;
+			//color:white;
+		}
 	}
-	a {
-		color:white;
+	#header {
+		display: block;
 	}
 }
 #post-content {
+	margin-top: $header-height;
 }
 .post-header {
 	background-color: $grey;
+	background-color: $red;
+	color:white;
 	padding-top:20px;
 	padding-bottom:20px;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
+	}
+	h1 {
+		font-size:3em;
 	}
 }
 .post-content {

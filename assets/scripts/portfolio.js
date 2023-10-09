@@ -9,68 +9,53 @@
 	var _this = this;
 
 	_this.options = {
-		headerHeight : 50,
-		fixedLimit: 0,
+		headerHeight : 60, // Must fit CSS value
+		heightTriggeringMenu : 600, // Default value, before querying window.height / 3 
 		selected:'selected',
 	};
 
 	_this.init = function(){
-		_this.options.headerHeight = $("#menu").height() - 1;
-		_this.options.fixedLimit = $(window).height() - _this.options.headerHeight;
-
-
+		_this.options.heightTriggeringMenu = $(window).height() / 3;
 		_this.$menu = $('#menu');
 		if(_this.$menu == undefined)
 			return;
 		_this.$section = $('.section');
-		_this.$menuLink = $('a[href^="#"].smooth-scroll');
+		_this.$menuLink = $('a[href^="/#"].smooth-scroll');
 
 		_this.build();
 	};
 
 	// --- BUILDING ---
 	_this.build = function(){
-		_this.buildScroll();
-		_this.buildLink();
-		$(window).resize(function(){
-			_this.options.headerHeight = $("#menu").height() - 1;
-			_this.options.fixedLimit = $("#home").height() - _this.options.headerHeight;
-		});
-		setInterval(function() {
-			$(window).resize();
-		}, 500);
+		// We only need these callback in home page.
+		if ($("#home").length != 0)
+		{
+			_this.createMenuBarScrollCallback();
+			$(window).scroll(function(event){
+				_this.createMenuBarScrollCallback();
+			});
+			setInterval(function() {
+				_this.createMenuBarScrollCallback();
+			}, 500);
+		}
 	};
 
-	_this.buildScroll = function(){
-		_this.menuScroll();
-		_this.detectPosition();
-		$(window).scroll(function(event){
-			_this.menuScroll();
-			_this.detectPosition();
-		});
-	};
-
-	_this.buildLink = function(){
-		_this.$menuLink.click(function(){
-			var dest = $(this.hash).offset().top - _this.options.headerHeight;
-			$('html, body').animate({
-				scrollTop:dest
-			}, 'slow');
-			return false;
-		});
+	_this.createMenuBarScrollCallback = function(){
+		_this.setMenuBarMinimization();
+		_this.findAndSetCurrentMenuItem();
 	};
 
 	// --- MENU ---
-	_this.menuScroll = function(){
+	_this.setMenuBarMinimization = function(){
 		var windowScroll = $(window).scrollTop();
-		if(windowScroll >= _this.options.fixedLimit ){
+		if(windowScroll >= _this.options.heightTriggeringMenu ){
 			_this.$menu.addClass("minimize");
 		}else {
 			_this.$menu.removeClass("minimize");
 		}
 	};
 
-	_this.detectPosition = function(){
+	_this.findAndSetCurrentMenuItem = function(){
 		var scrollPosition = $(window).scrollTop();
 		var idPosition;
 		_this.$section.each(function() {
@@ -81,10 +66,10 @@
 				return;
 			}
 		});
-		_this.displayScroll(idPosition);
+		_this.setCurrentMenuItemAsSelected(idPosition);
 	};
 
-	_this.displayScroll = function(_id){
+	_this.setCurrentMenuItemAsSelected = function(_id){
 		_this.$menuLink.each(function() {
 			if($(this).attr('id') == _id){
 				$(this).addClass(_this.options.selected);

@@ -2,6 +2,12 @@
 /************** MEDIA QUERIES **************/
 /*******************************************/
 
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 @media only screen and (max-width : 1000px){
 	#menu .wrapper {
 		width: 100%;

@@ -2,18 +2,26 @@
 	z-index: 20;
 	position: fixed;
 	width: 100%;
-	background-color: #fff;
+	background-color: $grey;
 
 	height: 0px;
 	transition: height 0.2s;
 	overflow: hidden;
 	&.minimize {
-		height: 51px;
+		height: $header-height;
 	}
 
-	h1 {
-		margin: 0;
-		color: #000;
+	#home-link {
+		color: $dark-blue;
+		text-decoration: none;
+		transition: all 0.2s;
+		h1 {
+			margin: 0;
+			padding: 7px 0;
+		}
+		&:hover {
+			color:$red;
+		}
 	}
 	nav {
 		float:right;
@@ -26,12 +34,12 @@
 	li {
 		display: inline-block;
 	}
-	a {
+	a.smooth-scroll {
 		position: relative;
 		display: inline-block;
 		text-decoration: none;
 		color: black;
-		padding: 15px 20px;
+		padding: 20px;
 		&:before {
 			transition:height 0.2s, background-color 0.2s;
 			z-index: -1;

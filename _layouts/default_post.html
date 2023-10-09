@@ -2,13 +2,10 @@
 <html lang="{{ page.lang | default: site.lang | default: "fr" }}">
 
   {% include head.html %}
+  
   <body id="post">
-
-    <header id="post-main-header">
-      <div>
-        <a href="/">Home</a>
-      </div>
-    </header>
+    
+    {% include header.html %}
 
     <main id="post-content" aria-label="Content">
         {{ content }}
