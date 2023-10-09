@@ -16,13 +16,13 @@
 
 environment: "development"
 
-title: Antoine Altorffer - 3D software engineer
+title: Antoine Altorffer - 3D graphics programmer
 email: altorantoine@gmail.com
 image: /assets/images/projets/miniatures/profile.jpg
 description: > # this means to ignore newlines until "baseurl:"
   Ingénieur créatif passioné par l'animation,
   les jeux vidéo et la réalité virtuelle et augmentée.
-keywords: "esiea, ingénieur, engineer, master, computer science, dut, mmi, src, vulkan, opencl, animation, effets spéciaux, vfx, jeux video, video games, réalité virtuelle, virtual reality, réalité augmentée, augmented reality, réalité mixte, mixed reality, portfolio"
+keywords: "ingénieur, engineer, master, computer science, computer graphics, ubisoft, dut, mmi, esiea, vulkan, directx, animation, vfx, jeux video, video games, réalité virtuelle, virtual reality, portfolio, blog"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://antaalt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: antaalt

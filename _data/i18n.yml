@@ -3,7 +3,7 @@ fr:
   skills: "Compétences"
   posts: "Posts"
   contact: "Contact"
-  home_description: "Ingénieur 3D à Paris"
+  home_description: "Programmeur 3D à Paris"
   home_status: "En recherche d'emploi, contactez moi !"
   contact_me: "Contactez-moi"
   development: "Développement"
@@ -11,9 +11,9 @@ fr:
   web: "Web"
   graphism: "Graphisme"
 
-  whoami_title: "Ingénieur logiciel 3D"
+  whoami_title: "Programmeur 3D"
   whoami_description: > # this means ignore newlines
-    Je suis un ingénieur logiciel 3D à Paris, passionné par le rendu et le ray-tracing. J'ai choisi cette voie pour vivre
+    Je suis un programmeur graphique 3D à Paris, passionné par le rendu et le ray-tracing. J'ai choisi cette voie pour vivre
     de ma passion pour la création d'univers immersifs et créatifs aux travers d'outils que j'utilise dans mon temps libre comme Blender,
     le dessin, la photographie ! La curiosité m'a guidé, afin
     d'être en mesure de comprendre le fonctionnement de ces multiples technologies et de participer à l'élaboration et 
@@ -25,7 +25,15 @@ fr:
 
   experience_title: "Expériences"
   experiences:
-    - date: "Depuis 2018"
+    - date: "Since 2021"
+      company: "Ubisoft (Paris)"
+      job_title: "Programmeur graphique"
+      job_description: "Développement de fonctionnalitées graphiques sous un moteur propriétaire."
+    - date: "2020-2021"
+      company: "Virtuos (Paris)"
+      job_title: "Programmeur graphique"
+      job_description: "Développement de fonctionnalitées graphiques sous unreal engine."
+    - date: "2018-2020"
       company: "Kubity (Paris)"
       job_title: "Ingénieur logiciel 3D"
       job_description: "Développement d'un moteur 3D basé sous Vulkan pour des rendus photoréalistes accélérés sur le GPU."
@@ -82,7 +90,15 @@ en:
 
   experience_title: "Experiences"
   experiences:
-    - date: "Since 2018"
+    - date: "Since 2021"
+      company: "Ubisoft (Paris)"
+      job_title: "Graphic programmer"
+      job_description: "Working on a video game as a 3D programmer on various rendering features."
+    - date: "2020-2021"
+      company: "Virtuos (Paris)"
+      job_title: "Graphic programmer"
+      job_description: "Working on a video game as a 3D programmer on unreal engine."
+    - date: "2018-2020"
       company: "Kubity (Paris)"
       job_title: "3D Software engineer"
       job_description: "Working on a 3D rendering engine based on Vulkan for photorealistic rendering accelerated on the GPU."
