@@ -82,25 +82,42 @@
 	_this.init();
 }, function() {
 	var form = document.getElementById("mail-form");
+	var timeout;
 	
 	var onSuccess = function() {
 		var button = document.getElementById("mail-send-button");
 		button.innerHTML = button.dataset.sent;
+		button.classList.remove('error');
 		button.classList.add('sent');
 		button.classList.remove('sending');
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			// Restore button & text.
+			button.innerHTML = button.dataset.send;
+			button.classList.remove('sent');
+		}, 5000);
 	};
 
-	var onFailure = function() {
+	var onFailure = function(errors) {
 		var button = document.getElementById("mail-send-button");
-		button.innerHTML = button.dataset.error;
+		button.innerHTML = button.dataset.error + " (" + errors.map(error => error["message"]).join(", ") + ")";
+		button.classList.remove('sent');
 		button.classList.add('error');
 		button.classList.remove('sending');
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			// Restore button & text.
+			button.innerHTML = button.dataset.send;
+			button.classList.remove('error');
+		}, 5000);
 	};
     
     async function handleSubmit(event) {
 		event.preventDefault();
 		var status = document.getElementById("my-form-status");
 		var data = new FormData(event.target);
+		console.log(data);
+		console.log(form.method);
 		fetch(event.target.action, {
 			method: form.method,
 			body: data,
@@ -114,9 +131,10 @@
 			} else {
 				response.json().then(data => {
 					if (Object.hasOwn(data, 'errors')) {
-						onFailure(); //data["errors"].map(error => error["message"]).join(", ");
+						onFailure(data["errors"]);
+						console.error(data["errors"]);
 					} else {
-						onFailure();
+						onFailure(["Error"]);
 					}
 				})
 			}

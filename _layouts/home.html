@@ -191,16 +191,12 @@ title: Antoine Altorffer - 3D software engineer
 					<label for="mail">{{ site.data.i18n[page.lang].form_mail }} : </label>
 					<input type="email" id="mail" name="email" placeholder="{{ site.data.i18n[page.lang].form_mail_placeholder }}" required>
 				</div>
-				<div id="hello">
-					<label for="firstname">Data : </label>
-					<input type="text" id="hello-data" name="data"  placeholder="data">
-				</div>
 			</div>
 			<div id="message">
 				<label for="message">{{ site.data.i18n[page.lang].form_message }} : </label>
 				<textarea name="message" id="message" placeholder="{{ site.data.i18n[page.lang].form_message_placeholder }}" required></textarea>
 			</div>
-			<button class="cta" type="submit" id="mail-send-button" data-error="{{ site.data.i18n[page.lang].form_send_error }}" data-sending="{{ site.data.i18n[page.lang].form_sending }}" data-sent="{{ site.data.i18n[page.lang].form_sent }}">{{ site.data.i18n[page.lang].form_send }}</button>
+			<button class="cta" type="submit" id="mail-send-button" data-error="{{ site.data.i18n[page.lang].form_send_error }}" data-sending="{{ site.data.i18n[page.lang].form_sending }}" data-sent="{{ site.data.i18n[page.lang].form_sent }}" data-send="{{ site.data.i18n[page.lang].form_send }}">{{ site.data.i18n[page.lang].form_send }}</button>
 		</form>
 	</div>
 </section>
