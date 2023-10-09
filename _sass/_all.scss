@@ -19,6 +19,7 @@ img::-moz-selection {
 	background: transparent;
 }
 html{
+	scroll-behavior: smooth;
 	body{
 		margin:0;
 		font-family: sofia_pro_lightregular, verdana, arial;

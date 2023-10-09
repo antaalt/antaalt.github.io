@@ -1,7 +1,7 @@
 fr:
   whoami: "Qui suis-je"
   skills: "Compétences"
-  projects: "Projets"
+  posts: "Posts"
   contact: "Contact"
   home_description: "Ingénieur 3D à Paris"
   home_status: "En recherche d'emploi, contactez moi !"
@@ -58,7 +58,7 @@ fr:
 en:
   whoami: "Who am I"
   skills: "Skills"
-  projects: "Projects"
+  posts: "Posts"
   contact: "Contact"
   home_description: "Computer graphics engineer in Paris"
   home_status: "Looking for a job, Hire me !"

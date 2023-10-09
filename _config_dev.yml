@@ -1,0 +1,54 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+environment: "development"
+
+title: Antoine Altorffer - 3D software engineer
+email: altorantoine@gmail.com
+image: /assets/images/projets/miniatures/profile.jpg
+description: > # this means to ignore newlines until "baseurl:"
+  Ingénieur créatif passioné par l'animation,
+  les jeux vidéo et la réalité virtuelle et augmentée.
+keywords: "esiea, ingénieur, engineer, master, computer science, dut, mmi, src, vulkan, opencl, animation, effets spéciaux, vfx, jeux video, video games, réalité virtuelle, virtual reality, réalité augmentée, augmented reality, réalité mixte, mixed reality, portfolio"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://antaalt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: antaalt
+github_username:  antaalt
+github_url: "https://github.com/antaalt"
+linkedin_url: "https://fr.linkedin.com/in/antoinealtorffer"
+vimeo_url: "https://vimeo.com/antalt"
+langs: [fr, en]
+default_lang: fr
+cv_en: 2022.02.cv.en.altorffer.pdf
+cv_fr: 2022.02.cv.fr.altorffer.pdf
+
+# Build settings
+markdown: kramdown
+#plugins:
+  #- jekyll-feed
+timezone: Europe/Paris
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

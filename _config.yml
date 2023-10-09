@@ -13,6 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+environment: "production"
+
 title: Antoine Altorffer - 3D software engineer
 email: altorantoine@gmail.com
 image: /assets/images/projets/miniatures/profile.jpg
@@ -31,7 +34,6 @@ langs: [fr, en]
 default_lang: fr
 cv_en: 2022.02.cv.en.altorffer.pdf
 cv_fr: 2022.02.cv.fr.altorffer.pdf
-google_analytics: true
 
 # Build settings
 markdown: kramdown
@@ -42,11 +44,11 @@ timezone: Europe/Paris
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

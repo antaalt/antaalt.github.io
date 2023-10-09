@@ -9,68 +9,53 @@
 	var _this = this;
 
 	_this.options = {
-		headerHeight : 50,
-		fixedLimit: 0,
+		headerHeight : 60, // Must fit CSS value
+		heightTriggeringMenu : 600, // Default value, before querying window.height / 3 
 		selected:'selected',
 	};
 
 	_this.init = function(){
-		_this.options.headerHeight = $("#menu").height() - 1;
-		_this.options.fixedLimit = $(window).height() - _this.options.headerHeight;
-
-
+		_this.options.heightTriggeringMenu = $(window).height() / 3;
 		_this.$menu = $('#menu');
 		if(_this.$menu == undefined)
 			return;
 		_this.$section = $('.section');
-		_this.$menuLink = $('a[href^="#"].smooth-scroll');
+		_this.$menuLink = $('a[href^="/#"].smooth-scroll');
 
 		_this.build();
 	};
 
 	// --- BUILDING ---
 	_this.build = function(){
-		_this.buildScroll();
-		_this.buildLink();
-		$(window).resize(function(){
-			_this.options.headerHeight = $("#menu").height() - 1;
-			_this.options.fixedLimit = $("#home").height() - _this.options.headerHeight;
-		});
-		setInterval(function() {
-			$(window).resize();
-		}, 500);
+		// We only need these callback in home page.
+		if ($("#home").length != 0)
+		{
+			_this.createMenuBarScrollCallback();
+			$(window).scroll(function(event){
+				_this.createMenuBarScrollCallback();
+			});
+			setInterval(function() {
+				_this.createMenuBarScrollCallback();
+			}, 500);
+		}
 	};
 
-	_this.buildScroll = function(){
-		_this.menuScroll();
-		_this.detectPosition();
-		$(window).scroll(function(event){
-			_this.menuScroll();
-			_this.detectPosition();
-		});
-	};
-
-	_this.buildLink = function(){
-		_this.$menuLink.click(function(){
-			var dest = $(this.hash).offset().top - _this.options.headerHeight;
-			$('html, body').animate({
-				scrollTop:dest
-			}, 'slow');
-			return false;
-		});
+	_this.createMenuBarScrollCallback = function(){
+		_this.setMenuBarMinimization();
+		_this.findAndSetCurrentMenuItem();
 	};
 
 	// --- MENU ---
-	_this.menuScroll = function(){
+	_this.setMenuBarMinimization = function(){
 		var windowScroll = $(window).scrollTop();
-		if(windowScroll >= _this.options.fixedLimit ){
+		if(windowScroll >= _this.options.heightTriggeringMenu ){
 			_this.$menu.addClass("minimize");
 		}else {
 			_this.$menu.removeClass("minimize");
 		}
 	};
 
-	_this.detectPosition = function(){
+	_this.findAndSetCurrentMenuItem = function(){
 		var scrollPosition = $(window).scrollTop();
 		var idPosition;
 		_this.$section.each(function() {
@@ -81,10 +66,10 @@
 				return;
 			}
 		});
-		_this.displayScroll(idPosition);
+		_this.setCurrentMenuItemAsSelected(idPosition);
 	};
 
-	_this.displayScroll = function(_id){
+	_this.setCurrentMenuItemAsSelected = function(_id){
 		_this.$menuLink.each(function() {
 			if($(this).attr('id') == _id){
 				$(this).addClass(_this.options.selected);
@@ -96,52 +81,50 @@
 
 	_this.init();
 }, function() {
-	var _this = this;
-
-	_this.init = function() {
-		_this.$form = $('#formMail');
-		if(_this.$form == undefined)
-			return;
-		_this.$form.on('submit', _this.handleSend);
+	var form = document.getElementById("mail-form");
+	
+	var onSuccess = function() {
+		var button = document.getElementById("mail-send-button");
+		button.innerHTML = button.dataset.sent;
+		button.classList.add('sent');
+		button.classList.remove('sending');
 	};
 
-	_this.handleSend = function(event) {
+	var onFailure = function() {
+		var button = document.getElementById("mail-send-button");
+		button.innerHTML = button.dataset.error;
+		button.classList.add('error');
+		button.classList.remove('sending');
+	};
+    
+    async function handleSubmit(event) {
 		event.preventDefault();
-		var $send = $('#send');
-		$send.removeClass("error sending");
-
-		$send.val($send.data("sending"));
-
-		if($("#hello-data").val() != "")
-			_this.error($send, $check);
-		$.ajax({
-			dataType: "jsonp",
-			url : "https://getsimpleform.com/messages/ajax?form_api_token=1db4df38e9b6a087372743c70051b0e4",
-			data : $('#formMail').serialize(),
-			beforeSend: function(){
-				$send.text($send.data("sending")).removeClass('error').addClass('sending');
-			},
-			success : function(data, textStatus, jqXHR){
-				if(data.success)
-					_this.success($send);
-				else
-					_this.error($send);
-			},
-			error : function(jqXHR, textStatus, errorThrown){
-				_this.error($send);
+		var status = document.getElementById("my-form-status");
+		var data = new FormData(event.target);
+		fetch(event.target.action, {
+			method: form.method,
+			body: data,
+			headers: {
+				'Accept': 'application/json'
 			}
+		}).then(response => {
+			if (response.ok) {
+				onSuccess();
+				form.reset()
+			} else {
+				response.json().then(data => {
+					if (Object.hasOwn(data, 'errors')) {
+						onFailure(); //data["errors"].map(error => error["message"]).join(", ");
+					} else {
+						onFailure();
+					}
+				})
+			}
+		}).catch(error => {
+			status.innerHTML = "Oops! There was a problem submitting your form"
 		});
-	};
-
-	_this.success = function($send) {
-		$send.text($send.data("sent")).addClass('sent').removeClass('sending');
-	};
-
-	_this.error = function($send) {
-		$send.text($send.data("error")).addClass('error').removeClass('sending');
-	};
-
-	_this.init();
+	}
+    form.addEventListener("submit", handleSubmit)
 }, function(options) {
 	var _this = this;
 

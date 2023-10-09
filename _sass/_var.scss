@@ -10,6 +10,7 @@ $hover:#111;
 $global-width: 960px;
 $sprite-width: 50px;
 $sprite-height: 50px;
+$header-height: 60px;
 
 @mixin sprite($x: 0, $y: 0) {
 	background-image: url("./images/sprite.png");
