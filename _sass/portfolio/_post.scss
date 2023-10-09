@@ -41,12 +41,10 @@
 		margin: 0 auto;
 	}
 	a {
-		color: $red;
+		color: $light-blue;
 		transition:all 0.1s;
 		&:hover {
-			background-color: $red;
-			color:$grey;
-			border-radius: 4px;
+			color: lighten($light-blue, 40%);
 		}
 	}
 }

@@ -6,7 +6,6 @@ subtitle: "How to integrate Renderdoc C/C++ API within your engine."
 author: "Me"
 background: '/assets/images/projets/aka.jpg'
 ---
-Yoyoyo, this is an excerpt
 
 ## Lorem ipsum
 

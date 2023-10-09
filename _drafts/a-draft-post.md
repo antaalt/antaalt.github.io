@@ -5,15 +5,9 @@ title: "Draft post"
 subtitle: "This is a draft post to learn how to use Jekyll"
 author: Me
 date: 2023-10-07 23:45:13 -0400
-background: '/assets/images/blog/books.jpeg'
-excerpt_separator: <!--more-->
+background: '/assets/images/projets/inTheRain.jpg'
 
 ---
-
-Excerpt with multiple paragraphs
-
-Here's another paragraph in the excerpt.
-<!--more-->
 # Jekyll
 In order to preview jekyll, run 'bundle exec jekyll serve'.
 If you want to display drafts as well (blogs u are working on), add the option --drafts
