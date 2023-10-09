@@ -15,8 +15,7 @@
 	background-color: $grey;
 	background-color: $red;
 	color:white;
-	padding-top:20px;
-	padding-bottom:20px;
+	padding:50px 0px;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
@@ -24,12 +23,22 @@
 	h1 {
 		font-size:3em;
 	}
+	img {
+		display: inline-block;
+		width: 250px;
+	}
+	.post-header-description
+	{
+		padding-left: 20px;
+		vertical-align: top;
+		display: inline-block;
+		width: calc(#{$global-width} - 250px);
+	}
 }
 .post-content {
 	background-color: $dark-blue;
 	color:white;
-	padding-top:20px;
-	padding-bottom:20px;
+	padding:20px 0px;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;

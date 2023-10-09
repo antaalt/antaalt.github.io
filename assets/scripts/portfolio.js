@@ -149,12 +149,11 @@
 	var path = "/assets/images/slider/";
 	var slider = document.getElementById("slider");
 	var images = [
-		"mountain.small.jpg",
-		"city.small.jpg",
+		"purple-building.small.jpg",
+		"fisheye-building.small.jpg",
 		"metro.small.jpg",
 		"hanami.small.jpg",
 		"colorfulNeko.small.jpg",
-		"densha.small.jpg",
 		"river.small.jpg",
 		"screw.small.jpg",
 		"window.small.jpg"
