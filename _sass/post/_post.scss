@@ -39,6 +39,7 @@
 	background-color: $dark-blue;
 	color:white;
 	padding:20px 0px;
+	text-align: justify;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
@@ -60,4 +61,11 @@
 		width: $global-width;
 		margin: 0 auto;
 	}
+}
+
+div.highlight {
+	padding: 1px 10px;
+	border-radius: 5px;
+	border:1px solid #ccc;
+	overflow: scroll;
 }

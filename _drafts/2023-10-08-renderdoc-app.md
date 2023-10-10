@@ -7,16 +7,58 @@ author: "Me"
 background: '/assets/images/projets/aka.jpg'
 ---
 
-## Lorem ipsum
+Renderdoc is a widely spread graphic debugging application that I happen to use a lot with my job, and I must say its quite efficient, I prefer it over NVIDIA Nsight & PIX, the two major alternatives because of its simplicity & efficiency, though its not as powerful as Nsight.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in ante ligula. Praesent semper vulputate ex. Aenean quis tellus sed ipsum varius rutrum quis sed odio. Vivamus fringilla sem tempus dui ornare, sit amet fringilla augue mattis. Phasellus eu congue odio. In sit amet arcu ullamcorper, lobortis neque vel, vestibulum velit. Aliquam erat volutpat. Ut posuere nulla ac sem convallis tincidunt. Quisque porta ex ac molestie suscipit. Proin augue enim, gravida at vulputate id, porttitor vel mauris. Phasellus posuere quis nunc at dignissim. Proin vitae nibh augue. Integer non neque a arcu pharetra imperdiet. Sed erat arcu, tincidunt ac ligula ut, placerat efficitur ligula. Donec nec tellus eleifend velit feugiat congue. Donec vel libero congue, mollis sem at, dictum ex.
+What's nice about RenderDoc is that it can be enabled within your engine. With their [In-application API](https://renderdoc.org/docs/in_application_api.html), you can integrate renderdoc in your engine to avoid the burden of connecting to it everytime you launch it. This way, you can have a simple button in you UI in order to capture a frame instantly. Unreal engine has a [plugin](https://docs.unrealengine.com/4.27/en-US/TestingAndOptimization/PerformanceAndProfiling/RenderDoc/) that is using it and I found it very convenient and decided to try implementing it within my engine, and it end up being quite easy, so go on and stop wasting so much time connecting to your API ! I did not search much about it but it seems [PIX also allow integration](https://devblogs.microsoft.com/pix/pix-2108-18/) within your engine and [Nsight aswell](https://docs.nvidia.com/nsight-graphics/NsightGraphicsSDK/index.html).
 
-Praesent vel ante iaculis, vulputate nulla vitae, maximus eros. Sed fringilla consequat dui at semper. Suspendisse ac dolor eu odio porta aliquet eget ac augue. Nullam placerat sollicitudin lectus quis varius. Integer pulvinar interdum mauris, vestibulum gravida turpis. Curabitur ut nunc quis est scelerisque sagittis et nec mauris. Sed condimentum auctor feugiat. Proin vel rutrum massa. Phasellus suscipit auctor vulputate.
+But here I will only talk about renderdoc, its probably the same logic though.
 
-Donec non semper quam, id sodales arcu. Aliquam maximus eget justo in ultrices. Integer finibus a tellus vel porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ac tristique massa, vel pellentesque lorem. Morbi pretium nisi ac lectus rutrum fringilla. Nullam leo magna, venenatis non dignissim fermentum, convallis et risus. Nullam a facilisis dolor. Integer et quam augue. Integer vehicula nulla quis neque condimentum dignissim. Ut suscipit, velit nec accumsan venenatis, massa velit varius magna, vitae fringilla enim odio at ipsum. Phasellus consectetur hendrerit leo nec elementum. Sed mattis aliquet neque nec blandit.
+# In application API
 
-In a ante nec ante sollicitudin venenatis. Vivamus vel ullamcorper tortor. Quisque ornare nulla ut semper malesuada. Mauris rhoncus orci felis, in scelerisque urna facilisis vel. Integer quam purus, accumsan sit amet metus quis, scelerisque posuere neque. Aenean commodo leo eget accumsan suscipit. Quisque eget nisi eget justo mattis vulputate.
+Their API can be easily accessed from their repo [here](https://github.com/baldurk/renderdoc/tree/v1.x/renderdoc/api). You will Need two things in order to make it work:
+- Include the file app/renderdoc_app.h somehow in your application.
+- Install renderdoc on your machine so that renderdoc.dll (librenderdoc.so on linux) is accessible. You will also need it to launch the captures you make !
 
-Pellentesque ut purus risus. Donec erat ligula, rutrum non lacus eu, tincidunt convallis purus. Ut aliquet tristique augue. Suspendisse potenti. Maecenas ut laoreet lectus. Sed sem sapien, maximus a lorem eget, hendrerit fermentum elit. Maecenas dapibus tincidunt nunc in consectetur. Ut vel arcu et massa molestie sollicitudin. Ut convallis ex et laoreet consectetur. 
+With all this setup, you will be able to capture some frame !
 
-[Link](https://gpuopen.com/learn/integrating-renderdoc-for-unconventional-apps/)
+We need to load the DLL **before** the device creation. This is important as renderdoc need to be injected in the device.
+
+```c
+// TODO check the loading here that seems too much, should not need both call to load library & getmodulehandle.
+if (HMODULE module = LoadLibrary("C:/Program Files/RenderDoc/renderdoc.dll"))
+{
+    if (HMODULE module = GetModuleHandle("renderdoc"))
+    {
+
+    }
+}
+// TODO linux android equivalent
+vkDeviceCreateInstance(...);
+```
+
+After this is done, everything is setup to capture a frame ! There is various way to capture a frame with this API that I will let you explore in the documentation, the simplest way being to begin & end the capture when you need it.
+
+
+```c
+// To start a frame capture, call StartFrameCapture.
+// You can specify NULL, NULL for the device to capture on if you have only one device and
+// either no windows at all or only one window, and it will capture from that device.
+// See the documentation below for a longer explanation
+if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
+
+// Your rendering should happen here
+
+// stop the capture
+if(rdoc_api) rdoc_api->EndFrameCapture(NULL, NULL);
+```
+
+You can then ask the API to start Renderdoc to view your capture.
+
+```c
+// TODO capture code
+```
+
+Et voilà ! You have a succesfully captured frame ! Enjoy debugging it !
+
+# Resources
+[GPUopen](https://gpuopen.com/learn/integrating-renderdoc-for-unconventional-apps/)
