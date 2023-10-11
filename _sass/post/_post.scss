@@ -16,23 +16,26 @@
 	background-color: $red;
 	color:white;
 	padding:50px 0px;
+	border-bottom: 1px solid white;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
 	}
 	h1 {
 		font-size:3em;
+		margin: 0;
 	}
 	img {
 		display: inline-block;
-		width: 250px;
+		width: 300px;
 	}
 	.post-header-description
 	{
-		padding-left: 20px;
-		vertical-align: top;
+		border-top: 1px solid white;
+		margin-left: 20px;
+		vertical-align: bottom;
 		display: inline-block;
-		width: calc(#{$global-width} - 250px);
+		width: calc(#{$global-width} - 320px);
 	}
 }
 .post-content {
@@ -40,6 +43,7 @@
 	color:white;
 	padding:20px 0px;
 	text-align: justify;
+	list-style: square;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
@@ -50,6 +54,19 @@
 		&:hover {
 			color: lighten($light-blue, 40%);
 		}
+	}
+	h1 {
+		text-align: left;
+		color: white;
+		border-bottom: 3px solid $light-blue;
+		font-size: 3.0em;
+	}
+	h2 {
+		border-bottom: 1px solid white;
+		font-size: 1.8em;
+	}
+	h3 {
+		font-size: 1.5em;
 	}
 }
 .post-footer {

@@ -19,6 +19,7 @@
             display: none;
         }
         .post-header-description {
+            border-top: none;
             padding: 0;
             width: 100%;
         }
@@ -35,6 +36,9 @@
 // diminution menu
 @media only screen and (max-width : 820px){
 	
+    #post-content {
+        margin-top: 118px;
+    }
 	#post {
         #menu {
             text-align: center;

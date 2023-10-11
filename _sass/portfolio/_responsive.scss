@@ -26,10 +26,6 @@
 	}
 
 	#whoami {
-		#bottom-cross > svg {
-			margin-left: calc(50% - 50px)
-		}
-
 		&>div {
 			width: 100%;
 			padding: 10px;
@@ -83,6 +79,9 @@
 		}
 	}
 	#posts {
+		#bottom-cross > svg {
+			margin-left: calc(50% - 50px)
+		}
 		&> div {
 			width: 100%;
 			padding:10px;
