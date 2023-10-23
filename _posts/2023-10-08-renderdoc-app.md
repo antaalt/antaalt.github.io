@@ -118,11 +118,11 @@ if (captureResult == 1 && captureCount > 0)
 }
 ```
 
-Et voilà ! You have a succesfully captured frame ! Enjoy debugging it !
+Et voilà ! You have a successfully captured a frame ! Enjoy debugging it !
 
 # Resources
 
 Here is a list of some resources that I got some reading into :
 
-- Check [renderdoc documentation]([In-application API](https://renderdoc.org/docs/in_application_api.html))
+- Check [renderdoc documentation](https://renderdoc.org/docs/in_application_api.html)
 - Another tutorial from [GPUopen](https://gpuopen.com/learn/integrating-renderdoc-for-unconventional-apps/) 
