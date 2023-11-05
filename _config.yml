@@ -37,6 +37,10 @@ cv_fr: 2022.02.cv.fr.altorffer.pdf
 
 # Build settings
 markdown: kramdown
+kramdown:
+input: GFM
+syntax_highlighter: rouge
+highlighter: rouge
 #plugins:
   #- jekyll-feed
 timezone: Europe/Paris

@@ -8,6 +8,7 @@ layout: default_post
       <img src="{{page.background}}"><!-- HACK
       --><div class="post-header-description">
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p>{{ page.subtitle }}</p>
         <p class="post-meta">
           <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
             {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
@@ -25,14 +26,17 @@ layout: default_post
       {{ content }}
     </div>
   </div>
-  <div class="post-footer">
-    <div>
-      <h1>References</h1>
-      <p>add some links & references here</p>
+  {% comment %}
+    <div class="post-footer">
+      <div>
+        <h1>References</h1>
+        <p>add some links & references here</p>
+        
+        {% if site.disqus.shortname %}
+        {% include disqus_comments.html %}
+      {% endif %}
+      </div>
     </div>
-  </div>
+  {% endcomment %}
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
 </article>

@@ -5,11 +5,11 @@
 }
 /*Highlighting*/
 ::selection {
-	background: $dark-blue;
+	background: darken($dark-blue, 10%);
 	color: white;
 }
 ::-moz-selection {
-	background: $dark-blue;
+	background: darken($dark-blue, 10%);
 	color: white;
 }
 img::selection {
@@ -23,7 +23,7 @@ html{
 	body{
 		margin:0;
 		font-family: sofia_pro_lightregular, verdana, arial;
-		-webkit-tap-highlight-color: $dark-blue;
+		-webkit-tap-highlight-color: darken($dark-blue, 10%);
 	}
 }
 @keyframes loadingMail{

@@ -26,10 +26,6 @@
 	}
 
 	#whoami {
-		#bottom-cross > svg {
-			margin-left: calc(50% - 50px)
-		}
-
 		&>div {
 			width: 100%;
 			padding: 10px;
@@ -83,6 +79,9 @@
 		}
 	}
 	#posts {
+		#bottom-cross > svg {
+			margin-left: calc(50% - 50px)
+		}
 		&> div {
 			width: 100%;
 			padding:10px;
@@ -138,41 +137,6 @@
 		ul {
 			white-space: nowrap;
 			overflow-x: scroll;
-			li:first-child {
-				position:relative;
-				a {
-					z-index: 2;
-				}
-				&:after {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 50px;
-					height: 100%;
-					display: block;
-					background-image: linear-gradient(to right, white, white, transparent);
-					z-index: 1;
-				}
-			}
-			li:last-child {
-				position:relative;
-				a {
-					z-index: 2;
-				}
-				&:after {
-					content: '';
-					position: absolute;
-					top: 0;
-					right: 0;
-					width: 50px;
-					height: 100%;
-					display: block;
-					background-image: linear-gradient(to right, transparent, white, white);
-					z-index: 1;
-				}
-			}
-
 		}
 	}
 	#home {
