@@ -1,86 +1,61 @@
-(function(scrollFollower, sendMail, slider) {
-	$('document').ready(function() {
-		new scrollFollower();
-		new sendMail();
-		new slider({duration: 2.0, transitionDuration: 5000});
-	});
-})(function() {
+let scrollHandler = function()
+{
+	let headerHeight = 60; // Must fit CSS value
+	let heightTriggeringMenu = window.innerHeight / 3;
+	let selectedClassName = 'selected';
 
-	var _this = this;
-
-	_this.options = {
-		headerHeight : 60, // Must fit CSS value
-		heightTriggeringMenu : 600, // Default value, before querying window.height / 3 
-		selected:'selected',
-	};
-
-	_this.init = function(){
-		_this.options.heightTriggeringMenu = $(window).height() / 3;
-		_this.$menu = $('#menu');
-		if(_this.$menu == undefined)
-			return;
-		_this.$section = $('.section');
-		_this.$menuLink = $('a[href^="/#"].smooth-scroll');
-
-		_this.build();
-	};
-
-	// --- BUILDING ---
-	_this.build = function(){
-		// We only need these callback in home page.
-		if ($("#home").length != 0)
-		{
-			_this.createMenuBarScrollCallback();
-			$(window).scroll(function(event){
-				_this.createMenuBarScrollCallback();
-			});
-			setInterval(function() {
-				_this.createMenuBarScrollCallback();
-			}, 500);
-		}
-	};
-
-	_this.createMenuBarScrollCallback = function(){
-		_this.setMenuBarMinimization();
-		_this.findAndSetCurrentMenuItem();
-	};
-
-	// --- MENU ---
-	_this.setMenuBarMinimization = function(){
-		var windowScroll = $(window).scrollTop();
-		if(windowScroll >= _this.options.heightTriggeringMenu ){
-			_this.$menu.addClass("minimize");
+	let setMenuBarMinimization = function() {
+		let windowScroll = window.scrollY;
+		let menu = document.getElementById("menu");
+		if(windowScroll >= heightTriggeringMenu ){
+			menu.classList.add("minimize");
 		}else {
-			_this.$menu.removeClass("minimize");
+			menu.classList.remove("minimize");
 		}
 	};
 
-	_this.findAndSetCurrentMenuItem = function(){
-		var scrollPosition = $(window).scrollTop();
+	let setCurrentMenuItemAsSelected = function(_id) {
+		let menuLinks = document.querySelectorAll('a[href^="/#"].smooth-scroll');
+		Array.prototype.forEach.call(menuLinks, function(menuLink) {
+			if(menuLink.getAttribute("id") == _id)
+			{
+				menuLink.classList.add(selectedClassName);
+			}
+			else
+			{
+				menuLink.classList.remove(selectedClassName);
+			}
+		});
+	};
+	let findAndSetCurrentMenuItem = function() {
+		var scrollPosition = window.scrollY;
 		var idPosition;
-		_this.$section.each(function() {
-			var position = $(this).position().top - _this.options.headerHeight - 20;
-			if(position < scrollPosition){
-				idPosition = $(this).attr('id') + "-link";
-			}else{
-				return;
+		let sections = document.getElementsByClassName("section");
+		Array.prototype.forEach.call(sections, function(section) {
+			var position = section.offsetTop - headerHeight - 20;
+			if(position < scrollPosition)
+			{
+				idPosition = section.getAttribute('id') + "-link";
 			}
 		});
-		_this.setCurrentMenuItemAsSelected(idPosition);
+		setCurrentMenuItemAsSelected(idPosition);
 	};
 
-	_this.setCurrentMenuItemAsSelected = function(_id){
-		_this.$menuLink.each(function() {
-			if($(this).attr('id') == _id){
-				$(this).addClass(_this.options.selected);
-			}else{
-				$(this).removeClass(_this.options.selected);
-			}
-		});
+	let handleScroll = function() {
+		setMenuBarMinimization();
+		findAndSetCurrentMenuItem();
 	};
 
-	_this.init();
-}, function() {
+	let home = document.getElementById("home");
+	if (home.length != 0)
+	{
+		handleScroll();
+		window.addEventListener("scroll", handleScroll);
+	}
+};
+
+let mailHandler = function()
+{
 	var form = document.getElementById("mail-form");
 	var timeout;
 	
@@ -116,8 +91,6 @@
 		event.preventDefault();
 		var status = document.getElementById("my-form-status");
 		var data = new FormData(event.target);
-		console.log(data);
-		console.log(form.method);
 		fetch(event.target.action, {
 			method: form.method,
 			body: data,
@@ -142,10 +115,11 @@
 			status.innerHTML = "Oops! There was a problem submitting your form"
 		});
 	}
-    form.addEventListener("submit", handleSubmit)
-}, function(options) {
-	var _this = this;
+    form.addEventListener("submit", handleSubmit);
+};
 
+let sliderHandler = function(options)
+{
 	var path = "/assets/images/slider/";
 	var slider = document.getElementById("slider");
 	var images = [
@@ -161,31 +135,7 @@
 	var downloaded = [];
 	var nb = 0;
 
-	_this.init = function() {
-		if(slider == undefined)
-			return;
-		// Shuffle array
-		_this.shuffleArray(images);
-		// Load first image
-		downloaded[0] = new Image();
-		downloaded[0].index = 0;
-		downloaded[0].onload = function() {
-			_this.onLoad();
-			// When loaded, load others in background
-			images.forEach(function(value, index) {
-				if(index != 0) {
-					downloaded[index] = new Image();
-					downloaded[index].index = index;
-					downloaded[index].onload = _this.onLoad;
-					downloaded[index].src = path + value;
-				}
-			});
-			setInterval(_this.manageTransition, options.transitionDuration);
-		};
-		downloaded[0].src = path + images[0];
-	};
-
-	_this.shuffleArray = function(array) {
+	let shuffleArray = function(array) {
 	    var j, x, i;
 	    for (i = array.length - 1; i > 0; i--) {
 	        j = Math.floor(Math.random() * (i + 1));
@@ -195,7 +145,7 @@
 	    }
 	}
 
-	_this.manageTransition = function() {
+	let manageTransition = function() {
 		var actual = document.getElementById("slide"+nb);
 		var next = document.getElementById("slide"+((nb+1)%images.length));
 		if(next == undefined)
@@ -206,7 +156,7 @@
 		next.classList.remove("hidden");
 	}
 
-	_this.onLoad = function() {
+	let onLoad = function() {
 		var container = document.createElement("div");
 		var index = (this.index == undefined) ? 0 : this.index;
 		container.classList.add("slide");
@@ -217,7 +167,32 @@
 		container.style.backgroundImage = "url(" + downloaded[index].src + ")";
 		slider.appendChild(container);
 	};
+	// Check if slider is present in image.
+	if(slider == undefined)
+		return;
+	// Shuffle array
+	shuffleArray(images);
+	// Load first image
+	downloaded[0] = new Image();
+	downloaded[0].index = 0;
+	downloaded[0].onload = function() {
+		onLoad();
+		// When loaded, load others in background
+		images.forEach(function(value, index) {
+			if(index != 0) {
+				downloaded[index] = new Image();
+				downloaded[index].index = index;
+				downloaded[index].onload = onLoad;
+				downloaded[index].src = path + value;
+			}
+		});
+		setInterval(manageTransition, options.transitionDuration);
+	};
+	downloaded[0].src = path + images[0];
+};
 
-	_this.init();
-
-});
+(function() {
+	new scrollHandler();
+	new mailHandler();
+	new sliderHandler({duration: 2.0, transitionDuration: 5000});
+})();
