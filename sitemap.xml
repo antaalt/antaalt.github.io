@@ -7,20 +7,25 @@ title : "Sitemap" #http://davidensinger.com/2013/11/building-a-better-sitemap-xm
 	{% for lang in site.langs %}
 	<url>
 		<loc>{{ site.url}}{% if lang != site.default_lang %}/{{lang}}{% endif %}</loc>
-		{% for lang in site.langs %}
+		{% for other_lang in site.langs %}
+		{% if other_lang != lang %}
 		<xhtml:link
              rel="alternate"
-             hreflang="{{lang}}"
-             href="{{ site.url}}{% if lang != site.default_lang %}/{{lang}}{% endif %}"
+             hreflang="{{other_lang}}"
+             href="{{ site.url}}{% if other_lang != site.default_lang %}/{{other_lang}}{% endif %}"
              />
-		 {% endfor %}
+		{% endif %}
+		{% endfor %}
 	</url>
 	{% endfor %}
     {% for post in site.posts %}
-	{% if post.sitemap.enabled == true %}
+    {% unless post.published == false %}   
     <url>
-        <loc>{{site.url}}{{ post.url | remove: 'index.html' }}</loc>
+		<loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
+		<lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
     </url>
-	{% endif %}
+    {% endunless %}
     {% endfor %}
 </urlset>
