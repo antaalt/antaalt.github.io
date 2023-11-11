@@ -21,22 +21,83 @@ layout: default_post
     </div>
   </header>
 
-  <div class="post-content" itemprop="articleBody">
+  <section class="post-content" itemprop="articleBody">
     <div>
       {{ content }}
     </div>
-  </div>
-  {% comment %}
-    <div class="post-footer">
-      <div>
-        <h1>References</h1>
-        <p>add some links & references here</p>
-        
-        {% if site.disqus.shortname %}
-        {% include disqus_comments.html %}
+  </section>
+
+  <footer class="post-footer">
+    <div>
+      <section class="post-info">
+        <div class="post-half">
+          <p>Written by {{ page.author }}</p>
+        </div><!--
+        --><div class="post-half">
+          <p>Share</p>
+          {% comment %} https://mefody.dev/chunks/social-sharing-html-only/ {% endcomment %}
+          <div class="share-btn" id="share-facebook">
+            <a href="https://www.facebook.com/sharer.php?u={{ site.url  }}{{ page.url  }}" target="_blank">Share on Facebook</a>
+          </div>
+          <div class="share-btn" id="share-twitter">
+            <a href="https://twitter.com/intent/tweet?text={{ site.url | url_encode  }}{{ page.url | url_encode  }}" target="_blank">Tweet</a>
+          </div>
+          <div class="share-btn" id="share-linkedin">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url | url_encode  }}{{ page.url | url_encode  }}" target="_blank">Share on Linkedin</a>
+          </div>
+        </div>
+      </section>
+      {% if site.posts.size > 0 %}
+      <section class="post-nav">
+        <div class="post-half">
+          {% for post in site.posts %}
+            {% if post.lang == page.lang %}
+              {% if prev %}
+                <a href="{{ post.url }}">{{ post.title }}</a>
+              {% endif %}
+              {% assign prev = false %}
+              {% if post.id == page.id %}
+                {% assign prev = true %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div><!-- HACK
+        --><div class="post-half">
+          {% for post in site.posts reversed %}
+            {% if post.lang == page.lang %}
+              {% if next %}
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                {% break %}
+              {% endif %}
+              {% assign next = false %}
+              {% if post.id == page.id %}
+                {% assign next = true %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      <section class="other-posts">
+        <ul>
+          {% for post in site.posts %}
+            {% if post.title != page.title %}
+              <li>
+                {% assign date_format = site.minima.date_format | default: "%Y-%m-%d" %}
+                <a href="{{ post.url }}">{{ post.date | date: date_format }} | {{post.title}}{{post.title}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </section>
       {% endif %}
-      </div>
+      {% comment %}
+      <section class="post-comment">
+        {% if site.disqus.shortname %}
+          {% include disqus_comments.html %}
+        {% endif %}
+      </section>
+      {% endcomment %}
     </div>
-  {% endcomment %}
+  </footer>
 
 </article>

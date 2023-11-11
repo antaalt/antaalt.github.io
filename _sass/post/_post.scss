@@ -16,7 +16,6 @@
 	background-color: $red;
 	color:white;
 	padding:50px 0px;
-	border-bottom: 1px solid white;
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
@@ -31,7 +30,7 @@
 	}
 	.post-header-description
 	{
-		border-top: 1px solid white;
+		border-top: 1px solid lighten($red, 20%);
 		margin-left: 20px;
 		vertical-align: bottom;
 		display: inline-block;
@@ -51,14 +50,16 @@
 	a {
 		color: $light-blue;
 		transition:all 0.1s;
+		text-decoration: none;
 		&:hover {
 			color: lighten($light-blue, 40%);
+			text-decoration: underline;
 		}
 	}
 	h1 {
 		text-align: left;
 		color: white;
-		border-bottom: 3px solid $light-blue;
+		border-bottom: 3px solid lighten($dark-blue, 20%);
 		font-size: 3.0em;
 	}
 	h2 {
@@ -77,6 +78,118 @@
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
+	}
+	.post-half {
+		width: 50%;
+		display: inline-block;
+		&:first-child {
+			text-align: left;
+		}
+		&:last-child {
+			text-align: right;
+		}
+	}
+	.post-info {
+		padding-bottom: 10px;
+		p {
+			display: inline-block;
+		}
+		.share-btn {
+			display: inline-block;
+			a {
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+				color: transparent;
+				vertical-align: middle;
+				&:hover {
+					filter: brightness(115%);
+				}
+			}
+			&#share-facebook{
+				a {
+					@include sprite(8, 4);
+				}
+			}
+			&#share-twitter{
+				a {
+					@include sprite(7, 4);
+					&:hover {
+					}
+				}
+			}
+			&#share-linkedin{
+				a {
+					@include sprite(6, 4);
+					&:hover {
+					}
+				}
+			}
+		}
+	}
+	.post-nav {
+		border-top: 1px solid darken($light-blue, 10%);
+		padding: 20px 0;
+		div {
+			a {
+				padding: 5px;
+				color: white;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+					color:$dark-blue;
+				}
+				&:focus {
+					color:$red;
+				}
+			}
+			&:first-child {
+				a:before {
+					content: '';
+					margin-right:5px;
+					border:solid white;
+					border-width: 0 3px 3px 0;
+					display: inline-block;
+					padding: 3px;
+					transform: rotate(135deg);
+				}
+			}
+			&:last-child {
+				a::after {
+					content: '';
+					margin-left:5px;
+					border:solid white;
+					border-width: 0 3px 3px 0;
+					display: inline-block;
+					padding: 3px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	.other-posts {
+		border-top: 1px solid darken($light-blue, 10%);
+		padding-top: 20px;
+		h1 {
+			margin-top: 0;
+		}
+		a {
+			color: white;
+			text-decoration:none;
+			padding:5px 0;
+			display: inline-block;
+			&:hover {
+				color: $dark-blue;
+				text-decoration:underline;
+			}
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
 	}
 }
 
