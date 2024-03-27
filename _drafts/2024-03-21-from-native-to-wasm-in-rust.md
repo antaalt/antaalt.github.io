@@ -11,13 +11,16 @@ Rust is nice, you can write plenty of safe code with it and there is starting to
 
 But I am not here to talk about Bevy, I am here to talk about custom engine & applications. One of the classic duo for 3D application in rust is [winit](https://github.com/rust-windowing/winit), a window handling library used with WGPU for the graphic backend. I started a small project and wanted to port it on wasm, but did not found much resources about converting an existing winit / wgpu application to wasm, with in bonus, a github action workflow for github pages, so here it is !
 
+# Quick note
+
+At the time of this writing, WASM is still experimental and some browser [does not support it fully](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status) *yet*.
+
 # Setting up your project
 
 First to build to project for WASM, you will need some setup. You will need to add some dependencies. For that, you can edit your file cargo.toml and add the following
 ```toml
-[target.'cfg(target_arch = "wasm32")'.dependencies]
+[dependencies]
 wasm-bindgen = "0.2.92"
-wasm-bindgen-futures = "0.4.42"
 wasm-bindgen-test = "0.3.42"
 web-sys = "0.3.5"
 js-sys = "0.3.68"
@@ -27,7 +30,6 @@ console_error_panic_hook = "0.1.7"
 The target arch force these dependencies only for wasm build, which is exactly what we want. Shared dependencies need to go into standard [dependencies]
 
 - **wasm-bindgen** is necessary to setup your project for wasm
-- **wasm-bindgen-futures** let you wait for async function, because libraries such as pollster are not supported in WASM, you need the browser async executor.
 - **wasm-bindgen-test** will let you run specific tests for your wasm API.
 - **web-sys** is a procedurally generated crate providing a binding to all APIs that browsers provide on the web.
 - **js-sys** will pass you bindings for all global JS objects
@@ -55,21 +57,22 @@ use wasm_bindgen::{self, prelude::*};
 /// You can add more callbacks like this if you want to call in to your code.
 #[cfg(target_arch = "wasm32")]
 #[wasm_bindgen(start)]
-pub fn start() {
+pub async fn start() -> Result<(), JsValue> {
     use std::panic;
     // Here we ensure console_log is working
     console_log::init_with_level(log::Level::Debug).expect("could not initialize logger");
     // Here we ensure panic will send log to the web console
     panic::set_hook(Box::new(console_error_panic_hook::hook));
-    // Here we run a rust feature on the current thread. WGPU has some async creation function, 
-    // so you will have to make function async as you can't block
-    wasm_bindgen_futures::spawn_local(async move {
-        run_your_app_async().await;
-    });
+    // Here we run our async application
+    app::run().await;
+    
+    Ok(())
 }
 ```
 
-Once you made your entry point correctly, you will be able to build your project. Note that there is many way to setup this, here we simply execute our whole app within the start that is called when loading the web assembly file in the browser, but we could retrieve an object and handle our application lifecycle from javascript instead. There are many resources on this topic on the web, feel free to look for this.
+Once you made your entry point correctly, you will be able to build your project. Note that there is many way to setup this, here we simply execute our whole app within the start that is called when loading the web assembly file in the browser, but we could retrieve an object and handle our application lifecycle from javascript instead. There are many resources on this topic on the web.
+
+Note that the function is async. You cannot use library such as pollster because the browser need to use its own async executor.
 
 # Building the project
 
@@ -87,96 +90,112 @@ Here we have a lot of things happening
 
 But wait, I still have an issue !
 
-TODO: schema of issue with missing target
+![Missing target](/assets/images/posts/wasm/missing-target-illustration.png)
 
 ## Missing target
-By default, wasm compiler is not available in cargo, so you have to install it yourself. That's simple, just run 
+By default, wasm compiler is not available in cargo, so its missing all the standard library so you have to install it yourself. That's simple, just run 
 
 ```shell
 rustup target add wasm32-unknown-unknown
 ```
 
-Bonus: For vscode user, you can also add "rust-analyzer.cargo.target": "wasm32-unknown-unknown" to your [rust analyzer](https://rust-analyzer.github.io/) extension settings
+> **BONUS**: For vscode user, you can also add `"rust-analyzer.cargo.target": "wasm32-unknown-unknown"` to your [rust analyzer](https://rust-analyzer.github.io/) extension settings so that linting is working with this target.
 
-Once you did this, run `cargo build` another time, and it should pass... except it does not
+Once you did this, run `cargo build` another time, and it should pass... except it does not.
 
-TODO: schema of no rust flags.
+*Wanted to add a screen of the error but somehow I cannot reproduce it 🤔*
 
 ## Unstable WGPU
-As seen [here](https://github.com/gfx-rs/wgpu/wiki/Running-on-the-Web-with-WebGPU-and-WebGL), webgpu is unstable and unstable API don't follow [web_sys](https://rustwasm.github.io/wasm-bindgen/api/web_sys/) semantic version. Which means you will have to tell your compiler to enable unstable API. You can do this by setting the RUSTFLAGS environment variable. Their is a lot of way to do this, the easier being to create or edit a file at .cargo/config.toml and adding the following content so that this variable is only set when you compile your project for web assembly.
+As seen [here](https://github.com/gfx-rs/wgpu/wiki/Running-on-the-Web-with-WebGPU-and-WebGL), webgpu is still unstable. Which means you will have to tell your compiler to enable unstable API. You can do this by setting the RUSTFLAGS environment variable. Their is a lot of way to do this, the easier being to create or edit a file at .cargo/config.toml and adding the following content so that this variable is only set when you compile your project for web assembly.
 
 ```toml
 [target.wasm32-unknown-unknown]
 rustflags = ["--cfg=web_sys_unstable_apis"]
 ```
 
-Finally, you can run again the project, and you should be able to compile it. Be aware that some dependencies might have difficulties with wasm compiler, and that you might run into some unexpected issues. Generally, the --no-default-features flag should solve them, but you might need to fix some code to compile aswell. Don't forget the `#[cfg(target_arch = "wasm32")]` which will be your best friend to solve them.
-
-It seems somes issues might still exist between [Winit & WGPU](https://www.reddit.com/r/rust/comments/1856u5a/what_is_the_state_of_winit_x_wgpu/) but i personnaly did not had them
+Finally, you can run again the project, and you should be able to compile it. Be aware that some dependencies might have difficulties with wasm compiler, and that you might run into some unexpected issues, such as dependencies that does not support wasm. Generally, the --no-default-features flag should solve a majority of them, but you might need to fix some code to compile aswell. Don't forget the `#[cfg(target_arch = "wasm32")]` which will be your best friend for that.
 
 # Generating dependencies
+
+## Generate javascript bindings
 
 With the previous step, you should have a wasm file somewhere in your targets. We will use it to generate javascript bindings for the browser. You will need to install cargo-bindgen-cli to execute the following commands. Run `cargo install cargo-bindgen-cli`.
 
 Then you can run :
 
 ```shell
-wasm-bindgen path/to/wasm.wasm --out-dir out/dir/path --out-name app_name --no-modules --no-typescript
+wasm-bindgen path/to/wasm.wasm --out-dir out/dir/path --out-name app_name --target no-modules
 ``` 
 
-This will generate javascript bindings for your wasm file. arguments are as follow
-- path to your wasm
-- path where to save js files
-- app_name
-- **--no-modules** to not generate javascript modules ECMA TODO:
-- **--no-typescript** TODO:
+This will generate javascript bindings for your wasm file. Arguments are as follow
+- Path to your input wasm
+- Path where you want to save output javascript files
+- Yout application name for javascript files generated
+- **--target no-modules** the target for your javascript. Here I want to load it directly from javascript in an HTML file so I go with no-modules. More info [here](https://rustwasm.github.io/wasm-bindgen/reference/deployment.html).
 
-TODO: check --web argument here (https://github.com/gfx-rs/wgpu/wiki/Running-on-the-Web-with-WebGPU-and-WebGL)
+## Optimize WASM file
 
-After this, we can optimize the WASM file with the following command:
-wasm-opt target/wasm32-unknown-unknown/debug/protos_rs.wasm -O2 --fast-math -o target/wasm32-unknown-unknown/debug/protos_rs.wasm
-TODO: test this, need binaryen which is c++
+An optional step, we can optimize the WASM file with wasm-opt to reduce its size. First, we need to install wasm-opt:
 
-## wasm-pack
-OR simply use wasm-pack
-https://surma.dev/things/rust-to-webassembly/
-https://github.com/rust-windowing/winit/blob/master/examples/web.rs
-install npm latest
-cargo install wasm-pack
+```shell
+cargo install wasm-opt
+``` 
 
-wasm-pack build -d web/public
-somehow, i have issue with it, need to inspect...
-TODO: test this
+Then we can run the following command to optimize it.
 
-## ISSUE WITH POLLSTER
-issues with pollster, async not supported
-condvar wait not supported
-https://www.reddit.com/r/rust/comments/srtrbz/wasm_panicked_at_condvar_wait_not_supported/
+```shell
+wasm-opt path/to/wasm.wasm -O2 --fast-math -o path/to/wasm.wasm
+``` 
 
-# NODE NPM MODULE
-NOW, if you want to make node module, check this, here we make a full app desktop (really interesting intro to WASM for rust aswell IMO)
-https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_Wasm
-This one aswell
-https://wasmbyexample.dev/examples/hello-world/hello-world.rust.en-us.html
-nice resources for this here aswell
-https://rustwasm.github.io/book/game-of-life/hello-world.html
-https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/cargo-toml.html
+## Testing
 
-// This is for using yew for ease of use 
-Yew is like react in rust, not what i needed
-https://plippe.github.io/blog/2021/07/12/rust-wasm-github.html
+Small note on testing, unit testing in rust is really easy. You will need `wasm-bindgen-test` for that in WASM :
 
-## support for WGPU on browser
-you need to enable experimental flags on your browser to use WebGPU 
-https://github.com/gpuweb/gpuweb/wiki/Implementation-Status
+```rust
+use wasm_bindgen_test::*;
 
+#[wasm_bindgen_test]
+fn pass() {
+    assert_eq!(1, 1);
+}
 
-# DEPLOY
-github pages actions & co for self deployment
-check commits
-https://github.com/emilk/egui/blob/master/.github/workflows/deploy_web_demo.yml
+#[wasm_bindgen_test]
+fn fail() {
+    assert_eq!(1, 2);
+}
+```
 
+You will need to add `wasm-bindgen-test-runner` to your dependency so that wasm test run in a browser.
 
+```toml
+[target.wasm32-unknown-unknown]
+runner = 'wasm-bindgen-test-runner'
+```
 
-# Resources
-https://github.com/gfx-rs/wgpu/wiki/Running-on-the-Web-with-WebGPU-and-WebGL
+## Deploying
+
+Now we have everything we need !
+Create an index.html file, include your javascript and then you can run your javascript :
+
+```js
+wasm_bindgen("path/to/wasm.wasm")
+                .then(on_wasm_loaded)
+                .catch(on_error);
+```
+
+Winit should handle everything and insert a canvas in your HTML for the app if you created your window correctly:
+
+```rs
+#[cfg(target_arch = "wasm32")]
+let builder = {
+    use winit::platform::web::WindowBuilderExtWebSys;
+    builder.with_append(true)
+};
+let window = builder
+    .build(&event_loop)
+    .unwrap();
+```
+
+# Final note
+
+With all this done, you should be able to run your wasm application in a web page. You can now even create a github action that will automatically deploy your app on the web ! Don't hesitate to check this [repo](https://github.com/antaalt/protos-rs), a personal project of a rust app I ported on WASM !
