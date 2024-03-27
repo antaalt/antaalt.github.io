@@ -9,7 +9,7 @@ background: '/assets/images/posts/wasm.png'
 
 Rust is nice, you can write plenty of safe code with it and there is starting to be some really intersting projects such as [Bevy](https://bevyengine.org/) for 3D rendering. And what's so nice about Bevy is that it's using [WGPU](https://wgpu.rs/) ! And WGPU support [WebAssembly](https://webassembly.org/) ! Which makes bevy able to run on the browser !
 
-But I am not here to talk about Bevy, I am here to talk about custom engine & applications. One of the classic duo for 3D application in rust is [winit](https://github.com/rust-windowing/winit), a window handling library used with WGPU for the graphic backend. I started a small project and wanted to port it on wasm, but did not found much resources about converting an existing winit / wgpu application to wasm, with in bonus, a github action workflow for github pages, so here it is !
+But I am not here to talk about Bevy, but about custom engine & applications. One of the classic duo for 3D application in rust is [winit](https://github.com/rust-windowing/winit), a window handling library used with WGPU for the graphic backend. I started a small project and wanted to port it on wasm, but did not found much resources about converting an existing winit / wgpu application to wasm, so here it is !
 
 # Quick note
 
