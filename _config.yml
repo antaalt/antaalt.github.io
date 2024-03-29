@@ -16,13 +16,12 @@
 
 environment: "production"
 
-title: Antoine Altorffer - 3D graphics programmer
+title: Antoine Altorffer - 3D graphics engineer
 email: altorantoine@gmail.com
 image: /assets/images/profile.jpg
 description: > # this means to ignore newlines until "keywords:"
-  Ingénieur créatif passioné par l'animation,
-  les jeux vidéo et la réalité virtuelle et augmentée.
-keywords: "ingénieur, engineer, master, computer science, computer graphics, ubisoft, dut, mmi, esiea, vulkan, directx, animation, vfx, jeux video, video games, réalité virtuelle, virtual reality, portfolio, blog"
+  Graphics engineer working in the video game industry who loves 3D, Rust, Blender, trees & alpha test.
+keywords: "engineer, computer science, computer graphics, ubisoft, mmi, esiea, vulkan, directx, rust, wasm, video games, virtual reality, portfolio, blog"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://antaalt.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: antaalt
@@ -38,9 +37,9 @@ cv_fr: 2022.02.cv.fr.altorffer.pdf
 # Build settings
 markdown: kramdown
 kramdown:
-input: GFM
-syntax_highlighter: rouge
-highlighter: rouge
+  input: GFM
+  syntax_highlighter: rouge
+  highlighter: rouge
 #plugins:
   #- jekyll-feed
 timezone: Europe/Paris

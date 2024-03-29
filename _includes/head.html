@@ -7,6 +7,9 @@
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta name="keywords" content="{{ site.keywords }}">
 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Antoine's computer graphics blog">
+
     <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"/>
     <meta property="og:image" content="{% if page.background %}{{ page.background }}{% else %}{{ site.image }}{% endif %}"/>
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}"/>
