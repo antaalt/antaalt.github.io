@@ -18,7 +18,7 @@ environment: "production"
 
 title: Antoine Altorffer - 3D graphics programmer
 email: altorantoine@gmail.com
-image: /assets/images/projets/miniatures/profile.jpg
+image: /assets/images/profile.jpg
 description: > # this means to ignore newlines until "keywords:"
   Ingénieur créatif passioné par l'animation,
   les jeux vidéo et la réalité virtuelle et augmentée.
