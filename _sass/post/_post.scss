@@ -81,7 +81,7 @@
 		padding: 1px 10px;
 		border-radius: 5px;
 		border:1px solid #ccc;
-		overflow: auto;
+		overflow: scroll;
 	}
 	
 	code.language-plaintext {
@@ -132,6 +132,7 @@
 				width: 30px;
 				color: transparent;
 				vertical-align: middle;
+				font-size: 0;
 				&:hover {
 					filter: brightness(115%);
 				}
