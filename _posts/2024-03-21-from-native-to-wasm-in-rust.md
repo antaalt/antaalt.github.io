@@ -4,7 +4,8 @@ lang: en
 title: "From native to WASM in Rust"
 subtitle: "How to make your rust winit/wgpu app in the browser with WASM."
 author: "Antoine"
-background: '/assets/images/posts/wasm.png'
+image: '/assets/images/posts/wasm.png'
+image-alt: 'wasm logo'
 ---
 
 Rust is nice, you can write plenty of safe code with it and there is starting to be some really intersting projects such as [Bevy](https://bevyengine.org/) for 3D rendering. And what's so nice about Bevy is that it's using [WGPU](https://wgpu.rs/) ! And WGPU support [WebAssembly](https://webassembly.org/) ! Which makes bevy able to run on the browser !
@@ -90,7 +91,7 @@ Here we have a lot of things happening
 
 But wait, I still have an issue !
 
-![Missing target](/assets/images/posts/wasm/missing-target-illustration.png)
+![Missing target error](/assets/images/posts/wasm/missing-target-illustration.png)
 
 ## Missing target
 By default, wasm compiler is not available in cargo, so its missing all the standard library so you have to install it yourself. That's simple, just run 

@@ -34,15 +34,23 @@ default_lang: fr
 cv_en: 2022.02.cv.en.altorffer.pdf
 cv_fr: 2022.02.cv.fr.altorffer.pdf
 
+defaults:
+-
+  scope:
+    path: "assets/**/*.pdf"
+  values:
+    sitemap: false
+
 # Build settings
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   highlighter: rouge
-#plugins:
-  #- jekyll-feed
 timezone: Europe/Paris
+plugins:
+  - jekyll-sitemap
+  #- jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

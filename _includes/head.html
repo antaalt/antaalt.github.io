@@ -7,16 +7,48 @@
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta name="keywords" content="{{ site.keywords }}">
 
-    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Antoine's computer graphics blog">
-
+    {% if page.author %}
+    <meta name="author" content="{{ page.author }}" />
+    {% endif %}
+    {% if page.date %}
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+    {% else %}
+    <meta property="og:type" content="website" />
+    {% endif %}
     <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"/>
-    <meta property="og:image" content="{% if page.background %}{{ page.background }}{% else %}{{ site.image }}{% endif %}"/>
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}"/>
     <meta property="og:url" content="{{ site.url }}{% if page.url %}{{ page.url }}{% endif %}"/>
     <meta property="og:locale" content="{{ page.lang | default: site.default_lang | default: "fr" }}"/>
+    <meta property="og:image" content="{% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}"/>
     <meta property="og:image:width" content="250"/>
     <meta property="og:image:height" content="250"/>
+    <meta property="og:image:alt" content="{% if page.image %}{{ page.image-alt }}{% else %}profile{% endif %}" />
+    {% if page.date %}
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "name": "{{page.title}}",
+        "author":
+        {
+            "@type":"Person",
+            "name":"{{page.author}}"
+        },
+        "dateModified":"{{ page.date | date_to_xmlschema }}",
+        "datePublished":"{{ page.date | date_to_xmlschema }}",
+        "description":"{{ page.description | date_to_xmlschema }}",
+        "headline":"{{page.title}}",
+        "image":"{{page.image}}",
+        "mainEntityOfPage":{
+            "@type":"WebPage",
+            "@id":"{{page.url}}"
+        },
+        "url":"{{page.url}}"
+    }
+    </script>
+    {% endif %}
 
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">

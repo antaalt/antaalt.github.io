@@ -4,7 +4,8 @@ lang: en
 title: "Renderdoc C/C++ API"
 subtitle: "How to integrate Renderdoc C/C++ API within your engine."
 author: "Antoine"
-background: '/assets/images/posts/renderdoc.jpg'
+image: '/assets/images/posts/renderdoc.jpg'
+image-alt: 'renderdoc logo'
 ---
 
 Renderdoc is a widely spread graphic debugging application that I happen to use a lot when writing rendering stuff. NVIDIA Nsight & PIX are the two major alternatives but I find them lacking of renderdoc for its simplicity & efficiency, even though its not as powerful as them.
