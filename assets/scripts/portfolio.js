@@ -125,12 +125,13 @@ let sliderHandler = function(options)
 	var images = [
 		"purple-building.small.jpg",
 		"fisheye-building.small.jpg",
-		"metro.small.jpg",
+		"mountain-of-madness.small.jpg",
 		"hanami.small.jpg",
 		"colorfulNeko.small.jpg",
-		"river.small.jpg",
 		"screw.small.jpg",
-		"window.small.jpg"
+		"window.small.jpg",
+		"pink-forest.small.jpg",
+		"white-forest.small.jpg",
 	];
 	var downloaded = [];
 	var nb = 0;
