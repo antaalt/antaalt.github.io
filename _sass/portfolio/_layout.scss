@@ -29,6 +29,7 @@ a.anchor {
     visibility: hidden;
 }
 #home {
+	color: darken($dark-blue, 10%);
 	.highlighted {
 		white-space: normal;
 	}
@@ -134,7 +135,7 @@ a.anchor {
 		margin:0 auto;
 		padding:20px 0;
 		h2{
-			color: white;
+			color: $grey;
 		}
 		#presentation{
 			font-size: 0;
@@ -153,13 +154,13 @@ a.anchor {
 				width:660px;
 				padding:20px;
 				h2{
-					color:white;
+					color:$grey;
 					vertical-align: middle;
 					display: inline-block;
 					margin-right: 20px;
 				}
 				&>p{
-					color:white;
+					color:$grey;
 					text-indent: 20px;
 					text-align: justify;
 				}
@@ -195,7 +196,7 @@ a.anchor {
 		#formation, #experience{
 			&>div{
 				display: inline-block;
-				color:white;
+				color:$grey;
 				vertical-align: top;
 				p{
 					margin: 0;
@@ -238,7 +239,7 @@ a.anchor {
 
 #posts {
 	background-color: $red;
-	color: #fff;
+	color: $grey;
 	z-index: 2;
 	width: 100%;
 	position: relative;
@@ -277,7 +278,7 @@ a.anchor {
 		transition:all 0.2s;
 		a {
 			display: block;
-			color:white;
+			color:$grey;
 			text-decoration: none;
 		}
 		&:hover {
@@ -302,7 +303,7 @@ a.anchor {
 
 #skills {
 	background-color: $light-blue;
-	color: #fff;
+	color: $grey;
 	&>div {
 		width: $global-width;
 		margin:0 auto;
@@ -386,7 +387,7 @@ a.anchor {
 	button[type="submit"]{
 		width: 100px;
 		background-color: black;
-		color:white;
+		color:$grey;
 		cursor:pointer;
 		position: relative;
 		left:0;

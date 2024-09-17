@@ -8,9 +8,9 @@ image: '/assets/images/posts/wasm.png'
 image-alt: 'wasm logo'
 ---
 
-Rust is nice, you can write plenty of safe code with it and there is starting to be some really intersting projects such as [Bevy](https://bevyengine.org/) for 3D rendering. And what's so nice about Bevy is that it's using [WGPU](https://wgpu.rs/) ! And WGPU support [WebAssembly](https://webassembly.org/) ! Which makes bevy able to run on the browser !
+Rust is nice, you can write plenty of safe code with it and there is starting to be some really intersting projects such as [Bevy](https://bevyengine.org/) for 3D rendering. And what's so nice about Bevy is that it's using [WGPU](https://wgpu.rs/). And WGPU support [WebAssembly](https://webassembly.org/) ! Which makes bevy able to run on the browser !
 
-But I am not here to talk about Bevy, but about custom engine & applications. One of the classic duo for 3D application in rust is [winit](https://github.com/rust-windowing/winit), a window handling library used with WGPU for the graphic backend. I started a small project and wanted to port it on wasm, but did not found much resources about converting an existing winit / wgpu application to wasm, so here it is !
+But I am not here to talk about Bevy, I am here to talk about custom engine & applications. One of the classic duo for 3D application in rust is [winit](https://github.com/rust-windowing/winit), a window handling library used with WGPU for the graphic backend. I started a small project and wanted to port it on wasm, but did not found much resources about converting an existing winit / wgpu application to wasm, so here it is !
 
 # Quick note
 
@@ -18,7 +18,7 @@ At the time of this writing, WASM is still experimental and some browser [does n
 
 # Setting up your project
 
-First to build to project for WASM, you will need some setup. You will need to add some dependencies. For that, you can edit your file cargo.toml and add the following
+First to build a project for WASM, you will need some setup. First, you need to add some dependencies. For that, you can edit your file cargo.toml and add the following
 ```toml
 [dependencies]
 wasm-bindgen = "0.2.92"
@@ -28,7 +28,7 @@ js-sys = "0.3.68"
 console_log = "1.0.0"
 console_error_panic_hook = "0.1.7"
 ```
-The target arch force these dependencies only for wasm build, which is exactly what we want. Shared dependencies need to go into standard [dependencies]
+The target arch force these dependencies only for wasm build, which is exactly what we want. Shared dependencies need to go into standard `[dependencies]`
 
 - **wasm-bindgen** is necessary to setup your project for wasm
 - **wasm-bindgen-test** will let you run specific tests for your wasm API.
@@ -73,7 +73,7 @@ pub async fn start() -> Result<(), JsValue> {
 
 Once you made your entry point correctly, you will be able to build your project. Note that there is many way to setup this, here we simply execute our whole app within the start that is called when loading the web assembly file in the browser, but we could retrieve an object and handle our application lifecycle from javascript instead. There are many resources on this topic on the web.
 
-Note that the function is async. You cannot use library such as pollster because the browser need to use its own async executor.
+> **NOTE**: The function is async here, it is not mandatory. You cannot use library such as pollster because the browser need to use its own async executor.
 
 # Building the project
 
