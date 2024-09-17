@@ -18,6 +18,7 @@
 		h1 {
 			margin: 0;
 			padding: 7px 0;
+			color:$dark-blue;
 		}
 		&:hover {
 			color:$light-blue;
@@ -54,14 +55,14 @@
 			left: 0;
 		}
 		&:hover {
-			color: #fff;
+			color: $grey;
 			&:before {
 				background-color: $light-blue;
 				height: 100%;
 			}
 		}
 		&.selected {
-			color:#fff;
+			color:$grey;
 			&:before {
 				height:100%;
 			}
