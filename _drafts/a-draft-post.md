@@ -5,7 +5,8 @@ title: "Draft post"
 subtitle: "This is a draft post to learn how to use Jekyll"
 author: Me
 date: 2023-10-07 23:45:13 -0400
-background: '/assets/images/projets/inTheRain.jpg'
+image: '/assets/images/projets/inTheRain.jpg'
+image-alt: 'draft'
 
 ---
 
