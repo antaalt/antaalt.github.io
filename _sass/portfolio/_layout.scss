@@ -1,19 +1,24 @@
 #fr-link {
-	@include sprite(6, 3);
+	&::before {
+		content: "🇫🇷";
+	}
 }
 #en-link {
-	@include sprite(7, 3);
+	&::before {
+		content: "🇬🇧";
+	}
 }
 .lang-selector {
-	width: 30px;
-	height: 20px;
+	padding: 0px 2px;
+	font-size: 0;
 	display: inline-block;
-	overflow: hidden;
-	text-indent: 9999px;
+	text-decoration: none;
+	&::before {
+		font-size: 30px;
+	}
 }
 .lang-selector-active {
 	pointer-events: none;
-
 }
 .lang-selector-unactive {
 	filter: grayscale(100%);
@@ -29,7 +34,7 @@ a.anchor {
     visibility: hidden;
 }
 #home {
-	color: darken($dark-blue, 10%);
+	color: $dark-blue;
 	.highlighted {
 		white-space: normal;
 	}
@@ -61,15 +66,23 @@ a.anchor {
 			display: inline-block;
 		}
 		p>a {
-			color: #000;
+			color: $dark-blue;
 			transition:color 0.1s;
 			&:hover {
-				color: $light-blue;
+				color: $dark-blue;
 			}
 		}
 		.cta {
 			margin-top: 25px;
 			margin-right: 0;
+			color: $dark-blue;
+			border-color: $dark-blue;
+			&:before{
+				background-color: $dark-blue;
+			}
+			&:hover {
+				color: #fff;
+			}
 		}
 		#right-cross {
 			font-size: 0;
@@ -90,16 +103,6 @@ a.anchor {
 					width:10%;
 					fill: $grey;
 				}
-			}
-		}
-		.cta {
-			color: #000;
-			border-color: #000;
-			&:before{
-				background-color: #000;
-			}
-			&:hover {
-				color: #fff;
 			}
 		}
 	}
@@ -157,7 +160,7 @@ a.anchor {
 					color:$grey;
 					vertical-align: middle;
 					display: inline-block;
-					margin-right: 20px;
+					margin-right: 10px;
 				}
 				&>p{
 					color:$grey;
@@ -165,31 +168,37 @@ a.anchor {
 					text-align: justify;
 				}
 				a.externLink{
-					display: inline-block;
 					text-decoration: none;
-					vertical-align: middle;
-					height: 30px;
-					width: 30px;
-					padding:5px;
-					text-indent: -9999px;
-				}
-				a#git{
-				    @include sprite(3, 2);
-				    &:hover {
-						@include sprite(2, 2);
-				    }
+					color: $grey;
+					text-align: middle;
+					font-size: 0;
+					transition: color 0.2s;
+		
+					&:hover {
+						color: $light-blue;
+					}
+					&:before {
+						font-size: 40px;
+						vertical-align: middle;
+					}
 				}
 				a#linkedin{
-				    @include sprite(1, 2);
-				    &:hover {
-						@include sprite(0, 2);
-				    }
+					&:before {
+						font-family: "social_media";
+						content: "L";
+					}
 				}
 				a#vimeo{
-				    @include sprite(8, 1);
-				    &:hover {
-						@include sprite(8, 0);
-				    }
+					&:before {
+						font-family: "social_media";
+						content: "V";
+					}
+				}
+				a#github{
+					&:before {
+						font-family: "social_media";
+						content: ")";
+					}
 				}
 			}
 		}
@@ -298,6 +307,9 @@ a.anchor {
 		h2 {
 			margin-top: 0;
 		}
+		.date {
+			font-style: italic;
+		}
 	}
 }
 
@@ -349,7 +361,7 @@ a.anchor {
 		margin:0 auto;
 		padding:20px 0;
 		h1{
-			color:black;
+			color:$dark-blue;;
 		}
 		&>div, form{
 			font-size: 16px;
@@ -359,7 +371,7 @@ a.anchor {
 		&>div{
 			width:300px;
 			a{
-				color:black;
+				color:$dark-blue;;
 				&:hover{
 					color: $light-blue;
 				}
@@ -376,17 +388,17 @@ a.anchor {
 			outline: none;
 			background-color: transparent;
 			&:hover{
-				border:1px solid $light-blue;
+				border:1px solid $dark-blue;
 			}
 			&:focus{
-				border:1px solid $light-blue;
+				border:1px solid $dark-blue;
 				background-color: #fff;
 			}
 		}
 	}
 	button[type="submit"]{
 		width: 100px;
-		background-color: black;
+		background-color: $dark-blue;
 		color:$grey;
 		cursor:pointer;
 		position: relative;
@@ -409,9 +421,9 @@ a.anchor {
 		}
 		&.sent{
 			left: calc(100% - 100px);
-			background-color: green;
+			background-color: #419141;
 			&:before{
-				background-color: green;
+				background-color: #419141;
 			}
 		}
 		&.sending{
@@ -454,6 +466,9 @@ a.anchor {
 	#question{
 		margin-top:20px;
 	}
+	label {
+		color: $dark-blue;
+	}
 	label + input#check{
 		width:40px;
 		text-align: center;
@@ -461,36 +476,47 @@ a.anchor {
 }
 
 footer#home-footer{
-	height:200px;
+	vertical-align: middle;
 	background-color: $grey;
+	color: $dark-blue;
 	div{
 		text-align: center;
-		line-height: 200px;
-		&>a{
-			display: inline-block;
-			height: 20px;
-			width: 20px;
-			overflow: hidden;
-			text-indent: -999px;
+		width: 100%;
+		padding: 100px 0px;
+		a {
+			color: $dark-blue;
+			text-decoration: none;
+		}
+		.social-link{
 			vertical-align: middle;
-			margin-bottom: 4px;
+			text-align: middle;
+			font-size: 0;
+			transition: color 0.2s;
+
+			&:hover {
+				color: $light-blue;
+			}
+			&:before {
+				font-size: 30px;
+				vertical-align: middle;
+			}
 		}
 		#linkedin{
-			@include sprite(4, 2);
-			&:hover {
-				@include sprite(5, 2);
+			&:before {
+				font-family: "social_media";
+				content: "l";
 			}
 		}
 		#vimeo{
-			@include sprite(8, 2);
-			&:hover {
-				@include sprite(8, 3);
+			&:before {
+				font-family: "social_media";
+				content: "v";
 			}
 		}
 		#github{
-			@include sprite(6, 2);
-			&:hover {
-				@include sprite(7, 2);
+			&:before {
+				font-family: "social_media";
+				content: "*";
 			}
 		}
 	}
