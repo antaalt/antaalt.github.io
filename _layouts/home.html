@@ -57,7 +57,7 @@ image-alt: 'profile pic'
 					<img src="{{post.image}}" class="post-link-image" alt="{{post.image-alt}}"/><!--
 					--><div class="post-link-description">
 						<h2>{{ post.title }}</h2>
-						<p>Published on {{ post.date | date: "%B %-d, %Y" }} by {{ post.author }}</p>
+						<p class="date">{{ post.date | date: "%B %-d, %Y" }} by {{ post.author }}</p>
 						<p>{{ post.content | strip_html | truncatewords: 30 }}</p>
 					</div>
 				</a>
@@ -81,7 +81,7 @@ image-alt: 'profile pic'
 			<div id="description">
 				<h2>{{ site.data.i18n[page.lang].whoami_title }}</h2>
 				<a href="{{ site.vimeo_url }}" target="_blank" id="vimeo" class="externLink">vimeo</a>
-				<a href="{{ site.github_url }}" target="_blank" id="git" class="externLink">github</a>
+				<a href="{{ site.github_url }}" target="_blank" id="github" class="externLink">github</a>
 				<a href="{{ site.linkedin_url }}" target="_blank" id="linkedin" class="externLink">linkedin</a>
 				<p>{{ site.data.i18n[page.lang].whoami_description }}</p>
 				{% if page.lang == "fr" %}
