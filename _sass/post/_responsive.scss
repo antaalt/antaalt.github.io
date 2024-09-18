@@ -21,6 +21,7 @@
         .post-header-description {
             border-top: none;
             padding: 0;
+            margin: 0;
             width: 100%;
         }
     }
@@ -53,6 +54,16 @@
         }
         blockquote {
             margin:40px 10px;
+        }
+    }
+    ul {
+       padding-left: 20px; 
+    }
+    .post-footer {
+        .post-third, .post-third-mid {
+            display: block;
+            width: 100%;
+            text-align: center;
         }
     }
 }

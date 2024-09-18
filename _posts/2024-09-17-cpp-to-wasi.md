@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: "Compile C++ to WASI"
-subtitle: "Compile a C++ project to target wasi and run on browser"
+title: "C++, Rust & WASI"
+subtitle: "Compile a Rust project with C++ bindings to WASI"
 author: Antoine
 image: '/assets/images/posts/wasi.png'
 image-alt: 'wasi logo by lachlansneff'

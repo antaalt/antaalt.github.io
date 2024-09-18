@@ -110,6 +110,16 @@
 		margin: 0 auto;
 	}
 	.post-half {
+		width: 50%;
+		display: inline-block;
+		&:first-child {
+			text-align: left;
+		}
+		&:last-child {
+			text-align: right;
+		}
+	}
+	.post-third {
 		width: 33%;
 		display: inline-block;
 		&:first-child {
@@ -119,7 +129,7 @@
 			text-align: right;
 		}
 	}
-	.post-half-mid {
+	.post-third-mid {
 		width: 34%;
 		display: inline-block;
 		text-align: center
