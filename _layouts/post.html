@@ -49,7 +49,7 @@ layout: default_post
       </section>
       {% if site.posts.size > 0 %}
       <section class="post-nav">
-        <div class="post-half">
+        <div class="post-third">
           {% for post in site.posts %}
             {% if post.lang == page.lang %}
               {% if prev %}
@@ -62,10 +62,10 @@ layout: default_post
             {% endif %}
           {% endfor %}
         </div><!-- HACK
-        --><div class="post-half-mid">
+        --><div class="post-third-mid">
           <a href ="/#posts" id="home-link">All posts</a>
         </div><!-- HACK
-        --><div class="post-half">
+        --><div class="post-third">
           {% for post in site.posts reversed %}
             {% if post.lang == page.lang %}
               {% if next %}
