@@ -22,19 +22,59 @@ https://code.visualstudio.com/blogs/2024/06/07/wasm-part2
 
 https://github.com/microsoft/vscode-wasm
 
-# How to
+# How to write a language server - part 1
 
-# Syntax highlitghting
+## What is a language server
 
-# Language server protocol
+A language server is a server (duh) that will be responsible of helping programmer by providing him some helpful features. This kind of feature could be:
 
-# Symbols through tree sitter
+- Diagnostic: Send some feedback about the code you are writing telling you where you made some mistake such as forgetting ';'.
+- Hover: Provide some informations when you hover your cursor at some point in your code
+- Completion: provide you some code as you type
+- Goto: when clicking on a symbol, find its definition & get to it.
+- A lot more...
+
+These features are not automatic, and you need code to analyze what you are writting and interpret it as you type. Thats what a language server does. You can find some famous language server such as [rust analyzer](https://rust-analyzer.github.io/) for Rust or [shader-language-server](https://github.com/antaalt/shader-language-server) for shaders.
+
+As its server, we will need a client, which will be mostly of the time your favorite IDE.
+
+But instead of writing your own client / server protocol, why not use something that already exist and is supported by some IDE already ? This is [language server protocol](https://microsoft.github.io/language-server-protocol/), or lsp as its called. 
+
+## Language server protocol (LSP)
+
+Language server protocol, as its name explain it, is an open standard protocol for writing language server. With this protocol, you just have to pick a lib for your server following it (such as [lsp-server](https://crates.io/crates/lsp-server), the lsp library used by rust-analyzer) and write features with it, and the client will be quite straigtforward if your IDE support it. 
+
+Some IDE support lsp, it was developed originally for VS code, but it is now open, and others such as IntelliJ and Visual Studio added support for it. So writing a server following LSP means its could be used by all these IDE (still demanding to create some more or less simple client code).
+
+
+
+## WASI
+
+lsp on wasi
+
+
+
+# How to write a language server - part 2
+
+## Syntax highlighting
+
+tmlanguage, improvement
+
+## Diagnostics
+
+Dxc, glslang, Naga, rust
+
+## Symbol regex
+
+
+## Symbols through tree sitter
+(Could have its own blog post.)
+
+Neovim
 
 https://tree-sitter.github.io/tree-sitter/
 
 Linting
-
-Dxc, glslang, Naga, rust
 
 Dedicated post on WASI
 

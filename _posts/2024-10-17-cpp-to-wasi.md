@@ -4,7 +4,7 @@ lang: en
 title: "C++, Rust & WASI"
 subtitle: "Compile a Rust project with C++ bindings to WASI"
 author: Antoine
-image: '/assets/images/posts/wasi.png'
+image: '/assets/images/posts/wasi/wasi-logo.png'
 image-alt: 'wasi logo by lachlansneff'
 
 ---
@@ -23,36 +23,6 @@ To build an application using FFI, it is common to have the following code archi
 - a crate `my-app-sys` holding a generated interface to your code, that is built using a build.rs and linked to the crate.
 - a crate `my-app` using my-app-sys and eventually proposing an improved interface with a more rust-like interface, hiding the unsafe call being a nice interface.
 
-# Build c++ API into rust WASI
-
-## Building C++ to WASI
-
-In order to build C++ to WASI, you need to use the [WASI SDK](https://github.com/WebAssembly/wasi-sdk) that you can download in the [release](https://github.com/WebAssembly/wasi-sdk/releases) section of their Github repo. This SDK contains some required component such as a sysroot containing libc, libc++ & some important library already compiled for WASI to be linked against on build.
-
-To build a program, you will need to use clang++ as its the only supported compiler for now. Either use any clang version to which you provide a path to WASI SDK sysroot, or use the bundled clang version in WASI SDK that already link the sysroot internally to build your application.
-
-You will need to set some important flags such as: 
-
-- `-fno-exceptions` as WASI does not support exceptions yet. 
-- `-L/path/to/sysroot/{wasi-target}/lib/wasm32-wasi` to tell the compiler where to find c++ lib to link against
-- `-lstatic=c++ -lstatic=c++ab` to tell the compiler which C++ lib we link against.
-- `--sysroot="path/to/sysroot` to tell the compiler where to find all configurations for target.
-
-You should be able to build your project and generate a .wasm file.
-
-## Building rust to WASI
-
-Building WASI is quite straight forward in rust. First simply add one of the target you need. WASI has multiple target as its still in its early prototyping. You will have access to 2 previews version as of now aswell as some extension that support interesting features such as threads. Theses extensions are not yet part of core, but they are already quite used:
-
-- **wasm32-wasip1**: Preview 1
-- **wasm32-wasip2**: Preview 2
-- **wasm32-wasip1-threads**: Preview 1 with threads support
-
-You can then simply add the target. If you don't add it, you will not be able to compile if you use anything from standard library.
-
-```sh
-rustup target add wasm32-wasip1
-```
 
 You should have a codebase following this structure:
 
@@ -77,14 +47,58 @@ my-app
 
 > **NOTE**: You can look at [bindgen](https://github.com/rust-lang/rust-bindgen) to automate the binding generation.
 
-You will also need the WASI_SYSROOT environment variable set for cc-rs targetting the sysroot from WASI_SDK.
+
+# Build c++ API into rust WASI
+
+## Building C++ to WASI
+
+In order to build C++ to WASI, you need to use the [WASI SDK](https://github.com/WebAssembly/wasi-sdk) that you can download in the [release](https://github.com/WebAssembly/wasi-sdk/releases) section of their Github repo. This SDK contains some required component such as a sysroot containing libc, libc++ & some important library already compiled for WASI to be linked against on build.
+
+To build a program, you will need to use clang++ as its the only supported compiler for now. Either use any clang version to which you provide a path to WASI SDK sysroot, or use the bundled clang version in WASI SDK that already link the sysroot internally to build your application.
+
+You will need to set some important flags such as: 
+
+- `-fno-exceptions` as WASI does not support exceptions yet. 
+- `-L/path/to/sysroot/{wasi-target}/lib/wasm32-wasi` to tell the compiler where to find c++ lib to link against
+- `-lstatic=c++ -lstatic=c++ab` to tell the compiler which C++ lib we link against.
+- `--sysroot="path/to/sysroot` to tell the compiler where to find all configurations for target, which you can find in WASI SDK.
+
+You should be able to build your project and generate a .wasm file.
+
+## Building rust to WASI
+
+Building WASI is quite straight forward in rust. First simply add one of the target you need. WASI has multiple target as its still in its early prototyping. You will have access to 2 previews version as of now aswell as some extension that support interesting features such as threads. Theses extensions are not yet part of core, but they are already quite used:
+
+- **wasm32-wasip1**: Preview 1
+- **wasm32-wasip2**: Preview 2
+- **wasm32-wasip1-threads**: Preview 1 with threads support
+
+You can then simply add the target. If you don't add it, you will not be able to compile if you use anything from standard library and you will get error not found on std & core library at compilation such as in the following image :
+
+![no-target-installed](/assets/images/posts/wasi/invalid-target.png)
+
+To fix this, just run the following command:
+
+```sh
+rustup target add wasm32-wasip1
+```
+
+You will also need the WASI_SYSROOT environment variable set for cc-rs targetting the sysroot from WASI_SDK. cc-rs will look for it and setup everything.
 
 Then simply run:
 
 ```sh
 cargo build --target wasm32-wasip1
 ```
-Which will generate a wasm executable. To test it directly, you can download wasmtime and run `wasmtime /path/to/my/wasm`.
+... which will generate a wasm executable. To test it directly, you can download wasmtime and run `wasmtime /path/to/my/wasm`.
+
+If it does not, check the log, and ensure that you have clang accessible in path 
+
+![clang-not-found](/assets/images/posts/wasi/clang-not-found.png)
+
+& sysroot aswell, in order to find c++ std lib header.
+
+![no-target-installed](/assets/images/posts/wasi/no-sysroot.png)
 
 
 ## Linking C++ to rust for WASI
@@ -112,9 +126,10 @@ fn main() {
 }
 ```
 
-Your application should now be running C++ code within a WASI executable in rust. This is a really cool features as this let us run some big project on the web ! For example, you can build [glslang](https://github.com/KhronosGroup/glslang) to WASI using this ! A full features version of glslang running in a browser supporting WASI, now imagine the possibilites...
+Your application should now be running C++ code within a WASI executable in rust. This is a really cool features as this let us run some big project on the web ! For example, you can build [glslang](https://github.com/KhronosGroup/glslang) to WASI using this ! A full features version of glslang running in a browser supporting WASI, now imagine the possibilites... I have used it for a VS code extension of mine for shader linting & completion, [shader validator](https://github.com/antaalt/shader-validator) which I will talk about some another time !
 
 You can find a complete codebase on my [git repo](https://github.com/antaalt/wasi-rust-with-cpp-bindings) for compiling C++ to WASI with rust.
+
 
 # Interesting resources
 
