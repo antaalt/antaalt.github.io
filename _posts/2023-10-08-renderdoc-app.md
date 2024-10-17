@@ -4,7 +4,7 @@ lang: en
 title: "Renderdoc C/C++ API"
 subtitle: "How to integrate Renderdoc C/C++ API within your engine."
 author: "Antoine"
-image: '/assets/images/posts/renderdoc.jpg'
+image: '/assets/images/posts/renderdoc/renderdoc-logo.jpg'
 image-alt: 'renderdoc logo'
 ---
 

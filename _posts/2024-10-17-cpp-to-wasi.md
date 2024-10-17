@@ -4,7 +4,7 @@ lang: en
 title: "C++, Rust & WASI"
 subtitle: "Compile a Rust project with C++ bindings to WASI"
 author: Antoine
-image: '/assets/images/posts/wasi.png'
+image: '/assets/images/posts/wasi/wasi-logo.png'
 image-alt: 'wasi logo by lachlansneff'
 
 ---
