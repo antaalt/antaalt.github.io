@@ -5,7 +5,7 @@ title: "How to write a language server"
 subtitle: "Creating a language server with language server protocol for vscode"
 author: Antoine
 image: '/assets/images/posts/shader-validator-part1/vscode.png'
-image-alt: 'shader validator logo'
+image-alt: 'vscode logo'
 
 ---
 
@@ -15,7 +15,7 @@ Notepad is probably not the best tool for writing code. We use IDE because they 
 
 A language server is a server (duh) that will be responsible of helping programmer by providing him some helpful features. This kind of feature could be:
 
-- Diagnostic: Send some feedback about the code you are writing telling you where you made some mistake such as forgetting ';'.
+- Diagnostic: Send some feedback about the code you are writing.
 
 ![diagnostic](/assets/images/posts/shader-validator-part1/diagnostic.png)
 
@@ -33,21 +33,21 @@ A language server is a server (duh) that will be responsible of helping programm
 
 - A lot more...
 
-These features are not automatic, and you need code to analyze what you are writing and interpret it as you type. Thats what a language server does. You can find some famous language server such as [rust analyzer](https://rust-analyzer.github.io/) for Rust.
+These features are not automatic, and you need code to analyze what you are writing and interpret it as you type. Thats what a language server does. As its a server, we will need a client, which will be most of the time an extension in your favorite IDE.
 
-As its a server, we will need a client, which will be most of the time your favorite IDE.
+You can find some famous language server extension such as [rust analyzer](https://rust-analyzer.github.io/) for Rust.
 
-But instead of writing your own client / server protocol, why not use something that already exist and is supported by some IDE already ? This is [language server protocol](https://microsoft.github.io/language-server-protocol/), or lsp as some call it. 
+But instead of writing your own client / server protocol, why not use something that already exist and is supported by some IDE already ? This is [language server protocol](https://microsoft.github.io/language-server-protocol/), or lsp as some call it and that is what rust analyzer is based on. 
 
 # Language server protocol (LSP)
 
 Language server protocol is an open standard protocol for writing language server based on JSON-RPC. With this protocol, you just have to pick a library for your server to adhere to it (such as rust [lsp-server](https://crates.io/crates/lsp-server), the lsp library used by rust-analyzer) and write features with it, the client will then be quite straigtforward if your IDE support it. 
 
-Some of them support lsp out of the box, it was developed originally for VS code, but it is now open, and others such as IntelliJ, Visual Studio and Neovim added support for it (You can find the non exhaustive list [here](https://microsoft.github.io/language-server-protocol/implementors/tools/)). Writing a server following LSP means its could be used by all these IDE (still demanding to create some more or less simple client code).
+Some of them support lsp out of the box, it was developed originally for VS code, but it is now open, and others such as IntelliJ, Visual Studio, Neovim and much more added support for it (You can find a non exhaustive list [here](https://microsoft.github.io/language-server-protocol/implementors/tools/)). Writing a server following LSP means its could be used by all these IDE (still demanding to create some more or less simple client code).
 
-What is nice about LSP is that it can be written in any language. Pick up your language, find a library following the protocol (or make your own if you have time to spare), write your server by including all the functionnality you need, and profit ! There is lot of languages supported, for which you can find a list on [Microsoft specifications](https://microsoft.github.io/language-server-protocol/implementors/sdks/).
+What is nice about LSP is that it can be written in any language. Pick up your language, find a library following the protocol (or make your own if you have time to spare), write your server by including all the functionnality you need, and profit ! There is lot of SDK available for many languages, for which you can find a list on [Microsoft specifications](https://microsoft.github.io/language-server-protocol/implementors/sdks/).
 
-Personnally, I choose to go with Rust as its a performant language that has a lot of tools available for language server. Plus it compile easily to WASI target, and vscode offer a really nice feature with it.
+Personnally, I choose to go with Rust as its a performant language that has a lot of tools available for language server. Plus it compile easily to WASI target, and vscode offer a really nice feature with it I will present you.
 
 ## WASI language server
 
