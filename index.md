@@ -1,4 +1,4 @@
 ---
 layout: home
-lang: fr
+lang: en
 ---
