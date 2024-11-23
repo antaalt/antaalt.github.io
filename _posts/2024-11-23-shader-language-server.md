@@ -15,7 +15,7 @@ Notepad is probably not the best tool for writing code. We use IDE because they 
 
 A language server is a server (duh) that will be responsible of helping programmer by providing him some helpful features. This kind of feature could be:
 
-- Diagnostic: Send some feedback about the code you are writing.
+- Diagnostic: Send some feedback about the code you are writing (aka. linting).
 
 ![diagnostic](/assets/images/posts/shader-validator-part1/diagnostic.png)
 
@@ -43,6 +43,9 @@ But instead of writing your own client / server protocol, why not use something 
 
 Language server protocol is an open standard protocol for writing language server based on JSON-RPC. With this protocol, you just have to pick a library for your server to adhere to it (such as rust [lsp-server](https://crates.io/crates/lsp-server), the lsp library used by rust-analyzer) and write features with it, the client will then be quite straigtforward if your IDE support it. 
 
+![lsp-implementation](/assets/images/posts/shader-validator-part1/lsp-implementation.png)
+*Caption from [learn.microsoft.com](https://learn.microsoft.com/en-us/visualstudio/extensibility/adding-an-lsp-extension?view=vs-2022)*
+
 Some of them support lsp out of the box, it was developed originally for VS code, but it is now open, and others such as IntelliJ, Visual Studio, Neovim and much more added support for it (You can find a non exhaustive list [here](https://microsoft.github.io/language-server-protocol/implementors/tools/)). Writing a server following LSP means its could be used by all these IDE (still demanding to create some more or less simple client code).
 
 What is nice about LSP is that it can be written in any language. Pick up your language, find a library following the protocol (or make your own if you have time to spare), write your server by including all the functionnality you need, and profit ! There is lot of SDK available for many languages, for which you can find a list on [Microsoft specifications](https://microsoft.github.io/language-server-protocol/implementors/sdks/).
@@ -59,13 +62,19 @@ You can find more about it on [visual studio blog](https://code.visualstudio.com
 # Shader language server
 
 Now the part about shaders. There is already some good extensions on vscode for shader but with some limitations:
-- [HLSL tools](https://marketplace.visualstudio.com/items?itemName=TimGJones.hlsltools): Probably the best hlsl extension, that made it to Visual Studio as default installed HLSL extension. The issue is that its not maintainted anymore and not easy to maintain as its reimplement a whole HLSL compiler to lint shaders.
-- [Shader languages support for VS Code](https://marketplace.visualstudio.com/items?itemName=slevesque.shader): Nice extension for GLSL & HLSL but not maintained anymore aswell. There is no diagnostics aswell, only symbol provider. Some compatible extension are available to make add it but they rely on glslang & directx shader compiler & require them to be install as dependencies.
+- [HLSL tools](https://marketplace.visualstudio.com/items?itemName=TimGJones.hlsltools): Probably the best hlsl extension, that made it to Visual Studio as default installed HLSL extension. The issue is that its not maintainted anymore and not easy to maintain as its reimplement a whole HLSL compiler to lint shaders. It does not support latest HLSL features from DXC such as enum.
+- [Shader languages support for VS Code](https://marketplace.visualstudio.com/items?itemName=slevesque.shader): Nice extension for GLSL & HLSL but not maintained anymore aswell. There is no diagnostics, only symbol provider. Some compatible extension are available to add linting but they rely on glslang & directx shader compiler & require them to be install as dependencies.
 - [WGSL](https://marketplace.visualstudio.com/items?itemName=PolyMeilex.wgsl): Nice extension for WGSL, but only support linting, and require an external installation of the server.
 
-These where some nice extensions, but none were really fitting my needs, so I decided to make my own language server for shader. And while we are at it, make it easy to support more than one shader language. 
+These where some nice extensions, but none were really fitting my needs, so I decided to make my own language server for shader using these needs:
+- Rely on LSP for IDE compatibility.
+- Rely on standard API for validation.
+- Run on web version of vscode using WASI.
+- Bundle the server into the extension to make it work out of the box.
+- Symbol providing (which came up later).
+- Support more than one shader language.
 
-And I came up with [shader validator](https://marketplace.visualstudio.com/items?itemName=antaalt.shader-validator). 
+Thats a lot of need, but I finally came up with [shader validator](https://marketplace.visualstudio.com/items?itemName=antaalt.shader-validator). 
 
 It support HLSL / GLSL & WGSL & is based on Rust. Diagnostics is run by standard API validator (Glslang, DXC, Naga) and symbol provider is provided by [tree-sitter](https://tree-sitter.github.io/tree-sitter/). Everything is bundled in the extension so it should work out of the box, and even on the web version of vscode thanks to WASI.
 

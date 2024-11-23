@@ -100,6 +100,16 @@
 		border-radius: 5px;
 		max-width: 100%;
 	}
+	img + em { 
+		display: inline-block;
+		color: #a4a4a4;
+		&::before {
+			content: '^';
+		}
+		&::after {
+			content: ' ^';
+		}
+	}
 }
 .post-footer {
 	background-color: $light-blue;
