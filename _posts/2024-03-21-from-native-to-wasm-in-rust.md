@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "From native to WASM in Rust"
 subtitle: "How to make your rust winit/wgpu app in the browser with WASM."
-author: "Antoine"
+author: "antaalt"
 image: '/assets/images/posts/wasm/wasm-logo.png'
 image-alt: 'wasm logo'
 ---

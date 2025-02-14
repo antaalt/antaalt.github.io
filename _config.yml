@@ -17,7 +17,6 @@
 environment: "production"
 
 title: Antoine Altorffer - 3D graphics engineer
-email: altorantoine@gmail.com
 image: /assets/images/profile.jpg
 description: > # this means to ignore newlines until "keywords:"
   Graphics engineer working in the video game industry who loves 3D, Rust, Blender, trees & alpha test.
@@ -41,6 +40,9 @@ defaults:
   values:
     sitemap: false
 
+feed:
+  excerpt_only: true
+
 # Build settings
 markdown: kramdown
 kramdown:
@@ -50,7 +52,7 @@ kramdown:
 timezone: Europe/Paris
 plugins:
   - jekyll-sitemap
-  #- jekyll-feed
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

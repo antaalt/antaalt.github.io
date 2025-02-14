@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "C++, Rust & WASI"
 subtitle: "Compile a Rust project with C++ bindings to WASI"
-author: Antoine
+author: antaalt
 image: '/assets/images/posts/wasi/wasi-logo.png'
 image-alt: 'wasi logo by lachlansneff'
 

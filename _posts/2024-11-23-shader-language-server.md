@@ -3,7 +3,7 @@ layout: post
 lang: en
 title: "How to write a language server"
 subtitle: "Creating a language server with language server protocol for vscode"
-author: Antoine
+author: antaalt
 image: '/assets/images/posts/shader-validator-part1/vscode.png'
 image-alt: 'vscode logo'
 

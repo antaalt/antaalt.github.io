@@ -1,5 +1,7 @@
 ---
 #jekyll
+# sitemap somehow is not indexed by google search console. Need to check more this.
+#https://dev.to/stankukucka/google-search-console-cant-fetch-sitemap-on-github-pages-31kn
 ---
 Sitemap: {{ site.url }}/sitemap.xml
 
