@@ -17,7 +17,6 @@
 environment: "development"
 
 title: Antoine Altorffer - 3D graphics programmer
-email: altorantoine@gmail.com
 image: /assets/images/profile.jpg
 description: > # this means to ignore newlines until "baseurl:"
   Ingénieur créatif passioné par l'animation,
@@ -42,12 +41,15 @@ defaults:
   values:
     sitemap: false
 
+feed:
+  excerpt_only: true
+
 # Build settings
 markdown: kramdown
 timezone: Europe/Paris
 plugins:
   - jekyll-sitemap
-  #- jekyll-feed
+  - jekyll-feed
 
 
 # Exclude from processing.
