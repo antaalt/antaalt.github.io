@@ -6,4 +6,6 @@
 #
 layout: home
 lang: fr
+title: Antoine Altorffer - Ingénieur graphique 3D
+description: Ingénieur graphique dans l'industrie du jeu vidéo, passionné de 3D, Rust, Blender, d'arbres & d'alpha test.
 ---

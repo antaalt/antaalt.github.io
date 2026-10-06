@@ -10,4 +10,4 @@ Requires Ruby & Jekyll.
 To start debug, run `bundle exec jekyll serve`.
 You can also view draft post aswell by adding argument `--draft`.
 
-Github Actions handle the build and deployment.
+Github pages auto build and deploy the site.
