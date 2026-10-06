@@ -23,6 +23,14 @@ layout: default_post
 
   <section class="post-content" itemprop="articleBody">
     <div>
+      {% assign now = 'now' | date: '%Y' %}
+      {% assign postTime = page.date | date: '%Y' %}
+      {% assign elapsed = now | minus: postTime %}
+      {% if elapsed > 1 %}
+        <blockquote class="warning">
+          <p>This post has been written more than a year ago and might be outdated.</p>
+        </blockquote>
+      {% endif %}
       {{ content }}
     </div>
   </section>

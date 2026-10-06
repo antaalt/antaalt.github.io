@@ -91,10 +91,13 @@
 		border-radius: 5px;
 	}
 	blockquote {
-		background-color: color-mix(in srgb, $light-blue 20%, transparent);;
+		background-color: color-mix(in srgb, $light-blue 20%, transparent);
 		padding: 2px 10px;
 		margin: 30px 40px;
 		border-radius: 10px;
+		&.warning {
+			background-color: color-mix(in srgb, $orange 20%, transparent);
+		}
 	}
 	img {
 		border-radius: 5px;
