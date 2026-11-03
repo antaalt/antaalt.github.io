@@ -1,137 +1,17 @@
-let scrollHandler = function()
-{
-	let headerHeight = 60; // Must fit CSS value
-	let heightTriggeringMenu = window.innerHeight / 3;
-	let selectedClassName = 'selected';
-
-	let setMenuBarMinimization = function() {
-		let windowScroll = window.scrollY;
-		let menu = document.getElementById("menu");
-		if(windowScroll >= heightTriggeringMenu ){
-			menu.classList.add("minimize");
-		}else {
-			menu.classList.remove("minimize");
-		}
-	};
-
-	let setCurrentMenuItemAsSelected = function(_id) {
-		let menuLinks = document.querySelectorAll('a[href^="/#"].smooth-scroll');
-		Array.prototype.forEach.call(menuLinks, function(menuLink) {
-			if(menuLink.getAttribute("id") == _id)
-			{
-				menuLink.classList.add(selectedClassName);
-			}
-			else
-			{
-				menuLink.classList.remove(selectedClassName);
-			}
-		});
-	};
-	let findAndSetCurrentMenuItem = function() {
-		var scrollPosition = window.scrollY;
-		var idPosition;
-		let sections = document.getElementsByClassName("section");
-		Array.prototype.forEach.call(sections, function(section) {
-			var position = section.offsetTop - headerHeight - 20;
-			if(position < scrollPosition)
-			{
-				idPosition = section.getAttribute('id') + "-link";
-			}
-		});
-		setCurrentMenuItemAsSelected(idPosition);
-	};
-
-	let handleScroll = function() {
-		setMenuBarMinimization();
-		findAndSetCurrentMenuItem();
-	};
-
-	let home = document.getElementById("home");
-	if (home.length != 0)
-	{
-		handleScroll();
-		window.addEventListener("scroll", handleScroll);
-	}
-};
-
-let mailHandler = function()
-{
-	var form = document.getElementById("mail-form");
-	var timeout;
-	
-	var onSuccess = function() {
-		var button = document.getElementById("mail-send-button");
-		button.innerHTML = button.dataset.sent;
-		button.classList.remove('error');
-		button.classList.add('sent');
-		button.classList.remove('sending');
-		clearTimeout(timeout);
-		timeout = setTimeout(() => {
-			// Restore button & text.
-			button.innerHTML = button.dataset.send;
-			button.classList.remove('sent');
-		}, 5000);
-	};
-
-	var onFailure = function(errors) {
-		var button = document.getElementById("mail-send-button");
-		button.innerHTML = button.dataset.error + " (" + errors.map(error => error["message"]).join(", ") + ")";
-		button.classList.remove('sent');
-		button.classList.add('error');
-		button.classList.remove('sending');
-		clearTimeout(timeout);
-		timeout = setTimeout(() => {
-			// Restore button & text.
-			button.innerHTML = button.dataset.send;
-			button.classList.remove('error');
-		}, 5000);
-	};
-    
-    async function handleSubmit(event) {
-		event.preventDefault();
-		var status = document.getElementById("my-form-status");
-		var data = new FormData(event.target);
-		fetch(event.target.action, {
-			method: form.method,
-			body: data,
-			headers: {
-				'Accept': 'application/json'
-			}
-		}).then(response => {
-			if (response.ok) {
-				onSuccess();
-				form.reset()
-			} else {
-				response.json().then(data => {
-					if (Object.hasOwn(data, 'errors')) {
-						onFailure(data["errors"]);
-						console.error(data["errors"]);
-					} else {
-						onFailure(["Error"]);
-					}
-				})
-			}
-		}).catch(error => {
-			status.innerHTML = "Oops! There was a problem submitting your form"
-		});
-	}
-    form.addEventListener("submit", handleSubmit);
-};
-
 let sliderHandler = function(options)
 {
 	var path = "/assets/images/slider/";
 	var slider = document.getElementById("slider");
+	// Description is shown in a small popup over the picture. Leave empty to hide it.
 	var images = [
-		"purple-building.small.jpg",
-		"fisheye-building.small.jpg",
-		"mountain-of-madness.small.jpg",
-		"hanami.small.jpg",
-		"colorfulNeko.small.jpg",
-		"screw.small.jpg",
-		"window.small.jpg",
-		"pink-forest.small.jpg",
-		"white-forest.small.jpg",
+		{ file: "purple-building.small.jpg", description: "Purple facade." },
+		{ file: "fisheye-building.small.jpg", description: "La Défense." },
+		{ file: "mountain-of-madness.small.jpg", description: "Mountain of madness." },
+		{ file: "pink-forest.small.jpg", description: "Infrared Fontainebleau." },
+		{ file: "screw.small.jpg", description: "A wild screw." },
+		{ file: "white-forest.small.jpg", description: "Infrared forest." },
+		{ file: "milan.small.jpg", description: "Black kite." },
+		{ file: "squirrel.small.jpg", description: "Looking for food." },
 	];
 	var downloaded = [];
 	var nb = 0;
@@ -166,6 +46,12 @@ let sliderHandler = function(options)
 		container.id = "slide"+index;
 		container.style.transition = "opacity " + options.duration + "s";
 		container.style.backgroundImage = "url(" + downloaded[index].src + ")";
+		if(images[index].description) {
+			var popup = document.createElement("p");
+			popup.classList.add("slide-popup");
+			popup.textContent = images[index].description;
+			container.appendChild(popup);
+		}
 		slider.appendChild(container);
 	};
 	// Check if slider is present in image.
@@ -184,16 +70,40 @@ let sliderHandler = function(options)
 				downloaded[index] = new Image();
 				downloaded[index].index = index;
 				downloaded[index].onload = onLoad;
-				downloaded[index].src = path + value;
+				downloaded[index].src = path + value.file;
 			}
 		});
 		setInterval(manageTransition, options.transitionDuration);
 	};
-	downloaded[0].src = path + images[0];
+	downloaded[0].src = path + images[0].file;
+};
+
+let postOffset = function()
+{
+	const items = document.querySelectorAll('.post-container a');
+	const maxOffset = 100; // px
+	const mq = window.matchMedia('only screen and (max-width: 720px)');
+
+	function update() {
+		if (mq.matches) {
+			items.forEach(li => li.style.transform = '');
+			return;
+		}
+		const vh = window.innerHeight;
+		items.forEach(a => {
+			const r = a.getBoundingClientRect();
+			const center = r.top + r.height / 2;
+			const t = 1 - center / vh; // 0 = top, 1 = bottom
+			const x = t * maxOffset;
+			a.style.transform = `translateX(${x}px)`;
+		});
+	}
+
+	window.addEventListener('resize', update);
+	update();
 };
 
 (function() {
-	new scrollHandler();
-	new mailHandler();
 	new sliderHandler({duration: 2.0, transitionDuration: 5000});
+	new postOffset();
 })();

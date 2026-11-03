@@ -16,7 +16,7 @@
 
 environment: "production"
 
-title: Antoine Altorffer - 3D graphics engineer
+title: antaalt - 3D graphics engineer
 image: /assets/images/profile.jpg
 description: > # this means to ignore newlines until "keywords:"
   Graphics engineer working in the video game industry who loves 3D, Rust, Blender, trees & alpha test.

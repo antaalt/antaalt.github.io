@@ -1,15 +1,5 @@
 #post {
 	margin-top: 0px;
-	#menu {
-		height:$header-height;
-		top:0;
-	}
-	#header {
-		display: block;
-	}
-}
-#post-content {
-	margin-top: $header-height;
 }
 .post-header {
 	background-color: $grey;
@@ -19,14 +9,52 @@
 	&>div {
 		width: $global-width;
 		margin: 0 auto;
+		a {
+			//text-indent: -9999px;
+			//white-space: nowrap;
+			//outline: none; 
+			margin-right: 20px;
+			height: 200px;
+			width: 20px;
+			border-radius: 5px;
+			background-color: transparent;
+			border:1px solid $grey;
+			&:before {
+				content: '';
+				text-indent: 0px;
+				margin-right:5px;
+				border:solid $grey;
+				border-width: 0 3px 3px 0;
+				display: inline-block;
+				padding: 3px;
+				transform: rotate(135deg);
+				margin-left: 6px;
+				margin-top: 90px;
+				transition: border-color 0.1s;
+			}
+			transition: background-color 0.1s;
+			&:hover {
+				background-color: $grey;
+				&:before {
+					border-color: $red;
+				}
+			}
+		}
+		&>a, &>div {
+			display: inline-block;
+			vertical-align:bottom;
+		}
 	}
 	h1 {
-		font-size:3em;
+		font-size:2.5em;
 		margin: 0;
+		a {
+			color: $grey;
+		}
 	}
 	img {
 		display: inline-block;
-		width: 300px;
+		width: 200px;
 	}
 	.post-header-description
 	{
@@ -116,7 +144,7 @@
 }
 .post-footer {
 	background-color: $light-blue;
-	color:$dark-blue;
+	color:$grey;
 	padding-top:20px;
 	padding-bottom:20px;
 	&>div {
@@ -158,13 +186,13 @@
 			&>a{
 				text-decoration: none;
 				vertical-align: middle;
-				color: $dark-blue;
+				color: $grey;
 				text-align: middle;
 				font-size: 0;
 				transition: color 0.2s;
 	
 				&:hover {
-					color: $grey;
+					color: $dark-blue;
 				}
 				&:before {
 					font-size: 40px;
@@ -198,12 +226,12 @@
 		div {
 			a {
 				padding: 5px;
-				color: $dark-blue;
+				color: $grey;
 				text-decoration: none;
 				transition: color 0.2s;
 				&:hover {
 					text-decoration: underline;
-					color: $grey;
+					color: $dark-blue;
 				}
 				&:focus {
 					color:$red;
@@ -213,7 +241,7 @@
 				a:before {
 					content: '';
 					margin-right:5px;
-					border:solid $dark-blue;
+					border:solid $grey;
 					border-width: 0 3px 3px 0;
 					display: inline-block;
 					padding: 3px;
@@ -224,7 +252,7 @@
 				a::after {
 					content: '';
 					margin-left:5px;
-					border:solid $dark-blue;
+					border:solid $grey;
 					border-width: 0 3px 3px 0;
 					display: inline-block;
 					padding: 3px;
@@ -240,7 +268,7 @@
 			margin-top: 0;
 		}
 		a {
-			color: $dark-blue;
+			color: $grey;
 			text-decoration:none;
 			padding:5px 0;
 			display: inline-block;

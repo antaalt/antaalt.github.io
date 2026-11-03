@@ -17,147 +17,58 @@
 		display: block;
 	}
 	#home {
-		.home-half-text {
+		.home-third-text {
 			width: 50%;
 		}
-		.home-half-picture {
+		.home-third-articles {
 			width: 50%;
-		}
-	}
-
-	#whoami {
-		&>div {
-			width: 100%;
-			padding: 10px;
-			#presentation {
-				&>div {
-					display: block;
-					width: 100%;
-					margin: 0 auto;
-				}
-				#description {
-					width: 100%;
-				}
-			}
-			#formation {
-				&>div {
-					width: 100%;
-				}
+			#right-cross {
+				display: none;
 			}
 		}
-	}
-	#skills {
-		&>div {
-			width: 100%;
-		}
-	}
-	#contact{
-		&>div{
-			width: 100%;
-			padding: 20px;
-			&>div{
-				width: 100%;
-			}
-			form{
-				width: 100%;
-				#message{
-					textarea{
-						width:100%;
-						max-width: 100%;
-						min-width: 100%;
-					}
-				}
-				#infoMessage{
-					input{
-						width: 80%;
-					}
-				}
-				label+input#check{
-					margin-bottom: 20px;
-				}
-			}
+		.home-third-picture {
+			display: none;
 		}
 	}
 	#posts {
-		#bottom-cross > svg {
-			margin-left: calc(50% - 50px)
-		}
-		&> div {
-			width: 100%;
-			padding:10px;
-		}
-		.post-link {
-			height: auto;
-			img {
-				display: none;
-			}
-		}
-		.post-link-description {
-			padding: 0px;
-			width: 100%;
-			img {
-				display: none;
-			}
-		}
+		padding-left: 60px;
 	}
 }
 
 // diminution menu
-@media only screen and (max-width : 820px){
-	#menu {
-		text-align: center;
-		&.minimize {
-			height: 118px;
-		}
-		nav {
-			position: relative;
-			float: none;
-			width: 100%;
-			&:before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 50px;
-				height: 100%;
-				display: block;
-				background-image: linear-gradient(to right, #ccc, transparent, transparent);
-			}
-			&:after {
-				content: '';
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 50px;
-				height: 100%;
-				display: block;
-				background-image: linear-gradient(to right, transparent, transparent, #ccc);
-			}
-		}
-		ul {
-			white-space: nowrap;
-			overflow-x: scroll;
-		}
-	}
+@media only screen and (max-width : 720px){
 	#home {
-		.home-half-text, .home-half-picture {
+		.home-third-text, .home-third-articles {
 			display: block;
 			width: 100%;
 			height: auto;
+			&>section {
+				align-items: center;
+			}
 		}
-		.home-half-text {
+		.home-third-text {
 			text-align: center;
 			padding-right: 0;
+			height: 90vh;
 			&>div {
-				margin-top: 0;
-				margin-bottom: 100px;
+				margin: 40px 0;
 			}
 			#right-cross {
 				display: none;
 			}
 		}
-		.home-half-picture {
+		.home-third-articles {
+			height: auto;
+		}
+		#slider {
 			display: none;
+		}
+		#posts {
+			position: static;
+			padding: 20px;
+			h1 {
+				padding: 0;
+			}
 		}
 	}
 }

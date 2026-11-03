@@ -1,56 +1,21 @@
-#fr-link {
-	&::before {
-		content: "🇫🇷";
-	}
-}
-#en-link {
-	&::before {
-		content: "🇬🇧";
-	}
-}
-.lang-selector {
-	padding: 0px 2px;
-	font-size: 0;
-	display: inline-block;
-	text-decoration: none;
-	&::before {
-		font-size: 30px;
-	}
-}
-.lang-selector-active {
-	pointer-events: none;
-}
-.lang-selector-unactive {
-	filter: grayscale(100%);
-	transition: filter 0.3s;
-	&:hover {
-		filter: grayscale(0%);
-	}
-}
-a.anchor {
-    display: block;
-    position: relative;
-    top: -$header-height;
-    visibility: hidden;
-}
 #home {
-	color: $dark-blue;
+	color: $grey;
 	.highlighted {
 		white-space: normal;
 	}
-	.home-half-text, .home-half-picture {
+	.home-third-text, .home-third-picture, .home-third-articles {
 		display: inline-block;
 		vertical-align: top;
-		height: 99vh;
+		height: 100vh;
 		margin : 0;
 	}
-	.home-half-text {
-		z-index: 1;
-		width: 40%;
-		background-color: $grey;
+	.home-third-text {
+		z-index: 2;
+		width: 30%;
+		background-color: $red;
 		text-align: right;
-		padding-right: 40px;
 		position: relative;
+		text-transform: lowercase;
 		h1 {
 			font-size: 3em;
 		}
@@ -60,57 +25,117 @@ a.anchor {
 		h2 {
 			font-weight: lighter;
 		}
-		&>div {
-			margin-top: 40vh;
-			vertical-align: middle;
-			display: inline-block;
+		&>section {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
 		}
 		p>a {
-			color: $dark-blue;
+			color: $grey;
 			transition:color 0.1s;
 			&:hover {
-				color: $dark-blue;
+				color: $grey;
 			}
 		}
 		.cta {
 			margin-top: 25px;
 			margin-right: 0;
-			color: $dark-blue;
-			border-color: $dark-blue;
+			color: $grey;
+			border-color: $grey;
 			&:before{
-				background-color: $dark-blue;
+				background-color: $grey;
 			}
 			&:hover {
-				color: #fff;
+				color: $red;
 			}
 		}
-		#right-cross {
-			font-size: 0;
-			position: absolute;
-			top: 0px;
-			width: 100px;
-			right:-100px;
-			margin-top: 0px;
-			height: calc(99vh - 50px);
-			padding: 0;
-			&>svg{
-				display: inline-block;
-				height: 100%;
-				width: 100px;
-				margin-left: calc(40% - 50px);
-				transform: translateX(0); // Hack acceleration matérielle
-				&>polygon{
-					width:10%;
-					fill: $grey;
-				}
-			}
+		#right-cross>svg>polygon {
+			fill: $red;
 		}
 	}
-	.home-half-picture {
-		width: 60%;
+	.home-third-picture {
+		width: 50%;
 		background-color: $grey;
 		position: relative;
 		z-index: 0;
+		overflow: hidden;
+	}
+	.home-third-articles {
+		width: 20%;
+		background-color: $dark-blue;
+		position: relative;
+		z-index: 1;
+		text-transform: lowercase;
+		&>section {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		#right-cross {
+			
+			right:-110px;
+			&>svg>polygon {
+				fill: $dark-blue;
+			}
+		}
+	}
+	#right-cross {
+		font-size: 0;
+		position: absolute;
+		top: 0px;
+		width: 100px;
+		right:-100px;
+		margin-top: 0px;
+		height: 100vh;
+		padding: 0;
+		&>svg{
+			display: inline-block;
+			height: 100%;
+			width: 100px;
+			margin-left: calc(40% - 50px);
+			transform: translateX(0); // Hack acceleration matérielle
+			&>polygon{
+				width:10%;
+				fill: $red;
+			}
+		}
+	}
+	#slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.home-social {
+		margin-top: 15px;
+		.social-link {
+			color: $grey;
+			text-decoration: none;
+			font-size: 0;
+			margin-left: 10px;
+			transition: color 0.2s;
+			&:hover {
+				color: $dark-blue;
+			}
+			&:before {
+				font-family: "social_media";
+				font-size: 40px;
+				vertical-align: middle;
+			}
+		}
+		#github:before {
+			content: ")";
+		}
+		#linkedin:before {
+			content: "L";
+		}
+		#vimeo:before {
+			content: "V";
+		}
 	}
 	.slide {
 		opacity: 1;
@@ -123,355 +148,81 @@ a.anchor {
 		height: 100%;
 		&.hidden {
 			opacity: 0;
+			.slide-popup {
+				opacity: 0;
+				transform: translateX(10px);
+				transition-delay: 0s;
+			}
 		}
 	}
-}
-
-#whoami{
-	position: relative;
-	z-index: 2;
-	width: 100%;
-	background-color: $dark-blue;
-
-	&>div{
-		width: $global-width;
-		margin:0 auto;
-		padding:20px 0;
-		h2{
-			color: $grey;
-		}
-		#presentation{
-			font-size: 0;
-			&>div{
-				display: inline-block;
-				vertical-align: middle;
-			}
-			#imgProfil{
-				height:300px;
-				width:300px;
-				border-radius: 150px;
-				@include sprite(0, 3);
-			}
-			#description{
-				font-size: 16px;
-				width:660px;
-				padding:20px;
-				h2{
-					color:$grey;
-					vertical-align: middle;
-					display: inline-block;
-					margin-right: 10px;
-				}
-				&>p{
-					color:$grey;
-					text-indent: 20px;
-					text-align: justify;
-				}
-				a.externLink{
-					text-decoration: none;
-					color: $grey;
-					text-align: middle;
-					font-size: 0;
-					transition: color 0.2s;
-		
-					&:hover {
-						color: $light-blue;
-					}
-					&:before {
-						font-size: 40px;
-						vertical-align: middle;
-					}
-				}
-				a#linkedin{
-					&:before {
-						font-family: "social_media";
-						content: "L";
-					}
-				}
-				a#vimeo{
-					&:before {
-						font-family: "social_media";
-						content: "V";
-					}
-				}
-				a#github{
-					&:before {
-						font-family: "social_media";
-						content: ")";
-					}
-				}
-			}
-		}
-		#formation, #experience{
-			&>div{
-				display: inline-block;
-				color:$grey;
-				vertical-align: top;
-				p{
-					margin: 0;
-				}
-				h3{
-					margin:0;
-				}
-			}
-		}
-		#formation{
-			&>div{
-				text-align: center;
-				width:33%;
-				height:90px;
-				position: relative;
-				p{
-					font-size: 14px;
-				}
-			}
-		}
-		#experience{
-			&>div{
-				margin-bottom: 30px;
-				width: 100%;
-				text-align: center;
-				h3{
-					font-size: 16px;
-					margin-bottom: 5px;
-				}
-				.company-name {
-					font-size: 20px;
-				}
-				.date {
-					font-size: 20px;
-				}
-			}
-		}
+	.slide-popup {
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		max-width: 300px;
+		margin: 0;
+		padding: 8px 12px;
+		background-color: rgba(#333, 0.8);
+		border-radius: 5px;
+		color: $grey;
+		font-size: 14px;
+		font-style: italic;
+		opacity: 1;
+		transform: translateX(0);
+		transition: opacity 0.4s, transform 0.4s;
+		transition-delay: 1s; // Pop in once the slide is visible
 	}
 }
 
 #posts {
-	background-color: $red;
-	color: $grey;
-	z-index: 2;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
 	width: 100%;
-	position: relative;
-	#bottom-cross{
-		font-size: 0;
-		position: absolute;
-		top: -50px;
-		height: 50px;
-		width: 100%;
-		padding: 0;
-		&>svg{
-			display: inline-block;
-			height:50px;
-			width: 100px;
-			margin-left: calc(40% - 50px);
-			transform: translateX(0); // Hack acceleration matérielle
-			&>polygon{
-				width:10%;
-				fill: $red;
-			}
-		}
-	}
-	
-	&>div {
-		width: $global-width;
-		margin:0 auto;
-		padding:20px 0;
-		font-size: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 40px 40px 40px 40px; // Repadded in JS
+	background-color: rgba($dark-blue, 0.6);
+	color: $grey;
+	h1 {
+		font-size: 36px;
+		margin: 0 0 20px 0;
+		padding-left: 60px;
 	}
 	.post-container {
-		font-size: medium;
+		gap: 20px;
+		max-width: 800px;
+		a {
+			text-wrap: nowrap;
+			text-overflow: ellipsis;
+			padding-bottom:10px;
+			max-width: 300px;
+		}
 	}
 	.post-link {
-		margin: 10px 0px;
-		height:150px;
-		transition:all 0.2s;
-		a {
-			display: block;
-			color:$grey;
-			text-decoration: none;
+		display: block;
+		color: $grey;
+		text-decoration: none;
+		overflow: hidden;
+		transition: color 0.2s;
+		text-decoration: underline;
+		h2 {
+			font-size: 18px;
+			margin: 0;
+			padding: 10px;
 		}
 		&:hover {
-			background-color: darken($red, 5%);
+			color: darken($red, 8%);
 		}
 	}
 	.post-link-image {
-		width: 150px;
-		display: inline-block;
-		vertical-align: top;
-	}
-	.post-link-description {
-		display: inline-block;
-		vertical-align: top;
-		width: calc(#{$global-width} - 150px);
-		padding:0px 0px 0px 20px;
-		h2 {
-			margin-top: 0;
-		}
-		.date {
-			font-style: italic;
-		}
-	}
-}
-
-#skills {
-	background-color: $light-blue;
-	color: $grey;
-	&>div {
-		width: $global-width;
-		margin:0 auto;
-		padding:20px 0;
-	}
-	.half {
-		text-align: center;
-		margin-bottom: 20px;
-		ul {
-			margin:0;
-			padding:0;
-			list-style-type: none;
-		}
-	}
-	.half >div {
-		width: 80px;
-		height: 80px;
-		display: inline-block;
-	}
-	#icon-dev {
-		@include sprite(0, 0);
-	}
-	#icon-web {
-		@include sprite(2, 0);
-	}
-	#icon-design {
-		@include sprite(4, 0);
-	}
-	#icon-computer-graphics {
-		@include sprite(6, 0);
-	}
-	.skills-presentation {
-		text-align: justify;
-	}
-}
-
-#contact {
-	background-color: $grey;
-	width: 100%;
-	&>div{
-		font-size: 0;
-		width: $global-width;
-		margin:0 auto;
-		padding:20px 0;
-		h1{
-			color:$dark-blue;;
-		}
-		&>div, form{
-			font-size: 16px;
-			display: inline-block;
-			vertical-align: top;
-		}
-		&>div{
-			width:300px;
-			a{
-				color:$dark-blue;;
-				&:hover{
-					color: $light-blue;
-				}
-			}
-		}
-	}
-	form{
-		input, textarea{
-			border:none;
-			padding:10px;
-			font-family: sofia_pro_lightregular;
-			border:1px solid white;
-			transition:all 0.3s;
-			outline: none;
-			background-color: transparent;
-			&:hover{
-				border:1px solid $dark-blue;
-			}
-			&:focus{
-				border:1px solid $dark-blue;
-				background-color: #fff;
-			}
-		}
-	}
-	button[type="submit"]{
-		width: 100px;
-		background-color: $dark-blue;
-		color:$grey;
-		cursor:pointer;
-		position: relative;
-		left:0;
-		border:none;
-		margin-top:10px;
-		padding-top: 2px;
-		outline: none;
-		transition: left 0.3s;
-		&:hover{
-			border:none;
-		}
-		&:active{
-			&:before{
-				background-color: $light-blue;
-			}
-		}
-		&:before{
-			background-color: $light-blue;
-		}
-		&.sent{
-			left: calc(100% - 100px);
-			background-color: #419141;
-			&:before{
-				background-color: #419141;
-			}
-		}
-		&.sending{
-			&:before{
-				animation: loadingMail infinite ease 1s;
-			}
-		}
-		&.error{
-			background-color: #cd2829;
-			&:before{
-				background-color: #cd2829;
-			}
-		}
-	}
-	#infoMessage{
-		label{
-			display: inline-block;
-			width: 100px;
-		}
-		div{
-			margin:10px 0;
-		}
-		input{
-			width: 300px;
-		}
-	}
-	#message{
-		margin-top:20px;
-		label{
-			display: block;
-		}
-		textarea{
-			width:$global-width;
-			height:200px;
-			max-width: $global-width;
-			min-width: $global-width;
-			min-height:50px;
-		}
-	}
-	#question{
-		margin-top:20px;
-	}
-	label {
-		color: $dark-blue;
-	}
-	label + input#check{
-		width:40px;
-		text-align: center;
+		display: block;
+		width: 100%;
+		height: 120px;
+		object-fit: cover;
 	}
 }
 
