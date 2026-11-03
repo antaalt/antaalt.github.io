@@ -1,19 +1,19 @@
 ---
 permalink: /404.html
-lang: fr
+lang: en
 sitemap: false
 noindex: true
 ---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "fr" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
   <body>
     <div class="error-container">
         <h1>404</h1>
 
-        <p><strong>Fichier introuvable :(</strong></p>
-        <p>La page de demandée n'a pa pu être trouvée</p>
-        <a href="{{ site.url }}" class="cta">Accueil</a>
+        <p><strong>Page not found :(</strong></p>
+        <p>The requested page could not be found</p>
+        <a href="{{ site.url }}" class="cta">Home</a>
     </div>
 
     {% include scripts.html %}

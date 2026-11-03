@@ -4,13 +4,6 @@
 	width: 100%;
 	background-color: $grey;
 
-	height: 0px;
-	transition: height 0.2s;
-	overflow: hidden;
-	&.minimize {
-		height: $header-height;
-	}
-
 	#home-link {
 		color: black;
 		text-decoration: none;
@@ -18,54 +11,10 @@
 		h1 {
 			margin: 0;
 			padding: 7px 0;
-			color:$dark-blue;
-		}
-		&:hover {
-			color:$light-blue;
-		}
-	}
-	nav {
-		float:right;
-	}
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
-	li {
-		display: inline-block;
-	}
-	a.smooth-scroll {
-		position: relative;
-		display: inline-block;
-		text-decoration: none;
-		color: black;
-		padding: 20px;
-		&:before {
-			transition:height 0.2s, background-color 0.2s;
-			z-index: -1;
-			content: '';
-			text-align: center;
-			position: absolute;
-			width: 100%;
-			height: 0%;
-			display: block;
-			background-color: $dark-blue;
-			bottom: 0;
-			left: 0;
-		}
-		&:hover {
-			color: $grey;
-			&:before {
-				background-color: $light-blue;
-				height: 100%;
-			}
-		}
-		&.selected {
 			color:$grey;
-			&:before {
-				height:100%;
-			}
+		}
+		&:hover {
+			color:$dark-blue;
 		}
 	}
 	.wrapper {

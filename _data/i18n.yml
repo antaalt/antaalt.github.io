@@ -13,42 +13,7 @@ fr:
 
   whoami_title: "Programmeur 3D"
   whoami_description: > # this means ignore newlines
-    Je suis un programmeur graphique 3D à Paris, passionné par le rendu et le ray-tracing. J'ai choisi cette voie pour vivre
-    de ma passion pour la création d'univers immersifs et créatifs aux travers d'outils que j'utilise dans mon temps libre comme Blender,
-    le dessin, la photographie ! La curiosité m'a guidé, afin
-    d'être en mesure de comprendre le fonctionnement de ces multiples technologies et de participer à l'élaboration et 
-    l'utilisation de ces technologies par les artistes.</p>
-    <p>Au cours de ma formation et au fil des expériences, j’ai pu acquérir des compétences variées qui
-    m’ont amené à porter mon intérêt pour la 3D, au travers des films
-    d’animation, des jeux vidéo et de la réalité virtuelle. J’ai ainsi acquis
-    des compétences en modélisation 3D, en rendu photoréaliste...</p>
-
-  experience_title: "Expériences"
-  experiences:
-    - date: "Since 2022"
-      company: "Ubisoft (Paris)"
-      job_title: "Programmeur graphique"
-      job_description: "Développement de fonctionnalitées graphiques sous un moteur propriétaire pour Beyond Good & Evil 2."
-    - date: "2021-2022"
-      company: "Virtuos (Paris)"
-      job_title: "Programmeur graphique"
-      job_description: "Développement de fonctionnalitées graphiques sous unreal engine."
-    - date: "2018-2021"
-      company: "Kubity (Paris)"
-      job_title: "Ingénieur logiciel 3D"
-      job_description: "Développement d'un moteur 3D basé sous Vulkan pour des rendus photoréalistes accélérés sur le GPU."
-    - date: "2017"
-      company: "Tama University (Japon)"
-      job_title: "Stage en laboratoire de réalité virtuelle"
-      job_description: "Développement d'une application de réalité augmentée au sein du laboratoire du professeur Idehara pour s'immerger dans un monde virtuel et partager via la numérisation 3D offerte par la technologie Google Tango"
-
-  formation_title: "Formation"
-  formation_dut_title: "DUT MMI"
-  formation_dut_description: "Métier du Multimédia et de l'Internet (ex SRC)"
-  formation_evman_title: "Licence EVMAN"
-  formation_evman_description: "Etudes visuelles, multimédia et arts numériques"
-  formation_esiea_title: "ESIEA (Site de Laval)"
-  formation_esiea_description: "Ecole d'ingénieurs du monde numérique"
+    Je suis un programmeur graphique 3D travaillant dans l'industrie du jeu vidéo passioné par la 3D.
 
   form_name: "Nom"
   form_name_placeholder: "Nom"
@@ -68,7 +33,7 @@ en:
   skills: "Skills"
   posts: "Posts"
   contact: "Contact"
-  home_description: "Computer graphics engineer in Paris"
+  home_description: "computer graphics engineer"
   home_status: "Looking for a job, Hire me !"
   contact_me: "Contact-me"
   development: "Development"
@@ -78,42 +43,7 @@ en:
 
   whoami_title: "Computer graphics engineer"
   whoami_description: > # this means ignore newlines    
-    <p>I am a computer graphic engineer in Paris, passionate by rendering and ray-tracing.
-    I choosed this path to live of my passion for the creation
-    of immersive and creative universe through tools I use in my spare time, such as Blender, drawing and photography !
-    Curiosity lead me to understand the functionning of these multiple technologies and to participate to the elaboration
-    and use of such technologies by artists.
-    <p>In parallel, I acquired various skills during my formation. Artistical
-    skills in a first time, during my two-year university diploma in technology
-    and the third year at university, then I could improve my technical and
-    management skills during my three years at ESIEA.</p>
-
-  experience_title: "Experiences"
-  experiences:
-    - date: "Since 2022"
-      company: "Ubisoft (Paris)"
-      job_title: "Graphic programmer"
-      job_description: "Working on Beyond Good & Evil 2 as a 3D programmer on various rendering features."
-    - date: "2021-2022"
-      company: "Virtuos (Paris)"
-      job_title: "Graphic programmer"
-      job_description: "Working on a video game as a 3D programmer on Unreal Engine 5."
-    - date: "2018-2021"
-      company: "Kubity (Paris)"
-      job_title: "3D Software engineer"
-      job_description: "Working on a 3D rendering engine based on Vulkan for photorealistic rendering accelerated on the GPU."
-    - date: "2017"
-      company: "Tama University (Japan)"
-      job_title: "Internship in virtual reality laboratory"
-      job_description: "Working in professor Idehara laboratory on an augmented reality application to immerse himself in a virtual world and share it thanks to Google Tango AR technology."
-
-  formation_title: "Formation"
-  formation_dut_title: "DUT Multimedia"
-  formation_dut_description: "Two-year university diploma in technology"
-  formation_evman_title: "Licence Multimedia"
-  formation_evman_description: "Three-year university degree (third year only)"
-  formation_esiea_title: "ESIEA (Laval campus)"
-  formation_esiea_description: "Engineering school of computer science"
+    I am a french graphics programmer working in the video game industry who loves 3D.
 
   form_name: "Name"
   form_name_placeholder: "Name"
