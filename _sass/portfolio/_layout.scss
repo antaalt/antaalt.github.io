@@ -148,7 +148,29 @@
 		height: 100%;
 		&.hidden {
 			opacity: 0;
+			.slide-popup {
+				opacity: 0;
+				transform: translateX(10px);
+				transition-delay: 0s;
+			}
 		}
+	}
+	.slide-popup {
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		max-width: 300px;
+		margin: 0;
+		padding: 8px 12px;
+		background-color: rgba(#333, 0.8);
+		border-radius: 5px;
+		color: $grey;
+		font-size: 14px;
+		font-style: italic;
+		opacity: 1;
+		transform: translateX(0);
+		transition: opacity 0.4s, transform 0.4s;
+		transition-delay: 1s; // Pop in once the slide is visible
 	}
 }
 

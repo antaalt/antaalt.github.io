@@ -2,15 +2,16 @@ let sliderHandler = function(options)
 {
 	var path = "/assets/images/slider/";
 	var slider = document.getElementById("slider");
+	// Description is shown in a small popup over the picture. Leave empty to hide it.
 	var images = [
-		"purple-building.small.jpg",
-		"fisheye-building.small.jpg",
-		"mountain-of-madness.small.jpg",
-		"pink-forest.small.jpg",
-		"screw.small.jpg",
-		"white-forest.small.jpg",
-		"milan.small.jpg",
-		"squirrel.small.jpg",
+		{ file: "purple-building.small.jpg", description: "Purple facade." },
+		{ file: "fisheye-building.small.jpg", description: "La Défense." },
+		{ file: "mountain-of-madness.small.jpg", description: "Mountain of madness." },
+		{ file: "pink-forest.small.jpg", description: "Infrared Fontainebleau." },
+		{ file: "screw.small.jpg", description: "A wild screw." },
+		{ file: "white-forest.small.jpg", description: "Infrared forest." },
+		{ file: "milan.small.jpg", description: "Black kite." },
+		{ file: "squirrel.small.jpg", description: "Looking for food." },
 	];
 	var downloaded = [];
 	var nb = 0;
@@ -45,6 +46,12 @@ let sliderHandler = function(options)
 		container.id = "slide"+index;
 		container.style.transition = "opacity " + options.duration + "s";
 		container.style.backgroundImage = "url(" + downloaded[index].src + ")";
+		if(images[index].description) {
+			var popup = document.createElement("p");
+			popup.classList.add("slide-popup");
+			popup.textContent = images[index].description;
+			container.appendChild(popup);
+		}
 		slider.appendChild(container);
 	};
 	// Check if slider is present in image.
@@ -63,12 +70,12 @@ let sliderHandler = function(options)
 				downloaded[index] = new Image();
 				downloaded[index].index = index;
 				downloaded[index].onload = onLoad;
-				downloaded[index].src = path + value;
+				downloaded[index].src = path + value.file;
 			}
 		});
 		setInterval(manageTransition, options.transitionDuration);
 	};
-	downloaded[0].src = path + images[0];
+	downloaded[0].src = path + images[0].file;
 };
 
 let postOffset = function()
