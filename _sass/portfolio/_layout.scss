@@ -228,14 +228,14 @@
 
 footer#home-footer{
 	vertical-align: middle;
-	background-color: $grey;
-	color: $dark-blue;
+	background-color: $red;
+	color: $grey;
 	div{
 		text-align: center;
 		width: 100%;
 		padding: 100px 0px;
 		a {
-			color: $dark-blue;
+			color: $grey;
 			text-decoration: none;
 		}
 		.social-link{
@@ -245,7 +245,7 @@ footer#home-footer{
 			transition: color 0.2s;
 
 			&:hover {
-				color: $light-blue;
+				color: $dark-blue;
 			}
 			&:before {
 				font-size: 30px;
