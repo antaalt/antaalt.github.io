@@ -148,12 +148,8 @@
 	img + em { 
 		display: inline-block;
 		color: #a4a4a4;
-		&::before {
-			content: '^';
-		}
-		&::after {
-			content: ' ^';
-		}
+		text-align: center;
+		width: 100%;
 	}
 }
 .post-footer {
