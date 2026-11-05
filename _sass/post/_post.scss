@@ -77,10 +77,10 @@
 	background-color: $dark-blue;
 	color:$grey;
 	padding:20px 0px;
-	text-align: justify;
 	list-style: square;
 	&>div {
-		width: $global-width;
+		max-width: 72ch; // Smaller than global-width for lisibility
+		width: 100%;
 		margin: 0 auto;
 	}
 	a {
@@ -104,6 +104,20 @@
 	}
 	h3 {
 		font-size: 1.5em;
+	}
+	h1, h2, h3 {
+		line-height: 1.25;
+		margin: 2em 0 .6em;
+	}
+	p, li {
+		// system font for lisibility
+		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+		font-size: 1.125rem;
+		line-height: 1.7;
+		color: #fff;
+	}
+	p:first-child {
+		text-indent: 1.5em;
 	}
 
 	div.highlight {
@@ -134,20 +148,19 @@
 	img + em { 
 		display: inline-block;
 		color: #a4a4a4;
-		&::before {
-			content: '^';
-		}
-		&::after {
-			content: ' ^';
-		}
+		text-align: center;
+		width: 100%;
 	}
 }
 .post-footer {
-	background-color: $light-blue;
-	color:$grey;
+	background-color: $dark-blue;
 	padding-top:20px;
 	padding-bottom:20px;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	font-size: 1rem;
+	color: #fff;
 	&>div {
+		border-top: 1px solid white;
 		width: $global-width;
 		margin: 0 auto;
 	}
@@ -192,7 +205,7 @@
 				transition: color 0.2s;
 	
 				&:hover {
-					color: $dark-blue;
+					color: $light-blue;
 				}
 				&:before {
 					font-size: 40px;
@@ -221,17 +234,17 @@
 	}
 	.post-nav {
 		padding: 5px;
-		background-color: color-mix(in srgb, $dark-blue 10%, transparent);
+		background-color: color-mix(in srgb, $light-blue 10%, transparent);
 		border-radius: 10px;
 		div {
 			a {
 				padding: 5px;
-				color: $grey;
+				color: $light-blue;
 				text-decoration: none;
 				transition: color 0.2s;
 				&:hover {
 					text-decoration: underline;
-					color: $dark-blue;
+					color: $grey;
 				}
 				&:focus {
 					color:$red;
@@ -241,7 +254,7 @@
 				a:before {
 					content: '';
 					margin-right:5px;
-					border:solid $grey;
+					border:solid $light-blue;
 					border-width: 0 3px 3px 0;
 					display: inline-block;
 					padding: 3px;
@@ -252,7 +265,7 @@
 				a::after {
 					content: '';
 					margin-left:5px;
-					border:solid $grey;
+					border:solid $light-blue;
 					border-width: 0 3px 3px 0;
 					display: inline-block;
 					padding: 3px;
@@ -268,8 +281,7 @@
 			margin-top: 0;
 		}
 		a {
-			color: $grey;
-			text-decoration:none;
+			color: $light-blue;
 			padding:5px 0;
 			display: inline-block;
 			transition: color 0.2s;
