@@ -83,4 +83,5 @@ Indeed, why not write the server in C++, like the compilers it wraps ? Because i
 
 ## What's next
 
-There is still a lot to do: better HLSL support, Slang and Metal, a shader debugger... I go through the roadmap in detail in [this post](TODO-link-to-shader-ecosystem).
+There is still a lot to do: better HLSL support, Slang and Metal, a shader debugger... I will go through the roadmap in detail later.
+<!-- in [this post](TODO-link-to-shader-ecosystem). -->
