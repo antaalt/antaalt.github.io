@@ -68,7 +68,9 @@ That's a lot of requirements, but I finally came up with [shader validator](http
 
 It supports HLSL, GLSL & WGSL and is written in Rust. Diagnostics are run by standard API validators (glslang, DXC, Naga) and symbols are provided by [tree-sitter](https://tree-sitter.github.io/tree-sitter/). Everything is bundled in the extension, so it should work out of the box, even on the web version of VS Code thanks to WASI.
 
-In a next post, I will explain more about the tech inside it! Until then, go try it out in [vscode](https://marketplace.visualstudio.com/items?itemName=antaalt.shader-validator) !
+In a [next post]({% post_url 2026-11-05-shader-validator-part2 %}), I explain more about the tech inside it! 
+
+Until then, go try it out in [vscode](https://marketplace.visualstudio.com/items?itemName=antaalt.shader-validator) !
 
 # Interesting resources
 
