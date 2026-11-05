@@ -11,7 +11,7 @@ image-alt: 'shader validator logo'
 
 Until 2024, glslang, one of the most widely used shader compilers, could not tell you which *column* an error was on. The information was there internally, it simply was not printed in the logs. Without it, a linter cannot highlight the faulty word, only the whole line. I [fixed it](https://github.com/KhronosGroup/glslang/issues/3238) with a change of about ten characters.
 
-To me, this anecdote sums up shader tooling today: GPUs and shader languages move fast, while the tools we use to write shaders lag behind. In this post, I look at why, how the ecosystem is changing, where shader-validator stands in all of this, and where I would like to take it next.
+To me, this anecdote sums up shader authoring tools today: GPUs and shader languages move fast, while the tools we use to write shaders lag behind. In this post, I look at why, how the ecosystem is changing, where shader-validator stands in all of this, and where I would like to take it next.
 
 ## Shader tooling is lagging behind
 
