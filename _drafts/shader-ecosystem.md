@@ -11,13 +11,13 @@ image-alt: 'shader validator logo'
 
 Until 2024, glslang, one of the most widely used shader compilers, could not tell you which *column* an error was on. The information was there internally, it simply was not printed in the logs. Without it, a linter cannot highlight the faulty word, only the whole line. I [fixed it](https://github.com/KhronosGroup/glslang/issues/3238) with a change of about ten characters.
 
-To me, this anecdote sums up shader authoring tools today: GPUs and shader languages move fast, while the tools we use to write shaders lag behind. In this post, I look at why, how the ecosystem is changing, where shader-validator stands in all of this, and where I would like to take it next.
+To me, this anecdote sums up shader authoring tools today: GPUs and shader languages move fast, while the tools we use to write shaders lag behind.
 
 ## Shader tooling is lagging behind
 
 Compared to C++ or Rust, writing shaders is still a basic experience. Syntax highlighting is often all you get, and some of the best tools, such as the excellent HLSL Tools, are no longer maintained.
 
-The biggest problem, though, is entry points. A C++ or Rust codebase usually has a handful of `main` functions. A shader codebase can have tens of thousands of them once you count every file and every *permutation*: the same shader compiled several times with different macros, each producing a different program. To validate a shader, a tool needs to know which entry point and which macros to use, and I have yet to find an editor that offers a decent way to choose them. This is what shader-validator solves with its *variants*: you select the entry point and defines you care about, and your code is validated the way it will actually be compiled.
+The biggest problem, though, is entry points. A C++ or Rust codebase usually has only one `main` functions. A shader codebase can have tens of thousands of them once you count every file and every *permutation*: the same shader compiled several times with different macros, each producing a different program. To validate a shader, a tool needs to know which entry point and which macros to use, and I have yet to find an editor that offers a decent way to choose them. This is what shader-validator solves with its *variants*: you select the entry point and defines you care about, and your code is validated the way it will actually be compiled.
 
 ## The shader ecosystem is converging
 
@@ -41,7 +41,7 @@ WGSL arrived with WebGPU and gives the web a human-readable shader language, now
 
 Language changes are mostly driven by hardware. First came vertex and pixel shaders, then compute shaders, then ray tracing shaders, and tools barely keep up.
 
-The most recent example I can think of is work graphs: the GPU can now schedule its own work without the CPU having to step in. It's a big step forward, but it can lead to situations that are terrible to debug...
+On of the most recent example I can think of is work graphs: the GPU can now schedule its own work without the CPU having to step in. It's a nice feature added, but it can lead to situations that are terrible to debug...
 
 <blockquote class="twitter-tweet" data-theme="dark"><p lang="zxx" dir="ltr"><a href="https://t.co/1uZAXQS2yh">https://t.co/1uZAXQS2yh</a> <a href="https://t.co/YBNjNLFbNs">pic.twitter.com/YBNjNLFbNs</a></p>&mdash; Jeremy Laumon (@_plop_) <a href="https://x.com/_plop_/status/1672137808884973568?ref_src=twsrc%5Etfw">June 23, 2023</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
@@ -49,19 +49,21 @@ And there is more: shader execution reordering, which lets the GPU regroup ray t
 
 ## shader-validator today
 
-So where does shader-validator stand? I covered how it works in more depth in [part 2](TODO-link-to-part-2).
+So where does shader-validator stand ? I covered how it works in more depth in [part 2]({% post_url 2026-11-05-shader-validator-part2 %}).
 
-TODO: short list of the current features.
+Well shader-validator offer a rather complete suite of features offered by the language server protocol. Validation and symbol providing are the two main purposes of it.
+
+Autocompletion, goto, syntax highlighting, shader compilation, dependency viewer, variant entry point selector...
 
 Overall, the main limitation is that the Rust shader ecosystem is not mature yet. Most shader compilers are C++ libraries, and despite huge efforts from some people, their Rust bindings are often barely maintained:
 
-- **DXC**: bindings come from [hassle-rs](https://github.com/Traverse-Research/hassle-rs). They are heavy, limited to Shader Model 6.8, and updates are becoming sparse. It seems the 
+- **DXC**: bindings come from [hassle-rs](https://github.com/Traverse-Research/hassle-rs). They are heavy, limited to Shader Model 6.8, and updates are becoming sparse. 
 - **Slang**: the existing Rust bindings don't expose enough of the API to be usable yet (more on that below).
 - **glslang**: the exception. Thanks to [glslang-rs](https://github.com/SnowflakePowered/glslang-rs) and its active maintainer @chyyran, support is very complete.
 
 ## Where shader-validator is going
 
-### Why not use an existing language server?
+### Why not use an existing language server ?
 
 It would be great to build on `clangd`, `slangd`, `glsl_analyzer` or `wgsl_analyzer`. They look quite complete, and being specialized, they probably do more than shader-validator in some areas. But none of the ones I tested let you work with your shaders *as a codebase*: selecting entry points and controlling how each one is validated, as shader-validator does. Module systems are making shaders more flexible and might work around the entry point issue, but many shaders are still driven by defines, where a single `main` function behaves completely differently depending on the macros passed to it.
 
@@ -69,7 +71,7 @@ That is why I believe shader-validator is worth pursuing. And because it does no
 
 Most of these features would take a lot of work to integrate into a generic language server. Perhaps the concept could be added to the LSP specification? For now, shader-validator relies on custom commands outside the spec.
 
-### A shader AST based on SPIR-V?
+### A shader AST based on SPIR-V ?
 
 For a while, I considered using SPIR-V directly as the intermediate structure for parsing symbols. It is the future of DXC and already the present of GLSL and WGSL. But it has too many issues:
 
@@ -88,7 +90,7 @@ Here is where I would like to focus next:
 - **GLSL extensions**: GLSL support is fairly complete, except for extensions. Only one is supported for now: `GL_EXT_mesh_shader`.
 - **An in-editor renderer**: a small renderer that runs your shaders with dummy data, so you can test quick fixes right away. Heavy to build, but I believe it would be reliable.
 - **A shader debugger**: since everything goes through SPIR-V, a debugger following the [Debug Adapter Protocol](https://microsoft.github.io/debug-adapter-protocol/specification.html) could let you step through shaders, using the same dummy data as the renderer.
-- **Project-wide settings and modules**: the WESL module system is not handled well by the extension yet. TODO: finish this point.
+- **Project-wide settings and modules**: the WESL module system is not handled well by the extension yet and could be improved.
 - **Path completion** for includes and imports.
 - And much more...
 
@@ -101,6 +103,10 @@ With tree-sitter and compiler bindings available in Rust, adding a language is f
 - **ShaderLab** could be on the list as well, though I haven't looked into it much yet.
 - **PSSL**, **Cg**, there are many other shader languages, but I can't support them all.
 
+### About AI agents
+
+AI agents are getting more and more efficient as I speak and along MCP and others AI tooling, its not so sure if there is not new tooling based on it that will emerge in the ecosystem. What could be interesting though is creating an MCP server using this library someday to relieve the cost of shader analysis from AI itself as this extension has everything for it.
+
 ## How you can help
 
 My goal is an all-in-one shader authoring experience: write, validate, preview, and step through your shaders. There is still a lot to do, and here is how you can help.
@@ -111,7 +117,7 @@ You can contribute to shader-validator directly, or to the libraries it depends 
 
 - **Metal**: I need Mac users, as I don't have one.
 - **Slang**: Rust bindings are not ready yet. I have a PR using [slang-rs](https://github.com/FloatyMonkey/slang-rs), but it doesn't expose many Slang features yet, such as includes, so it is not usable for now. A fork might be necessary.
-- **DXC**: [hassle-rs](https://github.com/Traverse-Research/hassle-rs) is stuck at Shader Model 6.8, so a fork might be necessary here as well.
+- **DXC**: [hassle-rs](https://github.com/Traverse-Research/hassle-rs) is stuck at Shader Model 6.8, so a fork might be necessary here as well. It seems a [bit more complicated](https://github.com/Traverse-Research/hassle-rs#supported-dxc-versions-on-non-windows) that that though
 - **tree-sitter grammars**: the parsers shader-validator relies on are not perfect, and improving them directly improves symbol parsing.
 
 ### Join the community
