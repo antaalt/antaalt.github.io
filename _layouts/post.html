@@ -74,7 +74,7 @@ layout: default_post
           {% endfor %}
         </div><!-- HACK
         --><div class="post-third-mid">
-          <a href ="/" id="home-link">All posts</a>
+          <a href ="/" id="home-link">Home</a>
         </div><!-- HACK
         --><div class="post-third">
           {% for post in site.posts reversed %}
@@ -96,7 +96,7 @@ layout: default_post
           {% for post in site.posts %}
             {% if post.title != page.title %}
               <li>
-                <a href="{{ post.url }}">{{post.title}}</a>
+                <a href="{{ post.url }}">{{ post.date | date_to_string  }} - {{post.title}}</a>
               </li>
             {% endif %}
           {% endfor %}
